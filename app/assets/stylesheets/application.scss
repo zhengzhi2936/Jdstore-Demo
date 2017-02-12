@@ -119,10 +119,10 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 150px;
-  padding-top: 65px;
-}
+// body {
+//   margin-bottom: 150px;
+//   padding-top: 65px;
+// }
 
 .footer {
   position: absolute;
@@ -187,14 +187,88 @@ body {
   }
 
   .round-image-50 {
-      background-color: white;
-      border: 1px solid #d9d9d9;
-      border-radius: 25px;
-      -moz-border-radius: 25px;
-      -webkit-border-radius: 25px;
-      height: 50px;
-      width: 50px;
-      overflow: hidden;
-      text-align: center;
-      img { width: 100% }
-  }
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
+}
+
+// global
+body {
+  color: #6D6D6D;
+  font-family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+a {
+  color: #6D6D6D;
+}
+a:hover {
+  color: #C81623;
+  text-decoration: none;
+}
+
+// 字体颜色和背景颜色
+.bg_gray {
+  background: #F5F5F5
+}
+.bg_red {
+  background: #B1191A
+}
+.col_black {
+  color: #333333;
+}
+.col_red {
+  color: #E44143;
+}
+
+.navbar-wrap {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #EEEEEE;
+  overflow: hidden;
+}
+.jh_navbar-listItem {
+
+} 
+.jh_navbar-spacer {
+  width: 1px;
+  height: 12px;
+  margin-top: 9px;
+  padding: 0;
+  background: #ddd;
+  overflow: hidden;
+}
+
+// search
+.search {
+  width: 532px;
+}
+.search-input {
+  height: 36px;
+  line-height: 36px;
+  color: #666;
+  padding: 4px;
+  margin-bottom: 4px;
+  border-width: 2px 0 2px 2px;
+  border-color: #B61D1D;
+  border-style: solid;
+  outline: 0;
+  font-size: 14px;
+  font-family: "microsoft yahei";
+}
+.search-button {
+  width: 82px;
+  height: 36px;
+  background: #B61D1D;
+  border: none;
+  line-height: 1;
+  color: #fff;
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  cursor: pointer;
+}
