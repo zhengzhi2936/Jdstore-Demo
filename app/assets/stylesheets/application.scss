@@ -204,7 +204,7 @@ html {
 body {
   color: #2E2E2E;
   font-family: "Microsoft Yahei",verdana;
-  background: #F6F6F6;
+  background: #FFFFFF;
 }
 a {
   color: #6D6D6D;
@@ -219,13 +219,21 @@ a:hover {
   background: #F5F5F5
 }
 .bg-red {
-  background: #B1191A
+  background: #D32048
+}
+.col-gray {
+  color: #808080;
 }
 .col-black {
   color: #333333;
 }
 .col-red {
   color: #d32048;
+}
+
+// 边框
+.border {
+  border: 1px solid #DDDDDD;
 }
 
 .navbar-wrap {

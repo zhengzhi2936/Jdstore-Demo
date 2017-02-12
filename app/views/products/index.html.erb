@@ -8,72 +8,50 @@
   </div>
 </div>
 
-<div class="menu-wrap">
-  <ul class="menuList clearfix w1200 f16">
-    <li class="menuList-item menuList-activeItem fl pl20 pr20 ml40">
-      首页
-    </li>
-    <li class="menuList-item fl">
-      电脑办公
-    </li>
-    <li class="menuList-item fl">
-      数码产品
-    </li>
-    <li class="menuList-item fl">
-      美食天地
-    </li>
-    <li class="menuList-item fl">
-      潮流新平
-    </li>
-    <li class="menuList-item fl">
-      其他商品
-    </li>
-  </ul>
-</div>
+<%= render :partial => "products/menu" %>  
 
-<div class="banner tc mt30">
-  <img src="https://ww3.sinaimg.cn/large/006tKfTcly1fcnrtujh89j30xc0a0whm.jpg">  
-</div>
+<div class="index-main bg-gray">
+  <div class="banner tc mt30">
+    <img src="https://ww3.sinaimg.cn/large/006tKfTcly1fcnrtujh89j30xc0a0whm.jpg">  
+  </div>
 
-<div class="order clearfix mt30 w1200 bc">
-  <p class="fl title pl20 pr20">商品排序：</p>
-  <ul class="fl orderList">
-    <li class="fl orderList-orderItem pl20 pr20 col-red">人气</li>
-    <li class="fl orderList-orderItem pl20 pr20">销量</li>
-    <li class="fl orderList-orderItem pl20 pr20">新品</li>
-    <li class="fl orderList-orderItem pl20 pr20">价格</li>
-  </ul>
-</div>
+  <div class="order clearfix mt30 w1200 bc">
+    <p class="fl title pl20 pr20">商品排序：</p>
+    <ul class="fl orderList">
+      <li class="fl orderList-orderItem pl20 pr20 col-red">人气</li>
+      <li class="fl orderList-orderItem pl20 pr20">销量</li>
+      <li class="fl orderList-orderItem pl20 pr20">新品</li>
+      <li class="fl orderList-orderItem pl20 pr20">价格</li>
+    </ul>
+  </div>
 
-<div class="productList-wrap mt30 bc">
-  <ul class="productList clearfix pl10 pr10">
-     <% @products.each_with_index do |product, index| %>
-      <% if index > 0 && index % 4 == 0 %>
-        <li class="fl productList-item productList-lastItem p15">
-      <% else %>
-        <li class="fl productList-item p15">
-      <% end %>
-        <p class="productList-item-pic w200 h200">
-          <%= link_to product_path(product) do %>
-            <% if product.photos.present? %>
-              <%= image_tag(product.photos[0].avatar.thumb.url) %>
-            <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+  <div class="productList-wrap mt30 bc">
+    <ul class="productList clearfix pl10 pr10">
+       <% @products.each_with_index do |product, index| %>
+        <% if index > 0 && index % 4 == 0 %>
+          <li class="fl productList-item productList-lastItem p15">
+        <% else %>
+          <li class="fl productList-item p15">
+        <% end %>
+          <p class="productList-item-pic w200 h200">
+            <%= link_to product_path(product) do %>
+              <% if product.photos.present? %>
+                <%= image_tag(product.photos[0].avatar.thumb.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+              <% end %>
             <% end %>
-          <% end %>
-        </p>
-        <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
-        <p class="productList-item-name ell">
-          <%= link_to product_path(product) do %>
-            ¥ <%= product.title %>
-          <% end %>  
-        </p>
-        <p class="productList-item-desc mt5 f12"><%= product.description %></p>
-      </li>
-    <% end %>
-  </ul>
-</div>    
-
-
-
-   
+          </p>
+          <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
+          <p class="productList-item-name ell">
+            <%= link_to product_path(product) do %>
+              ¥ <%= product.title %>
+            <% end %>  
+          </p>
+          <p class="productList-item-desc mt5 f12"><%= product.description %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>    
+</div>
+  
