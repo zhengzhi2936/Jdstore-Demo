@@ -42,7 +42,6 @@
     <li class="fl orderList-orderItem pl20 pr20">新品</li>
     <li class="fl orderList-orderItem pl20 pr20">价格</li>
   </ul>
->>>>>>> master
 </div>
 
 <div class="productList-wrap mt30 bc">
@@ -65,7 +64,7 @@
         <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
         <p class="productList-item-name ell">
           <%= link_to product_path(product) do %>
-            ¥ <%= product.title %>
+             <%= product.title %>
           <% end %>
           <% if current_user && current_user.is_favorite_of?(product) %>
           <%= link_to('取消收藏'.html_safe, favorite_product_path(product, type: "unfavorite"), method: :put) %>
