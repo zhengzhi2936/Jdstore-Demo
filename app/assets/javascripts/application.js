@@ -19,3 +19,28 @@
 //= require local_time
 //= require chosen-jquery
 //= require_tree .
+
+// 点击事件
+$(document).on('click', '.backtop', function () {
+	$('body').animate({'scrollTop': 0}, 500)
+}).on('mouseenter', '.support', function () {
+	$('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500)
+}).on('mouseleave', '.support', function () {
+	$('.ewm').stop().animate({opacity: 0}, 500, function () {
+		$(this).css('left', 0).hide()
+	})
+})
+
+// 拉票小功能 
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 500) {
+		$('#sidebar').fadeIn()
+	} else {
+		$('#sidebar').fadeOut()
+	}
+})
+
+
+
+
+
