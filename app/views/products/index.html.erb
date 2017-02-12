@@ -16,9 +16,9 @@
     <p class="fl title pl20 pr20">商品排序：</p>
     <ul class="fl orderList">
       <li class="fl orderList-orderItem pl20 pr20 col-red">人气</li>
-      <li class="fl orderList-orderItem pl20 pr20">销量</li>
-      <li class="fl orderList-orderItem pl20 pr20">新品</li>
-      <li class="fl orderList-orderItem pl20 pr20">价格</li>
+      <li class="fl orderList-orderItem pl20 pr20"><%= link_to("销量", products_path(:order => "by_product_quantity")) %></li>
+      <li class="fl orderList-orderItem pl20 pr20"><%= link_to("新品", products_path ) %></li>
+      <li class="fl orderList-orderItem pl20 pr20"><%= link_to("价格", products_path(:order => "by_product_price")) %></li>
     </ul>
   </div>
 

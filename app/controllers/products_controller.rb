@@ -3,7 +3,14 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:favorite]
   def index
     if params[:category].blank?
-    @products = Product.all
+      @products = case params[:order]
+      when 'by_product_price'
+            Product.order('price DESC')
+      when 'by_product_quantity'
+            Product.order('quantity DESC')
+          else
+            Product.order('created_at DESC')
+          end
     else
       @category_id = Category.find_by(name: params[:category]).id
       @products = Product.where(:category_id => @category_id)
@@ -40,7 +47,6 @@ class ProductsController < ApplicationController
       if type == "favorite"
       current_user.favorite_products << @product
       redirect_to :back
-
       elsif type == "unfavorite"
       current_user.favorite_products.delete(@product)
       redirect_to :back
