@@ -1,0 +1,10 @@
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <strong><%= user.email %></strong>
+      <% unless current_user == user %>
+        <%= link_to 'Send message', new_message_path(to: user.id), class: 'btn btn-default btn-sm' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
