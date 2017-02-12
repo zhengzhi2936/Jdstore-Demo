@@ -1,73 +1,51 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <div>
-      <a class="navbar-brand" href="/" >JDstore </a>
-    </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active">
-            <%= link_to("Products", products_path) %>
-          </li>
-          <li>
-            <%= link_to '站内信', conversations_path %>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-left">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">分类<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <% Category.all.each do |category| %>
-                <li>
-                  <%= link_to category.name, products_path(category: category.name), class: "link" %>
-                </li>
-                <% end %>
-              </ul>
-            </li>
-        </ul>
 
-            <%= form_tag search_products_path , :method => :get, :class => "navbar-form navbar-right" do%>
-                <div class="input-group">
-                  <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜索工作关键字...">
+<div class="navbar-wrap clearfix pl10 pr10 bg_gray f12">
+  <div class="jh_navbar w1210 bc">
+    <div class="jh_navbar-left fl">欢迎来到xxx网！</div>
+    <ul class="jh_navbar-list fr">
 
-                  <span class="input-group-btn">
-                    <button type="submit" class="btn btn-default">
-                      <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                  </span>
-                </div>
-              <% end %>
+    <% if !current_user %>
+      <li class="fl jh_navbar-listItem pr10 pl10">
+       <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
+      </li> 
+      <li class="jh_navbar-spacer fl"></li>
+      <li class="fl jh_navbar-listItem pr10 pl10">
+       <a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
+      </li> 
+    <% end %>
 
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to carts_path do  %>
-                购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
-            <% end %>
-          </li>
-          <% if !current_user %>
-        <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
-          <% else %>
-          <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <% if current_user.admin?%>
-              <li> <%= link_to("Admin Panel", admin_products_path )%> </li>
-              <% end %>
-              <li>
-                <%= link_to("个人订单列表", account_orders_path )%>
-              </li>
-              <li><%= link_to '编辑个人主页',edit_user_registration_path %></li>
-              <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
-            </ul>
-          </li>
-          <% end %>
-        </ul>
-      </div>
+    <% if current_user %>
+     <li class="fl jh_navbar-listItem pr10 pl10">
+       Hi! <%= current_user.email %>
+      </li> 
+      <li class="jh_navbar-spacer fl"></li>
+      <li class="fl jh_navbar-listItem pr10 pl10">
+        <%= link_to("我的订单", account_orders_path )%>
+      </li> 
+      <li class="jh_navbar-spacer fl"></li>
+      <li class="fl jh_navbar-listItem pr10 pl10">
+        <%= link_to '站内信', conversations_path %>
+      </li> 
+      <li class="jh_navbar-spacer fl"></li>
+      <li class="fl jh_navbar-listItem pr10 pl10">
+        <%= link_to '账号设置',edit_user_registration_path %>
+      </li> 
+      <li class="jh_navbar-spacer fl"></li>
+      <% if current_user.admin?%>
+        <li class="fl jh_navbar-listItem pr10 pl10">
+          <%= link_to '后台管理',edit_user_registration_path %>
+        </li> 
+        <li class="jh_navbar-spacer fl"></li>
+      <% end %>
+      <li class="fl jh_navbar-listItem pr10 pl10">
+        <%= link_to("登出", destroy_user_session_path, method: :delete) %>
+      </li> 
+    <% end %>
+
+    </ul>
   </div>
-</nav>
+</div>
+
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">

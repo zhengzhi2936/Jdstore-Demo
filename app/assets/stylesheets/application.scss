@@ -119,10 +119,10 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 150px;
-  padding-top: 65px;
-}
+// body {
+//   margin-bottom: 150px;
+//   padding-top: 65px;
+// }
 
 .footer {
   position: absolute;
@@ -187,14 +187,58 @@ body {
   }
 
   .round-image-50 {
-      background-color: white;
-      border: 1px solid #d9d9d9;
-      border-radius: 25px;
-      -moz-border-radius: 25px;
-      -webkit-border-radius: 25px;
-      height: 50px;
-      width: 50px;
-      overflow: hidden;
-      text-align: center;
-      img { width: 100% }
-  }
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
+}
+
+// global
+body {
+  color: #6D6D6D;
+  font-family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+a {
+  color: #6D6D6D;
+}
+a:hover {
+  color: #C81623;
+  text-decoration: none;
+}
+
+// 字体颜色和背景颜色
+.bg_gray {
+  background: #F5F5F5
+}
+.bg_red {
+  background: #B1191A
+}
+.col_black {
+  color: #333333;
+}
+.col_red {
+  color: #E44143;
+}
+
+.navbar-wrap {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.jh_navbar-listItem {
+
+} 
+.jh_navbar-spacer {
+  width: 1px;
+  height: 12px;
+  margin-top: 9px;
+  padding: 0;
+  background: #ddd;
+  overflow: hidden;
+}
