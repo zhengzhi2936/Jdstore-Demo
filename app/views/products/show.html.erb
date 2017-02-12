@@ -62,7 +62,7 @@
   <div class="productDetail border mt40">
     <ul class="productDetail-tabList bg-gray clearfix">
       <li class="productDetail-tabList-tab fl pl50 pr50">
-            <%= @product.detail %>
+        商品详情
       </li>
     </ul>
     <div class="productDetail-content pt20 tc pb20">
@@ -72,6 +72,7 @@
         <% else %>
           <%= image_tag("http://placehold.it/1200x600&text=No Pic", class: "thumbnail") %>
         <% end %>
+          <%= @product.detail %>
       </div>
     </div>
   </div>
