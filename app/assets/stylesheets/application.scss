@@ -230,6 +230,7 @@ a:hover {
   height: 30px;
   line-height: 30px;
   border-bottom: 1px solid #EEEEEE;
+  overflow: hidden;
 }
 .jh_navbar-listItem {
 
@@ -241,4 +242,33 @@ a:hover {
   padding: 0;
   background: #ddd;
   overflow: hidden;
+}
+
+// search
+.search {
+  width: 532px;
+}
+.search-input {
+  height: 36px;
+  line-height: 36px;
+  color: #666;
+  padding: 4px;
+  margin-bottom: 4px;
+  border-width: 2px 0 2px 2px;
+  border-color: #B61D1D;
+  border-style: solid;
+  outline: 0;
+  font-size: 14px;
+  font-family: "microsoft yahei";
+}
+.search-button {
+  width: 82px;
+  height: 36px;
+  background: #B61D1D;
+  border: none;
+  line-height: 1;
+  color: #fff;
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  cursor: pointer;
 }
