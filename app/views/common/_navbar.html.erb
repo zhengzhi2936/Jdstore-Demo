@@ -1,7 +1,7 @@
 
 <div class="navbar-wrap clearfix pl10 pr10 bg-gray f12">
   <div class="jh_navbar w1200 bc">
-    <div class="jh_navbar-left fl"><!-- <i class="fa fa-home f16 mr5"></i> -->欢迎来到xxx网！</div>
+    <div class="jh_navbar-left fl"><!-- <i class="fa fa-home f16 mr5"></i> --><%=link_to("欢迎来到xxx网！", products_path)%></div>
     <ul class="jh_navbar-list fr">
 
     <% if !current_user %>
@@ -28,7 +28,7 @@
       </li>
       <li class="jh_navbar-spacer fl"></li>
       <li class="fl jh_navbar-listItem pr10 pl10">
-      <%= link_to(' 已收藏的工作'.html_safe, product_favorite_index_path(current_user.favorite_products)) %>
+      <%= link_to(' 已收藏的商品'.html_safe, product_favorite_index_path(current_user.favorite_products)) %>
       </li>
       <li class="jh_navbar-spacer fl"></li>
       <li class="fl jh_navbar-listItem pr10 pl10">
