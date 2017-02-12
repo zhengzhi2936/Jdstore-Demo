@@ -29,6 +29,18 @@
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
   </div>
+
+   <% if @product.image.present? %>
+   <span>目前商品图</span> <br>
+   <%= image_tag(@product.image.thumb.url) %>
+ <% end %>
+
+ <div class="group">
+   <%= f.input :detail %>
+ </div>
+ <div class="group">
+   <%= f.input :image, as: :file %>
+ </div>
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   <%= f.submit "Sbumit", data: { disable_with: "Submitting..."} %>
 
