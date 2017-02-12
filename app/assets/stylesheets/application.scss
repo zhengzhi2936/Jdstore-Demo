@@ -213,16 +213,16 @@ a:hover {
 }
 
 // 字体颜色和背景颜色
-.bg_gray {
+.bg-gray {
   background: #F5F5F5
 }
-.bg_red {
+.bg-red {
   background: #B1191A
 }
-.col_black {
+.col-black {
   color: #333333;
 }
-.col_red {
+.col-red {
   color: #E44143;
 }
 
@@ -242,6 +242,13 @@ a:hover {
   padding: 0;
   background: #ddd;
   overflow: hidden;
+}
+
+// logo
+.logo {
+  width: 360px;
+  height: 60px;
+
 }
 
 // search
@@ -271,4 +278,15 @@ a:hover {
   font-family: "Microsoft YaHei";
   font-size: 16px;
   cursor: pointer;
+}
+
+// cart
+.cart {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid #DFDFDF;
+  &:hover {
+    background: #fff;
+  }
 }
