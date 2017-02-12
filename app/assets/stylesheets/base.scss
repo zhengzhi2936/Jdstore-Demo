@@ -14,6 +14,7 @@ abbr,acronym { border:0}
 .f13{font-size:13px} 
 .f14{font-size:14px} 
 .f16{font-size:16px} 
+.f18{font-size:18px} 
 .f20{font-size:20px} 
 .fb{font-weight:bold} 
 .fn{font-weight:normal} 
@@ -23,6 +24,7 @@ abbr,acronym { border:0}
 .lh200{line-height:200%} 
 .unl{text-decoration:underline;} 
 .no_unl{text-decoration:none;}
+.ell {overflow:hidden; white-space:nowrap; text-overflow:ellipsis;word-wrap:normal;}
 /*定位*/
 .tl{text-align:left}
 .tc{text-align:center}
@@ -62,7 +64,7 @@ abbr,acronym { border:0}
 .w700{width:700px}
 .w800{width:800px}
 .w{width:100%}
-.w1210{width:1210px;}
+.w1200{width:1200px;}
 .h50{height:50px}
 .h80{height:80px}
 .h100{height:100px}
@@ -77,6 +79,7 @@ abbr,acronym { border:0}
 .mt15{margin-top:15px} 
 .mt20{margin-top:20px} 
 .mt30{margin-top:30px} 
+.mt40{margin-top:40px}
 .mt50{margin-top:50px} 
 .mt100{margin-top:100px}
 .mb10{margin-bottom:10px}
@@ -90,6 +93,7 @@ abbr,acronym { border:0}
 .ml15{margin-left:15px}
 .ml20{margin-left:20px}
 .ml30{margin-left:30px}
+.ml40{margin-left:40px}
 .ml50{margin-left:50px}
 .ml100{margin-left:100px}
 .mr5{margin-right:5px}
