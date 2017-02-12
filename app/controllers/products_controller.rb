@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user!, only: [:favorite]
   def index
     if params[:category].blank?
     @products = Product.all
@@ -32,6 +33,21 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
 
+  end
+    def favorite
+      @product = Product.find(params[:id])
+      type = params[:type]
+      if type == "favorite"
+      current_user.favorite_products << @product
+      redirect_to :back
+
+      elsif type == "unfavorite"
+      current_user.favorite_products.delete(@product)
+      redirect_to :back
+
+      else
+      redirect_to :back
+      end
   end
 
   protected

@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create]
   resources :categories
   resources :products do
+    put :favorite, on: :member
+    resources :favorite do
+      end
     member do
       post :add_to_cart
     end
