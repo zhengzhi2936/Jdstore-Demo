@@ -9,7 +9,7 @@
 </div>
 <%= render :partial => "products/menu" %>
 <div class="index-main bg-gray">
-  <div class="banner tc mt30">
+  <div class="banner tc pt30">
     <img src="https://ww3.sinaimg.cn/large/006tKfTcly1fcnrtujh89j30xc0a0whm.jpg">
   </div>
   <div class="order clearfix mt30 w1200 bc">
@@ -23,35 +23,36 @@
   </div>
 
   <div class="productList-wrap mt30 bc">
-    <ul class="productList clearfix pl10 pr10">
+    <ul class="productList clearfix pl10 pr10 pb20">
        <% @products.each_with_index do |product, index| %>
         <% if index > 0 && index % 4 == 0 %>
           <li class="fl productList-item productList-lastItem p15">
         <% else %>
           <li class="fl productList-item p15">
         <% end %>
-          <p class="productList-item-pic w200 h200">
-            <%= link_to product_path(product) do %>
-              <% if product.photos.present? %>
-                <%= image_tag(product.photos[0].avatar.thumb.url) %>
-              <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+            <p class="productList-item-pic w200 h200">
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                <% end %>
               <% end %>
+          </p>
+          <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
+          <p class="productList-item-name ell">
+            <%= link_to product_path(product) do %>
+               <%= product.title %>
             <% end %>
-        </p>
-        <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
-        <p class="productList-item-name ell">
-          <%= link_to product_path(product) do %>
-             <%= product.title %>
-          <% end %>
-          <% if current_user && current_user.is_favorite_of?(product) %>
-          <%= link_to('取消收藏'.html_safe, favorite_product_path(product, type: "unfavorite"), method: :put) %>
-          <% else %>
-          <%= link_to('添加收藏'.html_safe, favorite_product_path(product, type: "favorite"), method: :put) %>
-          <% end %>
-        </p>
-        <p class="productList-item-desc mt5 f12"><%= product.description %></p>
-      </li>
-    <% end %>
-  </ul>
+            <% if current_user && current_user.is_favorite_of?(product) %>
+            <%= link_to('取消收藏'.html_safe, favorite_product_path(product, type: "unfavorite"), method: :put) %>
+            <% else %>
+            <%= link_to('添加收藏'.html_safe, favorite_product_path(product, type: "favorite"), method: :put) %>
+            <% end %>
+          </p>
+          <p class="productList-item-desc mt5 f12"><%= product.description %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

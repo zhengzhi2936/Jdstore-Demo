@@ -1,62 +1,64 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2> 订单明细 </h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2> 订单明细 </h2>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th width="80%">商品明细</th>
-          <th>单价</th>
-        </tr>
-      </thead>
-    <tbody>
-
-      <% @product_lists.each do |product_list| %>
-      <tr>
-        <td>
-          <%= product_list.product_name %>
-        </td>
-        <td>
-          <%= product_list.product_price %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-    </table>
-
-    <div class="total clearfix">
-      <span class="pull-right">
-        总计 <%= @order.total %> CNY
-      </span>
-    </div>
-
-    <hr>
-
-    <h2>寄送资讯</h2>
-
-    <table class="table table-striped table-bordered">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th width="80%">商品明细</th>
+            <th>单价</th>
+          </tr>
+        </thead>
       <tbody>
+
+        <% @product_lists.each do |product_list| %>
         <tr>
           <td>
-            订购人
+            <%= product_list.product_name %>
           </td>
-        </tr>
-        <tr>
           <td>
-            发件人姓名: <%= @order.billing_name %> -  发件人地址: <%= @order.billing_address %>
+            <%= product_list.product_price %>
           </td>
         </tr>
-        <tr>
-          <td>
-            收件人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            收件人姓名: <%= @order.shipping_name %> - 收件人地址: <%= @order.shipping_address %>
-          </td>
-        </tr>
+        <% end %>
       </tbody>
-    </table>
+      </table>
+
+      <div class="total clearfix">
+        <span class="pull-right">
+          总计 <%= @order.total %> CNY
+        </span>
+      </div>
+
+      <hr>
+
+      <h2>寄送资讯</h2>
+
+      <table class="table table-striped table-bordered">
+        <tbody>
+          <tr>
+            <td>
+              订购人
+            </td>
+          </tr>
+          <tr>
+            <td>
+              发件人姓名: <%= @order.billing_name %> -  发件人地址: <%= @order.billing_address %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              收件人
+            </td>
+          </tr>
+          <tr>
+            <td>
+              收件人姓名: <%= @order.shipping_name %> - 收件人地址: <%= @order.shipping_address %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

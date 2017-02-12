@@ -213,6 +213,9 @@ a:hover {
   color: #C81623;
   text-decoration: none;
 }
+.main-content {
+  min-height: 800px;
+}
 
 /*字体颜色和背景颜色*/
 .bg-gray {
@@ -270,7 +273,7 @@ a:hover {
   padding: 4px;
   margin-bottom: 4px;
   border-width: 2px 0 2px 2px;
-  border-color: #B61D1D;
+  border-color: #D32048;
   border-style: solid;
   outline: 0;
   font-size: 14px;
@@ -279,7 +282,7 @@ a:hover {
 .search-button {
   width: 82px;
   height: 36px;
-  background: #B61D1D;
+  background: #D32048;
   border: none;
   line-height: 1;
   color: #fff;
@@ -306,15 +309,18 @@ a:hover {
   line-height: 42px;
   color: #fff;
 }
-.menuList-activeItem {
-  background: #D32048;
-} 
 .menuList-item {
   padding: 0 22px;
   cursor: pointer;
 }
 .menuList-item:hover {
   background-color: #434343;
+}
+.menuList-activeItem {
+  background: #D32048;
+} 
+.menuList-activeItem:hover {
+  background: #D32048;
 }
 
 
@@ -337,6 +343,9 @@ a:hover {
 /*商品列表*/
 .productList-wrap {
   width: 1220px;
+}
+.productList {
+  margin-bottom: 0;
 }
 .productList-item {
   width: 230px;

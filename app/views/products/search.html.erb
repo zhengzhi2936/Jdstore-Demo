@@ -1,13 +1,23 @@
-<%= render :partial => "products/search_bar" %>
+<div class="w1200 clearfix bc mt20">
+  <div class="logo fl">LOGO</div>
+  <div class="fl">
+    <%= render :partial => "products/search_bar" %>
+  </div>
+  <div class="fl">
+    <%= render :partial => "products/cart" %>
+  </div>
+</div>
+<%= render :partial => "products/menu" %>
+<div class="w1200 bc">
+	<br>
+	<div class="search-result">
 
-<br>
-<div class="search-result">
+	  <table class="table table-borderd">
+	    <% @products.each do |product| %>
+	      <%= link_to(render_highlight_content(product,@query_string),product_path(product)) %>
+	      <hr>
+	    <% end %>
+	 </table>
 
-  <table class="table table-borderd">
-    <% @products.each do |product| %>
-      <%= link_to(render_highlight_content(product,@query_string),product_path(product)) %>
-      <hr>
-    <% end %>
- </table>
-
+	</div>
 </div>
