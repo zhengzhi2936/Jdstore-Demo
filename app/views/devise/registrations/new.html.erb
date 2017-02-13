@@ -1,19 +1,41 @@
-<h2>Register</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <div><%= f.label :nickname %><br />
-    <%= f.text_field :nickname %></div>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+<div class="login-wrap">
+  <div class="moving-bg">
+    <div class="image-content">
+      <div class="w1200 clearfix bc mt50 pb20">
+        <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+  <div class="registration-wrap">
+    <div class="registration-block">
+      <div class="content clearfix">
+        <div class="right-part fr">
+          <div class="devise">
+            <h2>注册</h2>
 
-<%= render "devise/shared/links" %>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "邮箱" %>
+                <%= f.input :password, required: true, label: false, placeholder: "密码，6-16个字符，区分大小写" %>
+                <%= f.input :password_confirmation, required: true, label: false, placeholder: "确认密码" %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "注册", class: "registration-btn" %>
+              </div>
+            <% end %>
+
+            <div class="tip">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+</div>
+  

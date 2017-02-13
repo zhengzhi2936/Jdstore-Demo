@@ -1,15 +1,39 @@
-<h2>Forgot your password?</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+<div class="login-wrap">
+  <div class="moving-bg">
+    <div class="image-content">
+      <div class="w1200 clearfix bc mt50 pb20">
+        <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
+  <div class="registration-wrap">
+    <div class="registration-block">
+      <div class="content clearfix">
+        <div class="right-part fr">
+          <div class="devise">
+            <h2>忘记</h2>
 
-<%= render "devise/shared/links" %>
+            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "请输入电子邮箱" %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "发送恢复密码链接到邮箱" %>
+              </div>
+            <% end %>
+
+            <hr>
+
+            <div class="tip">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

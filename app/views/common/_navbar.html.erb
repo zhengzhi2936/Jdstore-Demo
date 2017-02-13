@@ -6,11 +6,11 @@
 
     <% if !current_user %>
       <li class="fl jh_navbar-listItem pr10 pl10">
-       <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
+        <%= link_to("注册", new_user_registration_path) %>
       </li>
       <li class="jh_navbar-spacer fl"></li>
       <li class="fl jh_navbar-listItem pr10 pl10">
-       <a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
+        <%= link_to("登入", new_user_session_path) %>
       </li>
     <% end %>
 

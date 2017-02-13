@@ -1,17 +1,40 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <div><%= f.label :nickname %><br />
-  <%= f.text_field :nickname %></div>
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="login-wrap">
+  <div class="moving-bg">
+    <div class="image-content">
+      <div class="w1200 clearfix bc mt50 pb20">
+        <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+  <div class="registration-wrap">
+    <div class="registration-block">
+      <div class="content clearfix">
+        <div class="right-part fr">
+          <div class="devise">
+            <h2>登录</h2>
 
-<%= render "devise/shared/links" %>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-inputs">
+                <%= f.input :email, required: false, autofocus: true, label: false, placeholder: "邮箱" %>
+                <%= f.input :password, required: false, label: false, placeholder: "密码" %>
+                <%= f.input :remember_me, inline_label: '记住我', label: false, as: :boolean if devise_mapping.rememberable? %>
+                <div class="forget-password">
+                  <%= link_to "忘记密码？", new_password_path(resource_name) %><br />
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "登录", class: "registration-btn" %>
+              </div>
+            <% end %>
+
+            <div class="tip">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
