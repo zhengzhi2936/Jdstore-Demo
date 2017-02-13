@@ -98,14 +98,16 @@
       <tr>
         <td><%= post.content %></td>
         <td> <%if post.user.avatar.present?%>
+               <!-- 没有头像的话，显示email -->
               <%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25") %>
               <%= post.user.nickname%>
-           <% else %>
-          <%= post.user.email %>
-          <% end %>
+              <% else %>
+              <%= post.user.email %>
+              <% end %>
         </td>
 
         <td><%= local_time(post.created_at) %></td>
+        <td><%= link_to("回复",new_product_post_path(@product), class: "btn btn-default " )%></td>
       </tr>
     <% end %>
   </tbody>
