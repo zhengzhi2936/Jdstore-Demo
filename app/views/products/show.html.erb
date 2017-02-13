@@ -70,6 +70,10 @@
       <li class="productDetail-tabList-tab fl pl50 pr50">
         商品详情
       </li>
+      <li class="productDetail-tabList-tab fl pl50 pr50">
+        商品评价(<%= @product.posts.count%>)
+        <%= link_to("评论", new_product_post_path(@product), class: "btn btn-default pull-right")%>
+      </li>
     </ul>
     <div class="productDetail-content pt20 tc pb20">
       <% if @product.image.present? %>
@@ -80,4 +84,32 @@
         <%= @product.detail %>
     </div>
   </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>评价详情</th>
+      <th>发表者</th>
+      <th>发表时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td> <%if post.user.avatar.present?%>
+               <!-- 没有头像的话，显示email -->
+              <%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25") %>
+              <%= post.user.nickname%>
+              <% else %>
+              <%= post.user.email %>
+              <% end %>
+        </td>
+
+        <td><%= local_time(post.created_at) %></td>
+        <td><%= link_to("回复",new_product_post_path(@product), class: "btn btn-default " )%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>

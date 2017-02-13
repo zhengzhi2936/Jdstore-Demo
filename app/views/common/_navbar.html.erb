@@ -16,7 +16,11 @@
 
     <% if current_user %>
      <li class="fl jh_navbar-listItem pr10 pl10">
-       Hi! <%= current_user.email %>
+       Hi! <% if current_user.nickname.present? %>
+            <%= current_user.nickname%>
+           <% else %>
+       <%= current_user.email %>
+       <% end %>
       </li>
       <li class="jh_navbar-spacer fl"></li>
       <li class="fl jh_navbar-listItem pr10 pl10">
@@ -57,8 +61,7 @@
        <h2>Log in</h2>
        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
          <div class="form-inputs">
-           <div><%= f.label :nickname %><br />
-            <%= f.text_field :nickname %></div>
+           <%= f.input :nickname, label: "Name"%>
            <%= f.input :email, required: false, autofocus: true %>
            <%= f.input :password, required: false %>
            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
@@ -79,8 +82,7 @@
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
-          <div><%= f.label :nickname %><br />
-          <%= f.text_field :nickname %></div>
+          <%= f.input :nickname, label: "Name"%>
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>

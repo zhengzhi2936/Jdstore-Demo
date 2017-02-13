@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    resources :posts
   end
   devise_for :users
   root 'products#index'
