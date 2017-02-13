@@ -71,7 +71,7 @@
         商品详情
       </li>
       <li class="productDetail-tabList-tab fl pl50 pr50">
-        商品评价
+        商品评价(<%= @product.posts.count%>)
         <%= link_to("评论", new_product_post_path(@product), class: "btn btn-default pull-right")%>
       </li>
     </ul>
@@ -105,7 +105,7 @@
           <% end %>
         </td>
 
-        <td><%= post.created_at %></td>
+        <td><%= local_time(post.created_at) %></td>
       </tr>
     <% end %>
   </tbody>
