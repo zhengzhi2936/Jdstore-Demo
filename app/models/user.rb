@@ -21,4 +21,5 @@ class User < ApplicationRecord
          def is_favorite_of?(product)
            favorite_products.include?(product)
          end
+         has_many :posts
 end
