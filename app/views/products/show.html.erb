@@ -47,6 +47,9 @@
       <p class="intro-text-count">
         <span class="pl20 pr30">库存</span><%= @product.quantity %><span></span>
       </p>
+      <td><%= pluralize(@product.votes.count, "like") %></td>
+      <td><%= button_to '喜欢', upvote_product_path(@product), method: :post %></td>
+
       <p class="intro-text-btnWrap">
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product),

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       end
     member do
       post :add_to_cart
+      post :upvote
     end
     collection do
       get :search
