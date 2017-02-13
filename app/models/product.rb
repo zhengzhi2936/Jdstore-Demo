@@ -7,4 +7,5 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :favorites
   has_many :fans, through: :favorites, source: :user
+  has_many :votes, dependent: :destroy
 end

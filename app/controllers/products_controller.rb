@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
             Product.order('price DESC')
       when 'by_product_quantity'
             Product.order('quantity DESC')
+      when 'by_product_like'
+            Product.order('like DESC')
           else
             Product.order('created_at DESC')
           end
@@ -56,6 +58,13 @@ class ProductsController < ApplicationController
       end
   end
 
+    def upvote
+      @product = Product.find(params[:id])
+      @product.votes.create
+      @product.like = @product.votes.count
+      @product.save
+      redirect_to :back
+    end
   protected
 
   def validate_search_key

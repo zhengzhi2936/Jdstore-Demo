@@ -15,7 +15,7 @@
   <div class="order clearfix mt30 w1200 bc">
     <p class="fl title pl20 pr20">商品排序：</p>
     <ul class="fl orderList">
-      <li class="fl orderList-orderItem pl20 pr20 col-red">人气</li>
+      <li class="fl orderList-orderItem pl20 pr20 col-red"><%= link_to("人气", products_path(:order => "by_product_like")) %></li>
       <li class="fl orderList-orderItem pl20 pr20"><%= link_to("销量", products_path(:order => "by_product_quantity")) %></li>
       <li class="fl orderList-orderItem pl20 pr20"><%= link_to("新品", products_path ) %></li>
       <li class="fl orderList-orderItem pl20 pr20"><%= link_to("价格", products_path(:order => "by_product_price")) %></li>
