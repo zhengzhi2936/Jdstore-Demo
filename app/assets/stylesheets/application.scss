@@ -234,7 +234,7 @@ a:hover {
   color: #d32048;
 }
 
-// 边框
+/*边框*/
 .border {
   border: 1px solid #DDDDDD;
 }
@@ -257,6 +257,11 @@ a:hover {
 
 /*logo*/
 .logo {
+  font-size: 36px;
+}
+
+/*logo*/
+.logo {
   width: 360px;
   height: 60px;
 
@@ -264,31 +269,34 @@ a:hover {
 
 /*search*/
 .search {
-  width: 532px;
+  width: 400px;
 }
 .search-input {
   height: 36px;
   line-height: 36px;
   color: #666;
-  padding: 4px;
+  padding: 4px 20px;
   margin-bottom: 4px;
-  border-width: 2px 0 2px 2px;
+  border-width: 2px;
   border-color: #D32048;
   border-style: solid;
   outline: 0;
   font-size: 14px;
   font-family: "microsoft yahei";
+  border-radius: 20px;
 }
 .search-button {
-  width: 82px;
+  width: 54px;
   height: 36px;
-  background: #D32048;
   border: none;
   line-height: 1;
   color: #fff;
+  background: none;
   font-family: "Microsoft YaHei";
   font-size: 16px;
   cursor: pointer;
+  top: 0;
+  right: 0px;
 }
 
 /*cart*/
@@ -300,6 +308,9 @@ a:hover {
   &:hover {
     background: #fff;
   }
+}
+.cart-left {
+  margin-left: 259px;
 }
 
 /*menu*/
