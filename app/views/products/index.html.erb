@@ -25,7 +25,7 @@
   <div class="productList-wrap mt30 bc">
     <ul class="productList clearfix pl10 pr10 pb20">
        <% @products.each_with_index do |product, index| %>
-        <% if index > 0 && index % 4 == 0 %>
+        <% if index > 0 && (index + 1) % 5 == 0 %>
           <li class="fl productList-item productList-lastItem p15">
         <% else %>
           <li class="fl productList-item p15">
