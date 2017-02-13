@@ -42,14 +42,17 @@
         <span class="pl20 pr30">售价</span><span class="price f24 fb col-red">￥<%= @product.price %></span>
       </p>
       <p class="intro-text-service">
-        <span class="pl20 pr30">售价</span><span>满99元包邮 | 正品保证</span>
+        <span class="pl20 pr30">运费</span><span>满99元包邮 | 正品保证</span>
       </p>
       <p class="intro-text-count">
         <span class="pl20 pr30">库存</span><%= @product.quantity %><span></span>
       </p>
-      <td><%= pluralize(@product.votes.count, "like") %></td>
-      <td><%= button_to '喜欢', upvote_product_path(@product), method: :post %></td>
-
+      <p class="intro-text-count">
+       <%= link_to raw("<i class=\"fa fa-thumbs-o-up\"></i>"),
+           upvote_product_path(@product),
+            method: :post  %>
+        <td><%= pluralize(@product.votes.count, "like") %></td>
+    </p>
       <p class="intro-text-btnWrap">
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product),

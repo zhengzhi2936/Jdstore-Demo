@@ -1,25 +1,12 @@
 <div class="menu-wrap">
   <ul class="menuList clearfix w1200 f16">
     <li class="menuList-item menuList-activeItem fl pl20 pr20 ml40">
-      首页
+      <%= link_to("首页", products_path)%>
     </li>
+    <% Category.all.each do |category| %>
     <li class="menuList-item fl">
-      糖果/巧克力
-    </li>
-    <li class="menuList-item fl">
-      无糖食品
-    </li>
-    <li class="menuList-item fl">
-      休闲零食
-    </li>
-    <li class="menuList-item fl">
-      肉干肉脯
-    </li>
-    <li class="menuList-item fl">
-      饼干蛋糕
-    </li>
-    <li class="menuList-item fl">
-      蜜饯果干
+       <%= link_to category.name, products_path(category: category.name), class: "link" %>
+       <% end %>
     </li>
   </ul>
 </div>
