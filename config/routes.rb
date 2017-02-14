@@ -19,7 +19,12 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end
   resources :cart_items
   resources :users, only: [:index]
   resources :messages, only: [:new, :create]
