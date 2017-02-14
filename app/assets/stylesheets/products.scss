@@ -87,7 +87,7 @@
 	display: none;
 }
 
-.productDetail-content img {
+.productDetail-content .productDetail-introImg img {
 	width: 700px;
 }
 
@@ -102,4 +102,8 @@
 	&:hover {
 		color: #fff;
 	}
+}
+
+.productDetail-evaluation {
+	letter-spacing: 5px;
 }
