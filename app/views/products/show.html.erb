@@ -50,13 +50,13 @@
       </p>
 
           <p class="intro-text-count">
-              味道 : <%= rating_for @product, 'speed' %>
+              味道 : <%= rating_for @product, 'speed', disable_after_rate: true %>
             </p>
             <p class="intro-text-count">
-              外观 : <%= rating_for @product, 'engine' %>
+              外观 : <%= rating_for @product, 'engine', disable_after_rate: true %>
               </p>
               <p class="intro-text-count">
-              价格 : <%= rating_for @product, 'price' %>
+              价格 : <%= rating_for @product, 'price', disable_after_rate: true %>
                 </p>
 
 
