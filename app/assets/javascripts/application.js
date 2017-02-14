@@ -18,6 +18,8 @@
 //= require bootstrap/modal
 //= require local_time
 //= require chosen-jquery
+//= require jquery.raty
+//= require ratyrate
 //= require_tree .
 
 // 点击事件
@@ -38,7 +40,7 @@ $(document).on('click', '.intro-preview-item', function () {
 	$(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
 })
 
-// 拉票小功能 
+// 拉票小功能
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 500) {
 		$('#sidebar').fadeIn()
@@ -46,8 +48,3 @@ $(window).scroll(function () {
 		$('#sidebar').fadeOut()
 	}
 })
-
-
-
-
-
