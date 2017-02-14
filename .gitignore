@@ -22,3 +22,6 @@
 config/database.yml
 public/uploads
 public/system/users
+
+# Ignore application configuration
+/config/application.yml
