@@ -48,3 +48,9 @@ $(window).scroll(function () {
 		$('#sidebar').fadeOut()
 	}
 })
+
+// 详情菜单栏切换
+$(document).on('click', '.productDetail-tabList-tab', function () {
+	$(this).addClass('productDetail-tabList-activeTab').siblings().removeClass('productDetail-tabList-activeTab')
+	$('.productDetail-content').eq($(this).index()).show().siblings().hide()
+})

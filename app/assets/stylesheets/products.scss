@@ -11,6 +11,9 @@
 .intro-bigPic {
 	width: 420px;
 	height: 420px;
+	img {
+		width: 100%;
+	}
 }
 
 .intro-preview {
@@ -70,12 +73,33 @@
 }
 
 .productDetail-tabList-tab {
+	cursor: pointer;
 	height: 35px;
 	line-height: 35px;
-	background: #fff;
 	border-right: 1px solid #D8D8D8;
+}
+
+.productDetail-tabList-activeTab {
+	background: #fff;
+}
+
+.productDetail-content {
+	display: none;
 }
 
 .productDetail-content img {
 	width: 700px;
+}
+
+.commentList-item {
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.comment-say a {
+	margin-right: auto;
+	margin-left: auto;
+	color: #fff;
+	&:hover {
+		color: #fff;
+	}
 }
