@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+             ratyrate_rater
            acts_as_messageable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

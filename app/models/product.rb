@@ -9,4 +9,6 @@ class Product < ApplicationRecord
   has_many :fans, through: :favorites, source: :user
   has_many :votes, dependent: :destroy
   has_many :posts
+
+  ratyrate_rateable "speed", "engine", "price"
 end
