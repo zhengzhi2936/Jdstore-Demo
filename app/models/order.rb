@@ -18,6 +18,8 @@ class Order < ApplicationRecord
   def pay!
     self.update_columns(is_paid: true )
   end
+
+include AASM
   aasm do
   state :order_placed, initial: true
   state :paid
@@ -46,4 +48,5 @@ class Order < ApplicationRecord
   event :cancell_order do
     transitions from: [:order_placed, :paid], to: :order_cancelled
   end
+end
 end
