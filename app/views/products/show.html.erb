@@ -19,7 +19,7 @@
           <%= image_tag @photos.first.avatar.medium.url %>
         <% end %>
       </div>
-      <ul class="intro-preview">
+      <ul class="intro-preview clearfix">
         <% if @photos.present? %>
           <% @photos.each_with_index do |p, index| %>
             <% if index == 0 %>
@@ -34,6 +34,15 @@
           <% end %>
         <% end %>
       </ul>
+      <p class="mt20">
+        <% if current_user && current_user.is_favorite_of?(@product) %>
+          <i class="fa fa-star col-red"></i>
+          <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put, class: "col-red") %>
+        <% else %>
+          <i class="fa fa-star-o"></i>
+          <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+        <% end %>
+      </p>
     </div>
     <div class="intro-text fr">
       <h3 class="f20 ell fb"><%= @product.title %></h3>

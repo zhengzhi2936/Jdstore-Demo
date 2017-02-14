@@ -43,11 +43,6 @@
             <%= link_to product_path(product) do %>
                <%= product.title %>
             <% end %>
-            <% if current_user && current_user.is_favorite_of?(product) %>
-            <%= link_to('取消收藏'.html_safe, favorite_product_path(product, type: "unfavorite"), method: :put) %>
-            <% else %>
-            <%= link_to('添加收藏'.html_safe, favorite_product_path(product, type: "favorite"), method: :put) %>
-            <% end %>
           </p>
           <p class="productList-item-desc mt5 f12"><%= product.description %></p>
 
