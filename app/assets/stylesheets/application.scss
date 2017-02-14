@@ -205,6 +205,18 @@ a:hover {
   right: 0px;
 }
 
+/*按钮*/
+.g-btn {
+  display: block;
+  width: 178px;
+  height: 48px;
+  line-height: 48px;
+  border: 1px solid #d32048;
+  font-family: "Microsoft Yahei",simhei;
+  border-radius: 50px;
+  color: #fff;
+}
+
 /*cart*/
 .cart {
   padding-top: 8px;
@@ -446,3 +458,4 @@ a:hover {
     line-height: 23px;
   }
 }
+
