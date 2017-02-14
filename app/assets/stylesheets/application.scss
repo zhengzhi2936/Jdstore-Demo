@@ -271,6 +271,9 @@ a:hover {
 .orderList-orderItem {
   cursor: pointer;
 }
+.orderList-activeItem a {
+  color: #d32048; 
+}
 
 /*商品列表*/
 .productList-wrap {
