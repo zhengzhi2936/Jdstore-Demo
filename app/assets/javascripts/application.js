@@ -24,6 +24,22 @@
 //= require_tree .
 
 
+// 放大镜
+var evt = new Event(),
+    m = new Magnifier(evt);
+m.attach({
+    thumb: '#thumb',
+    large: $('.intro-preview-activeItem img').attr('src'),
+    largeWrapper: 'preview',
+    zoom: 1.5,
+    onthumbenter: function () {
+      $('#preview').show()
+    },
+    onthumbleave: function () {
+    	$('#preview').hide()
+    }
+	})
+
 // 点击事件
 $(document).on('click', '.backtop', function () {
 	$('body').animate({'scrollTop': 0}, 500)
@@ -40,6 +56,17 @@ $(document).on('click', '.intro-preview-item', function () {
 	var src = $(this).find('img').attr('src')
 	$('.intro-bigPic img').attr('src', src)
 	$(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
+	m.attach({
+    thumb: '#thumb',
+    large: src,
+    largeWrapper: 'preview',
+    onthumbenter: function () {
+      $('#preview').show()
+    },
+    onthumbleave: function () {
+    	$('#preview').hide()
+    }
+	})
 })
 
 // 拉票小功能
@@ -56,3 +83,4 @@ $(document).on('click', '.productDetail-tabList-tab', function () {
 	$(this).addClass('productDetail-tabList-activeTab').siblings().removeClass('productDetail-tabList-activeTab')
 	$('.productDetail-content').eq($(this).index()).show().siblings().hide()
 })
+
