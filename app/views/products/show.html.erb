@@ -93,15 +93,15 @@
         <div class="productDetail-evaluation w200 bc">
           <div class="intro-text-count clearfix mt10">
             <div class="fl mr10">味道: </div>
-            <div class="fl"><%= rating_for @product, 'speed', disable_after_rate: true %></div>
+            <div class="fl"><%= rating_for @product, 'speed', disable_after_rate: true, star_path: '/images/ratyrate' %></div>
           </div>
           <div class="intro-text-count clearfix mt10">
             <div class="fl mr10">外观: </div>
-            <div class="fl"><%= rating_for @product, 'engine', disable_after_rate: true %></div>
+            <div class="fl"><%= rating_for @product, 'engine', disable_after_rate: true, star_path: '/images/ratyrate' %></div>
           </div>
           <div class="intro-text-count clearfix mt10">
             <div class="fl mr10">价格: </div>
-            <div class="fl"><%= rating_for @product, 'price', disable_after_rate: true %></div>
+            <div class="fl"><%= rating_for @product, 'price', disable_after_rate: true, star_path: '/images/ratyrate' %></div>
           </div>
         </div>
         <ul class="commentList mt70">
