@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-             ratyrate_rater
            acts_as_messageable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -23,4 +22,5 @@ class User < ApplicationRecord
            favorite_products.include?(product)
          end
          has_many :posts
+        ratyrate_rater
 end

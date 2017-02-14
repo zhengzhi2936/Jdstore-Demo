@@ -14,6 +14,11 @@
       <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
       <%= f.input :password_confirmation, required: false %>
       <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+      <div class="form-group">
+        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.file_field :avatar %>
+        </div>
     </div>
 
     <div class="form-actions">

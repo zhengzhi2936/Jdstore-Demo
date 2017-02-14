@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap/modal
@@ -20,7 +20,9 @@
 //= require chosen-jquery
 //= require jquery.raty
 //= require ratyrate
+//= require turbolinks
 //= require_tree .
+
 
 // 点击事件
 $(document).on('click', '.backtop', function () {
