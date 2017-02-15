@@ -18,8 +18,8 @@
         <div class="magnifier-preview border" id="preview"></div>
         <% if @photos.present? %>
           <a class="magnifier-thumb-wrapper" href="javascript:;">
-            <img 
-              id="thumb" 
+            <img
+              id="thumb"
               src="<%= @photos.first.avatar.medium.url %>"
               data-large-img-wrapper="preview"
               data-large-img-url="<%= @photos.first.avatar.medium.url %>">
@@ -88,10 +88,12 @@
     <div class="productDetail-contentWrap">
       <div class="productDetail-content pt20 tc pb20" style="display: block;">
         <div class="productDetail-introImg">
-          <% if @product.image.present? %>
-            <%= image_tag(@product.image.medium.url)%>
-          <% else %
-            <%= image_tag("http://placehold.it/1200x600&text=No Pic")%>
+          <% if @prints.present? %>
+            <% @prints.each_with_index do |p, index| %>
+                <%= image_tag p.avatar.medium.url %>
+            <% end %>
+          <% else %>
+              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
           <% end %>
         </div>
         <p class="mt20 mb20"><%= @product.detail %></p>

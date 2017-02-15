@@ -27,10 +27,12 @@
     <%= f.input :detail %>
   </div>
 
-   <div class="group">
-     <%= f.input :image, as: :file, label: "详情图" %>
-   </div>
-<%= select_tag(:category_id, options_for_select(@categories)) %>
+  <div class="group">
+    <%#= f.input :image, as: :file %>
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar, :multiple => true, name: "prints[avatar][]" %>
+  </div>
+  <%= select_tag(:category_id, options_for_select(@categories)) %>
   <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
 
 <% end %>

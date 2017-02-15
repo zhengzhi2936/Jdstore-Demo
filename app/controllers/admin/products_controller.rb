@@ -9,6 +9,8 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new
     @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
     @photo = @product.photos.build #for multi-pics
+    @print = @product.prints.build #for multi-pics
+
   end
   def show
     @product = Product.find(params[:id])
@@ -23,9 +25,14 @@ class Admin::ProductsController < ApplicationController
       @product.category_id = params[:category_id]
       if @product.save
         if params[:photos] != nil
-          params[:photos]['avatar'].each do |a|
+            params[:photos]['avatar'].each do |a|
             @photo = @product.photos.create(:avatar => a)
-          end
+        end
+        if params[:prints] != nil
+             params[:prints]['avatar'].each do |a|
+             @print = @product.prints.create(:avatar => a)
+         end
+     end
         end
 
         redirect_to admin_products_path
@@ -37,10 +44,15 @@ class Admin::ProductsController < ApplicationController
        @product = Product.find(params[:id])
        @product.category_id = params[:category_id]
        if params[:photos] != nil
+          params[:prints] != nil
          @product.photos.destroy_all #need to destroy old pics first
+          @product.prints.destroy_all #need to destroy old pics first
          params[:photos]['avatar'].each do |a|
            @picture = @product.photos.create(:avatar => a)
          end
+           params[:photos]['avatar'].each do |a|
+             @picture = @product.prints.create(:avatar => a)
+           end
 
          @product.update(product_params)
          redirect_to admin_products_path

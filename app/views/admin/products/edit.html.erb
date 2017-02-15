@@ -30,16 +30,20 @@
     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
   </div>
 
-   <% if @product.image.present? %>
-   <span>目前商品图</span> <br>
-   <%= image_tag(@product.image.thumb.url) %>
- <% end %>
+  <% if @product.prints.present? %>
+      <span>目前商品圖</span> <br>
+      <% @product.prints.each do |p| %>
+        <%= image_tag p.avatar.thumb.url %><br>
+      <% end %>
+  <% end %>
+
+    <div class="group">
+      <%= f.label :avatar %><br>
+      <%= f.file_field :avatar, :multiple => true, name: "prints[avatar][]" %>
+    </div>
 
  <div class="group">
    <%= f.input :detail %>
- </div>
- <div class="group">
-   <%= f.input :image, as: :file %>
  </div>
   <%= f.select :category_id, @categories %>
   <%= f.submit "Sbumit", data: { disable_with: "Submitting..."} %>

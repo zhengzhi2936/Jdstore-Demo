@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @photos = @product.photos.all
     @posts = @product.posts
+    @prints = @product.prints.all
   end
   def search
     if @query_string.present?
