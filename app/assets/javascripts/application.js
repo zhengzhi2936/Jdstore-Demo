@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require bootstrap/carousel
 //= require bootstrap/modal
 //= require local_time
 //= require chosen-jquery
@@ -23,6 +24,10 @@
 //= require turbolinks
 //= require_tree .
 
+// 首页轮播
+$(document).ready(function() {
+    $('#myCarousel').carousel({interval: 4000})  
+});
 
 // 放大镜
 $('#preview').css('visibility', 'hidden')
@@ -54,7 +59,6 @@ $(document).on('click', '.backtop', function () {
 })
 
 // 预览图选择
-console.log('mouseover')
 $(document).on('mouseover', '.intro-preview-item', function () {
 	var src = $(this).find('img').attr('src')
 	$('.intro-bigPic img').attr('src', src)
@@ -97,3 +101,4 @@ $('.comment-image').click(function () {
         $(this).addClass('comment-image-scale')
     }
 })
+

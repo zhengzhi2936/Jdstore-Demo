@@ -288,6 +288,16 @@ a:hover {
   background: #fff;
   margin-right: 12px;
   margin-bottom: 12px;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+  position: relative;
+  top: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  &:hover {
+    position: relative;
+    top: -5px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  }
 }
 .productList-lastItem {
   margin-right: 0;
@@ -527,4 +537,11 @@ a:hover {
 
 #thumb-lens {
     background-size: 415px 415px !important;
+}
+
+
+// 轮播图
+.carousel-inner .item {
+  width: 1200px;
+  height: 375px;
 }

@@ -9,8 +9,34 @@
 </div>
 <%= render :partial => "products/menu" %>
 <div class="index-main bg-gray">
-  <div class="banner tc pt30">
-    <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fco41sv9vij30xc0a0tdt.jpg">
+  <div class="banner tc pt30 w1200 bc">
+    <div id="myCarousel" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+     </ol>
+     <div class="carousel-inner">
+        <div class="item active">
+         <a href="javacript:;">
+          <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fcrl5afeqhj30xc0afgpx.jpg">
+          <div class="carousel-caption"></div>
+         </a>
+        </div>
+        <div class="item">
+         <a href="javacript:;">
+          <img src="https://vipweb.bs2cdn.yy.com/vipinter_de4f123bb220482e93649571a1491572.jpg">
+          <div class="carousel-caption"></div>
+         </a>
+        </div>
+        <div class="item">
+         <a href="javacript:;">
+          <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fcrlcb0knhj30xc0afwib.jpg">
+          <div class="carousel-caption"></div>
+         </a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="order clearfix mt30 w1200 bc">
     <p class="fl title pl20 pr20">商品排序：</p>
