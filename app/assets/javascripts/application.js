@@ -54,7 +54,7 @@ $(document).on('click', '.backtop', function () {
 })
 
 // 预览图选择
-$(document).on('click', '.intro-preview-item', function () {
+$(document).on('mouseover', '.intro-preview-item', function () {
 	var src = $(this).find('img').attr('src')
 	$('.intro-bigPic img').attr('src', src)
     $('#thumb-lens').css('background-image', 'url(' + src + ')')

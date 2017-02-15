@@ -1,14 +1,35 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+<div class="w1200 clearfix bc mt50 pb20">
+  <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+</div>
+<div class="index-main bg-gray">
+  <div class="productList-wrap mt30 bc">
+    <ul class="productList clearfix pl10 pr10 pb20">
+       <% @products.each_with_index do |product, index| %>
+        <% if index > 0 && (index + 1) % 5 == 0 %>
+          <li class="fl productList-item productList-lastItem p15">
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <li class="fl productList-item p15">
         <% end %>
+            <p class="productList-item-pic w200 h200">
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                <% end %>
+              <% end %>
+          </p>
+          <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
+          <p class="productList-item-name ell">
+            <%= link_to product_path(product) do %>
+               <%= product.title %>
+            <% end %>
+          </p>
+          <p class="productList-item-desc mt5 f12"><%= product.description %></p>
+
+        </li>
+
       <% end %>
-      <%= product.title %> ¥ <%= product.price %>
-    </div>
-  <% end %>
+    </ul>
+  </div>
 </div>
