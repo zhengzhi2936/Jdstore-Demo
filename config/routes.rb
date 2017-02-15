@@ -27,7 +27,12 @@ Rails.application.routes.draw do
       post :apply_to_cancel
     end
   end
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :add_quantity
+      post :remove_quantity
+    end
+  end
   resources :users, only: [:index]
   resources :messages, only: [:new, :create]
   resources :categories
