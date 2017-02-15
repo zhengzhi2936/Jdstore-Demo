@@ -25,6 +25,7 @@
 
 
 // 放大镜
+$('#preview').css('visibility', 'hidden')
 var evt = new Event(),
     m = new Magnifier(evt);
 m.attach({
@@ -33,12 +34,13 @@ m.attach({
     largeWrapper: 'preview',
     zoom: 1.5,
     onthumbenter: function () {
-      $('#preview').show()
+        console.log('onthumbenter')
+        $('#preview').css('visibility', 'visible')
     },
     onthumbleave: function () {
-    	$('#preview').hide()
+        $('#preview').css('visibility', 'hidden')
     }
-	})
+})
 
 // 点击事件
 $(document).on('click', '.backtop', function () {
@@ -55,17 +57,18 @@ $(document).on('click', '.backtop', function () {
 $(document).on('click', '.intro-preview-item', function () {
 	var src = $(this).find('img').attr('src')
 	$('.intro-bigPic img').attr('src', src)
+    $('#thumb-lens').css('background-image', 'url(' + src + ')')
 	$(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
 	m.attach({
-    thumb: '#thumb',
-    large: src,
-    largeWrapper: 'preview',
-    onthumbenter: function () {
-      $('#preview').show()
-    },
-    onthumbleave: function () {
-    	$('#preview').hide()
-    }
+        thumb: '#thumb',
+        large: src,
+        largeWrapper: 'preview',
+        onthumbenter: function () {
+            $('#preview').css('visibility', 'visible')
+        },
+        onthumbleave: function () {
+        	$('#preview').css('visibility', 'hidden')
+        }
 	})
 })
 

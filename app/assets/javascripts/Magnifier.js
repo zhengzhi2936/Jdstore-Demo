@@ -292,12 +292,11 @@ var Magnifier = function (evt, options) {
                         y: pos.y
                     });
                 }
-
-                curLens.className += ' hidden';
                 curThumb.className = curData.thumbCssClass;
+                jQuery(curLens).addClass('hidden')
 
                 if (curLarge !== null) {
-                    curLarge.className += ' hidden';
+                    // $(curLarge).addClass('hidden')
                 }
             }
         },
