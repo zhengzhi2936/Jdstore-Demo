@@ -24,9 +24,9 @@ class ProductsController < ApplicationController
     @posts = @product.posts
     @prints = @product.prints.all
     if @product.posts.present?
-    @post = @product.posts.find_by(params[:id])
+    @post = @product.posts.find(params[:id])
     @graphics = @post.graphics.all
-  end 
+  end
   end
   def search
     if @query_string.present?
