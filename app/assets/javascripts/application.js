@@ -54,6 +54,7 @@ $(document).on('click', '.backtop', function () {
 })
 
 // 预览图选择
+console.log('mouseover')
 $(document).on('mouseover', '.intro-preview-item', function () {
 	var src = $(this).find('img').attr('src')
 	$('.intro-bigPic img').attr('src', src)
