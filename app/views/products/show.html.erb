@@ -115,30 +115,36 @@
         </div>
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
-            <li class="commentList-item w700 pt10 pb10 bc clearfix">
-              <p class="fl w500 tl f12"><%= post.content %></p>
-              <% if @graphics.present? %>
-                <% @graphics.each_with_index do |p, index| %>
-                  <% if index == 0 %>
-                    <%= image_tag p.avatar.medium.url %>
-                    <div style="letter-spacing: -8px">
+            <li class="commentList-item pt10 pb10 bc clearfix">
+              <div class="fr w500 tl f12">
+                <p><%= post.content %></p>
+                <div class="comment-image tl">
+                  <% if @graphics.present? %>
+                    <% @graphics.each_with_index do |p, index| %>
+                      <% if index == 0 %>
+                        <%= image_tag p.avatar.medium.url %>
+                        <div style="letter-spacing: -8px">
+                      <% else %>
+                        <%= image_tag p.avatar.thumb.url %>
+                      <% end %>
+                    <% end %>
+                    </div>
                   <% else %>
-                    <%= image_tag p.avatar.thumb.url %>
+                      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                   <% end %>
-                <% end %>
                 </div>
-              <% else %>
-                  <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-              <% end %>
-              <p class="fr name">
+              </div>
+              <div class="fl name">
                 <%if post.user.avatar.present?%>
                    <!-- 没有头像的话，显示email -->
-                  <%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25") %>
-                  <%= post.user.nickname%>
+                  <p class="fl mr10"><%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25, comment-avatar") %></p>
+                  <!-- <p><%= post.user.nickname%></p> -->
                 <% else %>
-                  <%= post.user.email %>
+                  <p class="fl mr10"><%= image_tag('http://oggx6lf7f.bkt.clouddn.com/aa1io.jpeg', class: "round-image-25, comment-avatar") %></p>
                 <% end %>
-              </p>
+                <p class="fl comment-userName"><%= truncate(post.user.email, :length => 4) %>
+                m：</p>
+              </div>
             </li>
           <% end %>
         </ul>

@@ -87,3 +87,12 @@ $(document).on('click', '.productDetail-tabList-tab', function () {
 	$('.productDetail-content').eq($(this).index()).show().siblings().hide()
 })
 
+
+// 评论图片放大
+$('.comment-image').click(function () {
+    if ($(this).hasClass('comment-image-scale')) {
+        $(this).removeClass('comment-image-scale')
+    } else {
+        $(this).addClass('comment-image-scale')
+    }
+})

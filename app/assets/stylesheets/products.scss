@@ -92,6 +92,7 @@
 }
 
 .commentList-item {
+	width: 655px;
 	border-bottom: 1px solid #DDDDDD;
 }
 
@@ -102,6 +103,24 @@
 	&:hover {
 		color: #fff;
 	}
+}
+
+.comment-userName {
+	margin-top: 2px;
+}
+
+.comment-avatar {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}
+
+.comment-image img {
+	width: 70px;
+}
+
+.comment-image-scale img {
+	width: 220px;
 }
 
 .productDetail-evaluation {
