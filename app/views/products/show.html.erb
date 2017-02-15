@@ -11,7 +11,7 @@
 <%= render :partial => "products/menu" %>
 
 <div class="detail mt20 w1200 bc pb50">
-  <p class="location col-gray">首页 > 美食天地 > <%= @product.title %></p>
+  <p class="location col-gray">首页 > <%= @product.category.name%> > <%= @product.title %></p>
   <div class="intro clearfix">
     <div class="cover fl">
       <div class="intro-bigPic border pr">
