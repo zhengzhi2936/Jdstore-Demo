@@ -117,6 +117,19 @@
           <% @posts.each do |post| %>
             <li class="commentList-item w700 pt10 pb10 bc clearfix">
               <p class="fl w500 tl f12"><%= post.content %></p>
+              <% if @graphics.present? %>
+                  <% @graphics.each_with_index do |p, index| %>
+                    <% if index == 0 %>
+                      <%= image_tag p.avatar.medium.url %>
+                      <div style="letter-spacing: -8px">
+                    <% else %>
+                      <%= image_tag p.avatar.thumb.url %>
+                    <% end %>
+                  <% end %>
+                  </div>
+                <% else %>
+                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                <% end %>
               <p class="fr name">
                 <%if post.user.avatar.present?%>
                    <!-- 没有头像的话，显示email -->

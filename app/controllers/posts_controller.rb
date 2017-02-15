@@ -4,6 +4,8 @@ class PostsController < ApplicationController
     def new
       @product = Product.find(params[:product_id])
       @post = Post.new
+      @graphic = @post.graphics.build #for multi-pics
+
     end
 
     def create
@@ -13,6 +15,11 @@ class PostsController < ApplicationController
       @post.user = current_user
 
       if @post.save
+        if params[:graphics] != nil
+           params[:graphics]['avatar'].each do |a|
+           @graphic = @post.graphics.create(:avatar => a)
+         end
+       end
         redirect_to product_path(@product)
       else
         render :new
@@ -23,7 +30,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:content)
+      params.require(:post).permit(:content, :image)
     end
 
 end
