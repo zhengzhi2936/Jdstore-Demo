@@ -10,13 +10,29 @@
 
 <%= render :partial => "products/menu" %>
 
+<!-- <div>
+    <a class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
+        <img id="thumb" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/200px-Starry_Night_Over_the_Rhone.jpg"
+        data-large-img-url="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/400px-Starry_Night_Over_the_Rhone.jpg"
+        data-large-img-wrapper="preview">
+    </a>
+    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
+</div> -->
+
 <div class="detail mt20 w1200 bc pb50">
   <p class="location col-gray">首页 > 美食天地 > <%= @product.title %></p>
   <div class="intro clearfix">
     <div class="cover fl">
-      <div class="intro-bigPic border">
+      <div class="intro-bigPic border pr">
+        <div class="magnifier-preview border" id="preview"></div>
         <% if @photos.present? %>
-          <%= image_tag @photos.first.avatar.medium.url %>
+          <a class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
+            <img 
+              id="thumb" 
+              src="<%= @photos.first.avatar.medium.url %>"
+              data-large-img-wrapper="preview"
+              data-large-img-url="<%= @photos.first.avatar.medium.url %>">
+          </a>
         <% end %>
       </div>
       <ul class="intro-preview clearfix">
