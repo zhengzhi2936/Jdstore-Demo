@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     @posts = @product.posts
     @prints = @product.prints.all
     if @product.posts.present?
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
     @graphics = @post.graphics.all
     end
   end
