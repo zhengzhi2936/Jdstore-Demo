@@ -33,6 +33,12 @@ $(document).ready(function() {
 $('#preview').css('visibility', 'hidden')
 var evt = new Event(),
     m = new Magnifier(evt);
+m.attach({
+    thumb: '#thumb',
+    large: $('.intro-preview-activeItem img').attr('src'),
+    largeWrapper: 'preview',
+    zoom: 2
+})
 
 // 点击事件
 $(document).on('click', '.backtop', function () {
@@ -54,28 +60,16 @@ $(document).on('mouseover', '.intro-preview-item', function () {
 	m.attach({
         thumb: '#thumb',
         large: src,
-        largeWrapper: 'preview',
-        onthumbenter: function () {
-            $('#preview').css('visibility', 'visible')
-        },
-        onthumbleave: function () {
-        	// $('#preview').css('visibility', 'hidden')
-        }
+        largeWrapper: 'preview'
 	})
 })
 
 $('.intro-preview-activeItem').trigger('mouseover')
-$(document).mouseover(function (e) {
-    console.log($(e)[0])
-    var pageX = $(e)[0].pageX
-    var pageY = $(e)[0].pageY
-    console.log(pageX + ': ' + pageY)
-    if (pageX < 357 || pageX > 779) {
-        $('#preview').css('visibility', 'hidden')
-    }
-    if (pageY < 246 || pageY > 665) {
-        $('#preview').css('visibility', 'hidden')
-    }
+$(document).on('mouseover', '.magnifier-thumb-wrapper', function (e) {
+    $('#preview').css('visibility', 'visible')
+})
+$(document).on('mouseout', '.magnifier-thumb-wrapper', function (e) {
+    $('#preview').css('visibility', 'hidden')
 })
 
 // 拉票小功能
