@@ -115,23 +115,17 @@
         </div>
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
-            <li class="commentList-item pt10 pb10 bc clearfix">
-              <div class="fr w500 tl f12">
-                <p><%= post.content %></p>
-                <div class="comment-image tl">
-                </div>
-              </div>
-              <div class="fl name">
+            <li class="commentList-item w700 pt10 pb10 bc clearfix">
+              <p class="fl w500 tl f12"><%= post.content %></p>
+              <p class="fr name">
                 <%if post.user.avatar.present?%>
                    <!-- 没有头像的话，显示email -->
-                  <p class="fl mr10"><%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25, comment-avatar") %></p>
-                  <!-- <p><%= post.user.nickname%></p> -->
+                  <%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25") %>
+                  <%= post.user.nickname%>
                 <% else %>
-                  <p class="fl mr10"><%= image_tag('http://oggx6lf7f.bkt.clouddn.com/aa1io.jpeg', class: "round-image-25, comment-avatar") %></p>
+                  <%= post.user.email %>
                 <% end %>
-                <p class="fl comment-userName"><%= truncate(post.user.email, :length => 4) %>
-                m：</p>
-              </div>
+              </p>
             </li>
           <% end %>
         </ul>
@@ -143,3 +137,7 @@
     </div>
   </div>
 </div>
+
+
+                
+

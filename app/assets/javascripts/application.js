@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require bootstrap/carousel
 //= require bootstrap/modal
 //= require local_time
 //= require chosen-jquery
@@ -23,24 +24,15 @@
 //= require turbolinks
 //= require_tree .
 
+// 首页轮播
+$(document).ready(function() {
+    $('#myCarousel').carousel({interval: 4000})  
+});
 
 // 放大镜
 $('#preview').css('visibility', 'hidden')
 var evt = new Event(),
     m = new Magnifier(evt);
-m.attach({
-    thumb: '#thumb',
-    large: $('.intro-preview-activeItem img').attr('src'),
-    largeWrapper: 'preview',
-    zoom: 1.5,
-    onthumbenter: function () {
-        console.log('onthumbenter')
-        $('#preview').css('visibility', 'visible')
-    },
-    onthumbleave: function () {
-        $('#preview').css('visibility', 'hidden')
-    }
-})
 
 // 点击事件
 $(document).on('click', '.backtop', function () {
@@ -67,9 +59,23 @@ $(document).on('mouseover', '.intro-preview-item', function () {
             $('#preview').css('visibility', 'visible')
         },
         onthumbleave: function () {
-        	$('#preview').css('visibility', 'hidden')
+        	// $('#preview').css('visibility', 'hidden')
         }
 	})
+})
+
+$('.intro-preview-activeItem').trigger('mouseover')
+$(document).mouseover(function (e) {
+    console.log($(e)[0])
+    var pageX = $(e)[0].pageX
+    var pageY = $(e)[0].pageY
+    console.log(pageX + ': ' + pageY)
+    if (pageX < 357 || pageX > 779) {
+        $('#preview').css('visibility', 'hidden')
+    }
+    if (pageY < 246 || pageY > 665) {
+        $('#preview').css('visibility', 'hidden')
+    }
 })
 
 // 拉票小功能
@@ -96,3 +102,4 @@ $('.comment-image').click(function () {
         $(this).addClass('comment-image-scale')
     }
 })
+
