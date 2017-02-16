@@ -298,6 +298,10 @@ a:hover {
     top: -5px;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
   }
+  img {
+    width: 200px;
+    height: 200px;
+  }
 }
 .productList-lastItem {
   margin-right: 0;
@@ -544,4 +548,9 @@ a:hover {
 .carousel-inner .item {
   width: 1200px;
   height: 375px;
+}
+
+// thumbnail
+.thumbnail {
+  width: 250px;
 }
