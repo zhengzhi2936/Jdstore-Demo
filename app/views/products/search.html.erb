@@ -7,24 +7,38 @@
     <%= render :partial => "products/cart" %>
   </div>
 </div>
-<%= render :partial => "products/menu" %>
-<div class="w1200 bc">
-	<br>
-	<div class="search-result">
 
-	  <table class="table table-borderd">
-	    <% @products.each do |product| %>
-	      <%= link_to product_path(product) do%>
-        <%= link_to(render_highlight_content(product,@query_string), product_path(product))%>
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url) %>
-        <% else %>
-          <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+<div class="index-main bg-gray">
+  <div class="productList-wrap mt30 bc">
+    <% if @products.present? %>
+      <ul class="productList clearfix pl10 pr10 pb20">
+         <% @products.each_with_index do |product, index| %>
+          <% if index > 0 && (index + 1) % 5 == 0 %>
+            <li class="fl productList-item productList-lastItem p15">
+          <% else %>
+            <li class="fl productList-item p15">
+          <% end %>
+              <p class="productList-item-pic w200 h200">
+                <%= link_to product_path(product) do %>
+                  <% if product.photos.present? %>
+                    <%= image_tag(product.photos[0].avatar.thumb.url) %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                  <% end %>
+                <% end %>
+            </p>
+            <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
+            <p class="productList-item-name ell">
+              <%= link_to product_path(product) do %>
+                 <%= product.title %>
+              <% end %>
+            </p>
+            <p class="productList-item-desc mt5 f12"><%= product.description %></p>
+          </li>
         <% end %>
-      <% end %>
-	      <hr>
-	    <% end %>
-	 </table>
-
-	</div>
+      </ul>
+    <% else %>
+      <p class="tc">亲，没有搜到相关商品哦~</p>
+    <% end %>
+  </div>
 </div>
