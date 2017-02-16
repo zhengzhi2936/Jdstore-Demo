@@ -17,12 +17,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process :quality => 100
   version :thumb do
     process :quality => 90
-    process resize_to_fill: [418,418]
   end
 
   version :medium do
     process :quality => 90
-     process resize_to_fill: [800,800]
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
