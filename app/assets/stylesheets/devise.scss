@@ -91,12 +91,20 @@ $btn-background-hover: #00DBE9;
       background: #D12E3C;
       border-radius: 6px;
       width: 100%;
-      color: white;
+      color: #fff;
       height: 34px;
       border: none;
       box-shadow: none;
       margin-top: 10px;
       font-size: 16px;
+    }
+    .registration-btn.disabled:focus {
+      background-color: #D12E3C;
+      border-color: white;
+    }
+    .registration-btn.disabled:hover {
+      background-color: #D12E3C;
+      border-color: white;
     }
     .forget-password {
       position: relative;
