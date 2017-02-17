@@ -1,8 +1,15 @@
 <div class="w1200 clearfix bc mt30 pb20">
   <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+  <div class="fl ml40 mt10">
+    <%= render :partial => "products/search_bar" %>
+  </div>
+  <div class="fl mt10 cart-left">
+    <%= render :partial => "products/cart" %>
+  </div>
 </div>
+<%= render :partial => "products/menu" %>
 <div class="index-main bg-gray">
-  <div class="productList-wrap mt30 bc">
+  <div class="productList-wrap pt30 bc">
     <% if @products.present? %>
       <ul class="productList clearfix pl10 pr10 pb20">
          <% @products.each_with_index do |product, index| %>
