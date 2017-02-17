@@ -1,0 +1,10 @@
+<p><%=  product.title %></p>
+<%= link_to product_path(product) do %>
+  <% if product.photos.present? %>
+    <%= image_tag(product.photos[0].avatar.thumb.url) %>
+  <% else %>
+    <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+  <% end %>
+<% end %>
+<p>价格: ￥<%= product.price %></p>
+<p>描述: <%= product.description %></p>

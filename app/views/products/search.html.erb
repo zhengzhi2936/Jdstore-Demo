@@ -13,18 +13,8 @@
 	<div class="search-result">
 
 	  <table class="table table-borderd">
-	    <% @products.each do |product| %>
-	      <%= link_to product_path(product) do%>
-        <%= link_to(render_highlight_content(product,@query_string), product_path(product))%>
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url) %>
-        <% else %>
-          <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
-        <% end %>
-      <% end %>
-	      <hr>
-	    <% end %>
-	 </table>
-
-	</div>
+      <div class="col-md-12">
+		<%= render :partial => "product_search", :collection => @products, :as => :product %>
+  	</div>
+</div>
 </div>

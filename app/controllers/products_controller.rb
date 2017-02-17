@@ -25,15 +25,8 @@ class ProductsController < ApplicationController
     @prints = @product.prints.all
   end
   def search
-    if @query_string.present?
-      search_result = Product.ransack(@search_criteria).result(:distinct => true)
-      @products = search_result.paginate(:page => params[:page], :per_page => 20 )
-    else
-      redirect_to :back
-      flash[:alert] = "搜索内容不得为空！"
-
-    end
-  end
+		@products = Product.ransack({:title_cont => @q}).result(:distinct => true)
+	end
   def add_to_cart
     @product = Product.find(params[:id])
     if !current_cart.products.include?(@product)
@@ -70,12 +63,6 @@ class ProductsController < ApplicationController
   protected
 
   def validate_search_key
-    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
-    @search_criteria = search_criteria(@query_string)
-  end
-
-
-  def search_criteria(query_string)
-    {  title_or_description_or_price_or_category_cont:  @query_string }
+    @q = params[:query_string].gsub(/\|\'|\/|\?/, "") if params[:query_string].present?
   end
 end
