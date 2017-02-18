@@ -8,7 +8,7 @@
   </div>
 </div>
 <%= render :partial => "products/menu" %>
-<!-- <div class="index-main bg-gray">
+<div class="index-main bg-gray">
   <div class="productList-wrap pt30 bc">
     <% if @products.present? %>
       <ul class="productList clearfix pl10 pr10 pb20">
@@ -33,22 +33,15 @@
                  <%= product.title %>
               <% end %>
             </p>
-            <p class="productList-item-desc mt5 f12"><%= product.description %></p> -->
+            <p class="productList-item-desc mt5 f12"><%= product.description %></p>
 
 
-          <!-- </li>
+          </li>
 
         <% end %>
       </ul>
     <% else %>
-      <p class="tc">亲，你还没有收藏商品哦~</p>
+      <p class="tc mt100">亲，没有搜索到商品哦，要不换个关键词试试？</p>
     <% end %>
   </div>
-</div> -->
-
-	  <table class="table table-borderd">
-      <div class="col-md-12">
-		<%= render :partial => "product_search", :collection => @products, :as => :product %>
-  	</div>
-<!-- </div>
-</div> -->
+</div>
