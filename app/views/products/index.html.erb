@@ -81,3 +81,10 @@
     </ul>
   </div>
 </div>
+
+<div class="category_sidebar tc border f12">
+  <% Category.all.each do |category| %>
+    <%= link_to category.name, products_path(category: category.name) %>
+  </li>
+  <% end %>
+</div>

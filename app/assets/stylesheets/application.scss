@@ -26,6 +26,10 @@ html {
   min-height: 100%;
 }
 
+a:hover {
+  color: #d32048;
+}
+
 /*body {*/
   /*margin-bottom: 150px;*/
   /*padding-top: 65px;*/
@@ -45,7 +49,7 @@ html {
 }
 
 .cuadro_intro_hover{
-        padding: 0px;
+    padding: 0px;
 		position: relative;
 		overflow: hidden;
 		height: 200px;
