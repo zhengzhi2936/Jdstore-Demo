@@ -11,7 +11,13 @@
 <%= render :partial => "products/menu" %>
 
 <div class="detail mt20 w1200 bc pb50">
-  <p class="location col-gray">首页 > <%= @product.category.name%> > <%= @product.title %></p>
+  <p class="location col-gray"><%= link_to("首页", products_path)%> >
+    <% Category.all.each do |category| %>
+          <% if @product.category.name == category.name %>
+        <%= link_to category.name, products_path(category: category.name), class: "link" %>
+    <% end %>
+    <% end %>
+    > <%= @product.title %></p>
   <div class="intro clearfix">
     <div class="cover fl">
       <div class="intro-bigPic border pr">
