@@ -1,5 +1,6 @@
 <div class="cart bg-gray f12 pl20 pr20">
 	<%= link_to carts_path do %>
-      <i class="fa fa-shopping-cart cart-icon col-red f16 mr10"></i>我的购物车(<%= current_cart.products.count %>) >
+      <i class="fa fa-shopping-cart cart-icon col-red f16 mr10"></i>我的购物车
+      <span class="products_count"><%= current_cart.products.count %></span>
   <% end %>
 </div>
