@@ -122,8 +122,8 @@
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
             <li class="commentList-item w700 pt10 pb10 bc clearfix">
-              <p class="fl w500 tl f12"><%= post.content %></p>
-              <p class="fr name">
+              <p class="fl content tl f12"><%= post.content %></p>
+              <p class="fr name ell">
                 <%if post.user.avatar.present?%>
                    <!-- 没有头像的话，显示email -->
                   <%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25") %>
