@@ -42,11 +42,16 @@ $(document).on('click', '.backtop', function () {
 
 // 拉票小功能
 var $header = $('.header')
+var $sidebar = $('#sidebar')
+var $category_sidebar = $('.category_sidebar')
+
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 500) {
-		$('#sidebar').fadeIn()
+		$sidebar.fadeIn()
+		$category_sidebar.fadeIn()
 	} else {
-		$('#sidebar').fadeOut()
+		$sidebar.fadeOut()
+		$category_sidebar.fadeOut()
 	}
 
 	if ($(this).scrollTop() > 300) {
