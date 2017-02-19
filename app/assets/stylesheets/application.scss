@@ -559,3 +559,27 @@ a:hover {
 .index-main {
   min-height: 1000px;
 }
+
+// header
+.header_fixed {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  box-shadow: rgba(0,0,0,.1) 0 1px 5px;
+}
+
+.header_fixed .header_content {
+  margin-top: 4px;
+  padding-bottom: 4px;
+}
+
+.header_fixed .cart-left {
+  display: none;
+}
+
+.header_placeholder {
+  display: none;
+}

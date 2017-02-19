@@ -27,17 +27,6 @@ $(document).ready(function() {
     $('#myCarousel').carousel({interval: 4000})  
 });
 
-// 放大镜
-$('#preview').css('visibility', 'hidden')
-var evt = new Event(),
-    m = new Magnifier(evt);
-m.attach({
-    thumb: '#thumb',
-    large: $('.intro-preview-activeItem img').attr('src'),
-    largeWrapper: 'preview',
-    zoom: 2
-})
-
 // 点击事件
 $(document).on('click', '.backtop', function () {
 	$('body').animate({'scrollTop': 0}, 500)
@@ -71,11 +60,25 @@ $(document).on('mouseout', '.magnifier-thumb-wrapper', function (e) {
 })
 
 // 拉票小功能
+var $header = $('.header')
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 500) {
 		$('#sidebar').fadeIn()
 	} else {
 		$('#sidebar').fadeOut()
+	}
+
+	if ($(this).scrollTop() > 300) {
+		if ($header.is(':animated')) {
+			return false
+		}
+		$header.addClass('header_fixed')
+		$header.stop().animate({top: 0})
+		$('.header_placeholder').show()
+	} else {
+		$header.css({top: -80})
+		$header.removeClass('header_fixed')
+		$('.header_placeholder').hide()
 	}
 })
 
@@ -95,3 +98,13 @@ $('.comment-image').click(function () {
     }
 })
 
+// 放大镜
+$('#preview').css('visibility', 'hidden')
+var evt = new Event(),
+    m = new Magnifier(evt);
+m.attach({
+    thumb: '#thumb',
+    large: $('.intro-preview-activeItem img').attr('src'),
+    largeWrapper: 'preview',
+    zoom: 2
+})
