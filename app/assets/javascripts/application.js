@@ -14,9 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap/alert
-//= require bootstrap/dropdown
-//= require bootstrap/carousel
-//= require bootstrap/modal
+//= require bootstrap
 //= require local_time
 //= require chosen-jquery
 //= require jquery.raty
