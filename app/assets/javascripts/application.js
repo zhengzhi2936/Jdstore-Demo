@@ -22,6 +22,8 @@
 //= require turbolinks
 //= require_tree .
 
+console.log('test compile')
+
 // 首页轮播
 $(document).ready(function() {
     $('#myCarousel').carousel({interval: 4000})  
