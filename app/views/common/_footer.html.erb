@@ -15,6 +15,13 @@
   </ul>
 </div>
 
+<div class="category_sidebar tc border f12">
+  <% Category.all.each do |category| %>
+    <%= link_to category.name, products_path(category: category.name) %>
+  </li>
+  <% end %>
+</div>
+
 <footer class="footer">
 	<p>关于我们 | 帮助中心 | 开放平台 | 诚聘英才 | 联系我们 | 网站合作 | 友情链接</p>
 	<p>

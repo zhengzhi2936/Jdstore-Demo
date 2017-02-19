@@ -429,10 +429,16 @@ a:hover {
     }
     &.backtop i {
       font-size: 18px;
+      &:hover {
+        color: #D32048;
+      }
     }
     &.support {
       i {
         font-size: 20px;
+        &:hover {
+          color: #D32048;
+        }
       }
       .ewm {
         line-height: 22px;
@@ -582,4 +588,34 @@ a:hover {
 
 .header_placeholder {
   display: none;
+}
+
+/*category_sidebar*/
+.category_sidebar {
+  position: fixed;
+  width: 36px;
+  background: #F6F9FA; 
+  top: 50%;
+  left: 50%;
+  margin-left: -638px;
+  margin-top: -100px;
+  border-radius: 2px;
+}
+
+.category_sidebar a {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  line-height: 18px;
+  border-bottom: 1px solid #DDDDDD;
+  -webkit-transition:all 0.1s ease-in-out;
+  -moz-transition:all 0.1s ease-in-out;
+  -o-transition:all 0.1s ease-in-out;
+  -ms-transition:all 0.1s ease-in-out;
+  transition:all 0.1s ease-in-out;
+}
+
+.category_sidebar a:hover {
+  color: #fff;
+  background: #D32048;
 }
