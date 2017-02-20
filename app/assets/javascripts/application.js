@@ -83,12 +83,33 @@ $('.comment-image').click(function () {
     }
 })
 
-$('.star-rating').raty({
+$('.star-look').raty({
       path: '/ratyrate/',
           readOnly: true,
           score: function() {
         return $(this).attr('data-score');
       }
+});$('.star-price').raty({
+      path: '/ratyrate/',
+          readOnly: true,
+          score: function() {
+        return $(this).attr('data-score');
+      }
+});
+
+    $('#star-rating').raty({
+    path: '/ratyrate/',
+    scoreName: 'post[rating]'
+});
+
+$('#star-look').raty({
+path: '/ratyrate/',
+scoreName: 'post[look]'
+});
+
+$('#star-price').raty({
+    path: '/ratyrate/',
+    scoreName: 'post[price]'
 });
 
 // 放大镜

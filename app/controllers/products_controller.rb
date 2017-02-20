@@ -23,6 +23,15 @@ class ProductsController < ApplicationController
     @photos = @product.photos.all
     @posts = @product.posts
     @prints = @product.prints.all
+    if @posts.blank?
+      @avg_post = 0
+      @avg_look = 0
+      @avg_price = 0
+    else
+      @avg_post = @posts.average(:rating).round(2)
+      @avg_look = @posts.average(:look).round(2)
+      @avg_price = @posts.average(:price).round(2)
+end
   end
   def search
 		@products = Product.ransack({:title_cont => @q}).result(:distinct => true)
