@@ -3,6 +3,9 @@
 <div class="col-md-4 col-md-offset-4">
   <%= simple_form_for [@product,@post] do |f| %>
     <div class="form-group">
+      <%= f.input :rating %>
+    </div>
+    <div class="form-group">
       <%= f.input :content, label: "内容", input_html: { class: "form-control"} %>
     </div>
     <div class="form-actions">

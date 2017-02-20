@@ -11,5 +11,4 @@ class Product < ApplicationRecord
   has_many :posts
   has_many :prints
   accepts_nested_attributes_for :prints
-  ratyrate_rateable "speed", "engine", "price"
 end

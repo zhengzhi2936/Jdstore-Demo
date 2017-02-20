@@ -22,5 +22,4 @@ class User < ApplicationRecord
            favorite_products.include?(product)
          end
          has_many :posts
-        ratyrate_rater
 end

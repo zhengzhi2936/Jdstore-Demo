@@ -44,7 +44,6 @@ gem 'paperclip', '~> 4.1'
 gem 'font-awesome-rails'
 gem 'aasm'
 gem 'letter_opener', group: :development
-gem 'ratyrate'
 gem 'figaro'
 gem 'fog'
 gem 'jquery-turbolinks'

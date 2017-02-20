@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
