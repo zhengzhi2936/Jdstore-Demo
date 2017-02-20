@@ -106,6 +106,18 @@
       </div>
       <div class="productDetail-content pt30 tc pb20">
         <div class="productDetail-evaluation w200 bc">
+          <div class="intro-text-count clearfix mt10">
+            <div class="fl mr10">味道: </div>
+            <div class="star-rating" data-score= <%= @avg_post %> ></div>
+          </div>
+          <div class="intro-text-count clearfix mt10">
+            <div class="fl mr10">外观: </div>
+
+          </div>
+          <div class="intro-text-count clearfix mt10">
+            <div class="fl mr10">价格: </div>
+
+          </div>
         </div>
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
@@ -132,12 +144,3 @@
     </div>
   </div>
 </div>
-<script>
-$('.star-rating').raty({
-      path: '/ratyrate/',
-          readOnly: true,
-          score: function() {
-        return $(this).attr('data-score');
-      }
-});
-</script>
