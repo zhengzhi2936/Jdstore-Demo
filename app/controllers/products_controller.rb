@@ -27,8 +27,6 @@ class ProductsController < ApplicationController
       @avg_post = 0
     else
       @avg_post = @posts.average(:rating).round(2)
-      @avg_post = @posts.average(:look).round(2)
-      @avg_post = @posts.average(:price).round(2)
 end
   end
   def search
