@@ -112,16 +112,18 @@
           </div>
           <div class="intro-text-count clearfix mt10">
             <div class="fl mr10">外观: </div>
-
+            <div class="star-look" data-score= <%= @avg_post %> ></div>
           </div>
           <div class="intro-text-count clearfix mt10">
             <div class="fl mr10">价格: </div>
-
+            <div class="star-price" data-score= <%= @avg_post %> ></div>
           </div>
         </div>
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
-          <div class="star-rating" data-score= <%= post.rating %> ></div>
+          味道： <div class="star-rating" data-score= <%= post.rating %> ></div>
+          外观： <div class="star-look" data-score= <%= post.look %> ></div>
+          价格： <div class="star-price" data-score= <%= post.price %> ></div>
             <li class="commentList-item w700 pt10 pb10 bc clearfix">
               <p class="fl content tl f12"><%= post.content %></p>
               <p class="fr name ell">
