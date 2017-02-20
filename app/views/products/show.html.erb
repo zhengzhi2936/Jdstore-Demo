@@ -1,9 +1,9 @@
-<div class="w1200 clearfix bc mt30 pb20">
+<div class="w1200 clearfix bc mt30 pb20 pr">
   <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
   <div class="fl ml40 mt10">
     <%= render :partial => "products/search_bar" %>
   </div>
-  <div class="fl mt10 cart-left">
+  <div class="pa mt10 cart-left">
     <%= render :partial => "products/cart" %>
   </div>
 </div>
@@ -121,9 +121,6 @@
         </div>
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
-          味道： <div class="star-rating" data-score= <%= post.rating %> ></div>
-          外观： <div class="star-look" data-score= <%= post.look %> ></div>
-          价格： <div class="star-price" data-score= <%= post.price %> ></div>
             <li class="commentList-item w700 pt10 pb10 bc clearfix">
               <p class="fl content tl f12"><%= post.content %></p>
               <p class="fr name ell">

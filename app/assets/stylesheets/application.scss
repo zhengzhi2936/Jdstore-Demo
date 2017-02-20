@@ -26,7 +26,7 @@ html {
   min-height: 100%;
 }
 
-a:hover {
+a:focus, a:hover {
   color: #d32048;
 }
 
@@ -214,10 +214,26 @@ a:hover {
   display: block;
   width: 178px;
   height: 48px;
-  line-height: 48px;
+  line-height: 45px;
   border: 1px solid #d32048;
   font-family: "Microsoft Yahei",simhei;
   border-radius: 50px;
+  color: #fff;
+}
+
+.s-btn {
+  display: block;
+  width: 84px;
+  height: 30px;
+  padding: 0px 0px;
+  line-height: 29px;
+  border: 1px solid #d32048;
+  font-family: "Microsoft Yahei",simhei;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.s-btn:hover, .g-btn:hover {
   color: #fff;
 }
 
@@ -227,12 +243,18 @@ a:hover {
   padding-bottom: 8px;
   cursor: pointer;
   border: 1px solid #DFDFDF;
-  &:hover {
-    background: #fff;
-  }
 }
 .cart-left {
-  margin-left: 238px;
+  width: 150px;
+  top: 0;
+  right: 0px;
+}
+.cart-left:hover .cart {
+  border-bottom: none;
+  background: #fff;
+}
+.cart-left:hover .previewProductsList {
+  display: block;
 }
 .products_count {
   padding: 1px 5px;
@@ -241,6 +263,58 @@ a:hover {
   text-align: center;
   color: #fff;
 }
+.cart {
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+// 购物车预览
+.previewProductsList {
+  display: none;
+  width: 325px;
+  top: 33px;
+  left: -175px;
+  z-index: 9;
+  background: #fff;
+}
+
+.previewProductsList .info {
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+.previewProductsList-item {
+  border-bottom: 1px solid #DDDDDD;  
+}
+
+.previewProductsList-item-image {
+  width: 54px;
+  height: 54px;
+  img {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.previewProductsList-item-title {
+  color: #808080;
+  width: 120px;  
+}
+
+.previewProductsList-item-info p {
+  margin-bottom: 0;
+}
+
+.previewProductsList-item-info .delete-btn {
+  color: #808080;
+}
+
+.previewProductsList-item-info .delete-btn:hover {
+  color: #D32048;
+}
+
 
 /*menu*/
 .menu-wrap {

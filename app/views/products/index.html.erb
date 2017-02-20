@@ -1,11 +1,11 @@
 <div class="header_placeholder h80"></div>    
 <div class="header">
-  <div class="w1200 clearfix bc mt30 pb20 header_content">
+  <div class="w1200 clearfix bc mt30 pb20 header_content pr">
     <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
     <div class="fl ml40 mt10">
       <%= render :partial => "products/search_bar" %>
     </div>
-    <div class="fl mt10 cart-left">
+    <div class="pa mt10 cart-left">
       <%= render :partial => "products/cart" %>
     </div>
   </div>

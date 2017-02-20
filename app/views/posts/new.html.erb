@@ -1,15 +1,20 @@
-<h2 class="text-center">商品评价</h2>
-
+<h2 class="text-center mt100">商品评价</h2>
+  
 <div class="col-md-4 col-md-offset-4">
   <%= simple_form_for [@product,@post] do |f| %>
-    <div class="field">
-  味道：  <div id="star-rating"></div>
-    </div>
-    <div class="field">
-  外观：  <div id="star-look"></div>
-    </div>
-    <div class="field">
-  价格：  <div id="star-price"></div>
+    <div class="productDetail-evaluation w200 bc mt20 mb20">
+      <div class="intro-text-count clearfix mt10">
+        <div class="fl mr10">味道: </div>
+        <div id="star-rating"></div>
+      </div>
+      <div class="intro-text-count clearfix mt10">
+        <div class="fl mr10">外观: </div>
+        <div id="star-look"></div>
+      </div>
+      <div class="intro-text-count clearfix mt10">
+        <div class="fl mr10">价格: </div>
+        <div id="star-price"></div>
+      </div>
     </div>
     <div class="form-group">
       <%= f.input :content, label: "内容", input_html: { class: "form-control"} %>
