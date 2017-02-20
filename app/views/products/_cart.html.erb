@@ -22,11 +22,11 @@
 					<%= link_to("删除", cart_item_path(cart_item.product_id), method: :delete, class: "delete-btn")%>
 				</div>
 			</div>
-			<div class="bottom bg-gray p10 clearfix">
-				<p class="info fl f12 tr">合计 ￥<%= render_cart_total_price(current_cart) %></p>
-				<%= link_to("确认结账", checkout_carts_path, class: "s-btn add-cart pl15 pr15 ml20 tc col-red f12 bg-red fr") %>
-			</div>
 		<% end %>
+		<div class="bottom bg-gray p10 clearfix">
+			<p class="info fl f12 tr">合计 ￥<%= render_cart_total_price(current_cart) %></p>
+			<%= link_to("确认结账", checkout_carts_path, class: "s-btn add-cart pl15 pr15 ml20 tc col-red f12 bg-red fr") %>
+		</div>
 	<% else %>
 		<p class="empty-message fs pt10 tc f12">购物车还没有商品，赶紧添加吧</p>
 	<% end %>
