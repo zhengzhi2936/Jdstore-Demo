@@ -83,6 +83,14 @@ $('.comment-image').click(function () {
     }
 })
 
+$('.star-rating').raty({
+      path: '/ratyrate/',
+          readOnly: true,
+          score: function() {
+        return $(this).attr('data-score');
+      }
+});
+
 // 放大镜
 $('#preview').css('visibility', 'hidden')
 var evt = new Event(),
