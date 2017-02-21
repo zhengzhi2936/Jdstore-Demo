@@ -47,24 +47,15 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
    config.action_mailer.default_url_options = { host: 'localhost:3000' }
-   # config.action_mailer.delivery_method = :smtp
-   #  ActionMailer::Base.smtp_settings = {
-   #    address: "smtpcloud.sohu.com",
-   #    port: 25,
-   #    domain: "heroku.com",
-   #    authentication: "login",
-   #    enable_starttls_auto: true,
-   #    user_name: ENV["SEND_CLOUD_USER_NAME"],
-   #    password: ENV["SEND_CLOUD_USER_KEY"]
-   #  }
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      :authentication => :plain,
-      :address => "smtp.mailgun.org",
-      :port => 587,
-      :domain => ENV['MAILGUN_SMTP_SERVER'],
-      :user_name => ENV['MAILGUN_SMTP_LOGIN'],
-      :password => ENV['MAILGUN_SMTP_PASSWORD'],
+   config.action_mailer.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+      address: "smtpcloud.sohu.com",
+      port: 25,
+      domain: "heroku.com",
+      authentication: "login",
+      enable_starttls_auto: true,
+      user_name: ENV["SEND_CLOUD_USER_NAME"],
+      password: ENV["SEND_CLOUD_USER_KEY"]
     }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
