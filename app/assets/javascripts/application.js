@@ -138,6 +138,16 @@ m.attach({
     zoom: 2
 })
 
+// 评论图选择
+$('.commentImage').click(function () {
+  if ($(this).hasClass('selected')) {
+    $('.commentBigImage').hide()
+    return false
+  }
+  $(this).addClass('selected').siblings().removeClass('selected')
+  $('.commentBigImage').attr('src', $(this).attr('src')).fadeIn()
+})
+
 // 预览图选择
 $(document).on('mouseover', '.intro-preview-item', function () {
   var src = $(this).find('img').attr('src')
