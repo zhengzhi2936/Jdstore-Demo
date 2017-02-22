@@ -141,7 +141,7 @@ m.attach({
 // 评论图选择
 $('.commentImage').click(function () {
   if ($(this).hasClass('selected')) {
-    $('.commentBigImage').hide()
+    $(this).parent().find('.commentBigImage').hide()
     return false
   }
   $(this).addClass('selected').siblings().removeClass('selected')
