@@ -30,7 +30,13 @@ a:focus, a:hover {
   color: #d32048;
   text-decoration: none;
 }
-
+/*emoji用的css*/
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}
 /*body {*/
   /*margin-bottom: 150px;*/
   /*padding-top: 65px;*/
@@ -287,7 +293,7 @@ a:hover {
 }
 
 .previewProductsList-item {
-  border-bottom: 1px solid #DDDDDD;  
+  border-bottom: 1px solid #DDDDDD;
 }
 
 .previewProductsList-item-image {
@@ -301,7 +307,7 @@ a:hover {
 
 .previewProductsList-item-title {
   color: #808080;
-  width: 120px;  
+  width: 120px;
 }
 
 .previewProductsList-item-info p {
@@ -366,7 +372,7 @@ a:hover {
   cursor: pointer;
 }
 .orderList-activeItem a {
-  color: #d32048; 
+  color: #d32048;
 }
 
 /*商品列表*/
@@ -689,7 +695,7 @@ a:hover {
   display: none;
   position: fixed;
   width: 36px;
-  background: #F6F9FA; 
+  background: #F6F9FA;
   top: 50%;
   left: 50%;
   margin-left: -638px;
