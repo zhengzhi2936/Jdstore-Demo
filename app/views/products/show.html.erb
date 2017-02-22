@@ -128,8 +128,6 @@
                   <% post.graphics.each_with_index do |p, index| %>
                       <%= image_tag p.avatar.medium.url, class: "commentImage border" %>
                   <% end %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                 <% end %>
                 <br>
                 <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
