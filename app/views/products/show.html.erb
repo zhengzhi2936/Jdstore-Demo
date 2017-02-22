@@ -133,13 +133,7 @@
                 <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
               </p>
               <p class="fr name ell">
-                <%if post.user.avatar.present?%>
-                   <!-- 没有头像的话，显示email -->
-                  <%= image_tag(post.user.avatar.url(:thumb), class: "round-image-25") %>
-                  <%= post.user.nickname%>
-                <% else %>
-                  <%= post.user.email %>
-                <% end %>
+                <%= post.user.email %>
               </p>
             </li>
           <% end %>
