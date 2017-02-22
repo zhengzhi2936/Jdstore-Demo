@@ -145,7 +145,8 @@ $('.commentImage').click(function () {
     return false
   }
   $(this).addClass('selected').siblings().removeClass('selected')
-  $('.commentBigImage').attr('src', $(this).attr('src')).fadeIn()
+
+  $(this).parent().find('.commentBigImage').attr('src', $(this).attr('src')).fadeIn()
 })
 
 // 预览图选择
