@@ -122,6 +122,14 @@
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
             <li class="commentList-item w700 pt10 pb10 bc clearfix">
+              <% if post.graphics.present? %>
+                <% post.graphics.each_with_index do |p, index| %>
+                    <%= image_tag p.avatar.medium.url %>
+                <% end %>
+              <% else %>
+                  <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <% end %>
+
               <p class="fl content tl f12"><%= post.content %></p>
               <p class="fr name ell">
                 <%if post.user.avatar.present?%>

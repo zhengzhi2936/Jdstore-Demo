@@ -47,6 +47,7 @@ gem 'letter_opener', group: :development
 gem 'figaro'
 gem 'fog'
 gem 'jquery-turbolinks'
+gem 'bullet', group: 'development'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

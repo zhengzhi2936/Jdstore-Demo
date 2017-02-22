@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @photos = @product.photos.all
-    @posts = @product.posts
+    @posts = @product.posts.includes(:graphics).includes(:user)
     @prints = @product.prints.all
     if @posts.blank?
       @avg_post = 0

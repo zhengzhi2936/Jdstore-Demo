@@ -1,5 +1,5 @@
 <h2 class="text-center mt100">商品评价</h2>
-  
+
 <div class="col-md-4 col-md-offset-4">
   <%= simple_form_for [@product,@post] do |f| %>
     <div class="productDetail-evaluation w200 bc mt20 mb20">
@@ -18,6 +18,11 @@
     </div>
     <div class="form-group">
       <%= f.input :content, label: "内容", input_html: { class: "form-control"} %>
+    </div>
+
+    <div class="from-group">
+      <%= f.label :avatar %><br>
+      <%= f.file_field :avatar, :multiple => true, name: "graphics[avatar][]" %>
     </div>
     <div class="form-actions">
       <%= f.submit "提交", disable_with: "Submiting...", class: "g-btn pl15 pr15 mt20 ml20 tc col-red f20 bg-red bc"%>
