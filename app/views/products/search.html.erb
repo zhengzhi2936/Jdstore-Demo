@@ -3,41 +3,17 @@
   <div class="fl ml40 mt10">
     <%= render :partial => "products/search_bar" %>
   </div>
-  <div class="pa mt10 cart-left">
+  <div class="pa mt10 cart-wrap">
     <%= render :partial => "products/cart" %>
   </div>
 </div>
 <%= render :partial => "products/menu" %>
-<div class="index-main bg-gray">
+<div class="minHeight1000 bg-gray">
   <div class="productList-wrap pt30 bc">
     <% if @products.present? %>
       <ul class="productList clearfix pl10 pr10 pb20">
-         <% @products.each_with_index do |product, index| %>
-          <% if index > 0 && (index + 1) % 5 == 0 %>
-            <li class="fl productList-item productList-lastItem p15">
-          <% else %>
-            <li class="fl productList-item p15">
-          <% end %>
-              <p class="productList-item-pic w200 h200">
-                <%= link_to product_path(product) do %>
-                  <% if product.photos.present? %>
-                    <%= image_tag(product.photos[0].avatar.thumb.url) %>
-                  <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
-                  <% end %>
-                <% end %>
-            </p>
-            <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
-            <p class="productList-item-name ell">
-              <%= link_to product_path(product) do %>
-                 <%= product.title %>
-              <% end %>
-            </p>
-            <p class="productList-item-desc mt5 f12"><%= product.description %></p>
-
-
-          </li>
-
+        <% @products.each_with_index do |product, index| %>
+          <%= render :partial => "product_item", locals: { product: product, index: index } %>
         <% end %>
       </ul>
     <% else %>
