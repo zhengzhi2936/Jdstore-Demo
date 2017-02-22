@@ -142,6 +142,7 @@ m.attach({
 $('.commentImage').click(function () {
   if ($(this).hasClass('selected')) {
     $(this).parent().find('.commentBigImage').hide()
+    $(this).removeClass('selected')
     return false
   }
   $(this).addClass('selected').siblings().removeClass('selected')
