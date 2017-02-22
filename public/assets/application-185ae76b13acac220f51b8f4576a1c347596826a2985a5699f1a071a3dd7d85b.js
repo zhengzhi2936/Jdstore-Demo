@@ -16536,68 +16536,6 @@ if (typeof jQuery === 'undefined') {
   };
 
 })(jQuery);
-$.fn.raty.defaults.half = false;
-$.fn.raty.defaults.halfShow = true;
-$.fn.raty.defaults.path = "/assets";
-$.fn.raty.defaults.cancel = false;
-
-$(function(){ 
-  $(".star").each(function() {
-    var $readonly = ($(this).attr('data-readonly') == 'true');
-    var $half     = ($(this).attr('data-enable-half') == 'true');
-    var $halfShow = ($(this).attr('data-half-show') == 'true');
-    var $single   = ($(this).attr('data-single') == 'true');
-    $(this).raty({
-      score: function() {
-        return $(this).attr('data-rating')
-      },
-      number: function() {
-        return $(this).attr('data-star-count')
-      },
-      half:        $half,
-      halfShow:    $halfShow,
-      single:      $single,
-      path:        $(this).attr('data-star-path'),
-      starOn:      $(this).attr('data-star-on'),
-      starOff:     $(this).attr('data-star-off'),
-      starHalf:    $(this).attr('data-star-half'),
-      cancel:      $(this).attr('data-cancel'),
-      cancelPlace: $(this).attr('data-cancel-place'),
-      cancelHint:  $(this).attr('data-cancel-hint'),
-      cancelOn:    $(this).attr('data-cancel-on'),
-      cancelOff:   $(this).attr('data-cancel-off'),
-      noRatedMsg:  $(this).attr('data-no-rated-message'),
-      round:       $(this).attr('data-round'),
-      space:       $(this).attr('data-space'),
-      target:      $(this).attr('data-target'),
-      targetText:  $(this).attr('data-target-text'),
-      targetType:  $(this).attr('data-target-type'),
-      targetFormat: $(this).attr('data-target-format'),
-      targetScoret: $(this).attr('data-target-score'),
-      readOnly: $readonly,
-      click: function(score, evt) {
-        var _this = this;
-        if (score == null) { score = 0; }
-        $.post('/rate',
-        {
-          score: score,
-          dimension: $(this).attr('data-dimension'),
-          id: $(this).attr('data-id'),
-          klass: $(this).attr('data-classname')
-        },
-        function(data) {
-          if(data) {
-            // success code goes here ...
-
-            if ($(_this).attr('data-disable-after-rate') == 'true') {
-              $(_this).raty('set', { readOnly: true, score: score });
-            }
-          }
-        });
-      }
-    });
-  });
-});
 /*
 Turbolinks 5.0.0
 Copyright © 2016 Basecamp, LLC
@@ -17891,23 +17829,22 @@ var Magnifier = function (evt, options) {
 
 
 
-
 console.log('test compile')
 
 // 首页轮播
 $(document).ready(function() {
-    $('#myCarousel').carousel({interval: 4000})  
+    $('#myCarousel').carousel({interval: 4000})
 });
 
 // 点击事件
 $(document).on('click', '.backtop', function () {
-	$('body').animate({'scrollTop': 0}, 500)
+  $('body').animate({'scrollTop': 0}, 500)
 }).on('mouseenter', '.support', function () {
-	$('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500)
+  $('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500)
 }).on('mouseleave', '.support', function () {
-	$('.ewm').stop().animate({opacity: 0}, 500, function () {
-		$(this).css('left', 0).hide()
-	})
+  $('.ewm').stop().animate({opacity: 0}, 500, function () {
+    $(this).css('left', 0).hide()
+  })
 })
 
 // 拉票小功能
@@ -17916,32 +17853,32 @@ var $sidebar = $('#sidebar')
 var $category_sidebar = $('.category_sidebar')
 
 $(window).scroll(function () {
-	if ($(this).scrollTop() > 500) {
-		$sidebar.fadeIn()
-		$category_sidebar.fadeIn()
-	} else {
-		$sidebar.fadeOut()
-		$category_sidebar.fadeOut()
-	}
+  if ($(this).scrollTop() > 500) {
+    $sidebar.fadeIn()
+    $category_sidebar.fadeIn()
+  } else {
+    $sidebar.fadeOut()
+    $category_sidebar.fadeOut()
+  }
 
-	if ($(this).scrollTop() > 300) {
-		if ($header.is(':animated')) {
-			return false
-		}
-		$header.addClass('header_fixed')
-		$header.stop().animate({top: 0})
-		$('.header_placeholder').show()
-	} else {
-		$header.css({top: -80})
-		$header.removeClass('header_fixed')
-		$('.header_placeholder').hide()
-	}
+  if ($(this).scrollTop() > 300) {
+    if ($header.is(':animated')) {
+      return false
+    }
+    $header.addClass('header_fixed')
+    $header.stop().animate({top: 0})
+    $('.header_placeholder').show()
+  } else {
+    $header.css({top: -80})
+    $header.removeClass('header_fixed')
+    $('.header_placeholder').hide()
+  }
 })
 
 // 详情菜单栏切换
 $(document).on('click', '.productDetail-tabList-tab', function () {
-	$(this).addClass('productDetail-tabList-activeTab').siblings().removeClass('productDetail-tabList-activeTab')
-	$('.productDetail-content').eq($(this).index()).show().siblings().hide()
+  $(this).addClass('productDetail-tabList-activeTab').siblings().removeClass('productDetail-tabList-activeTab')
+  $('.productDetail-content').eq($(this).index()).show().siblings().hide()
 })
 
 
@@ -17954,6 +17891,50 @@ $('.comment-image').click(function () {
     }
 })
 
+// 投票
+$('.star-look').raty({
+  path: '/ratyrate/',
+    readOnly: true,
+    score: function() {
+    return $(this).attr('data-score');
+  }
+});
+
+$('.star-price').raty({
+  path: '/ratyrate/',
+    readOnly: true,
+    score: function() {
+    return $(this).attr('data-score');
+  }
+});
+
+$('.star-rating').raty({
+  path: '/ratyrate/',
+    readOnly: true,
+    score: function() {
+    return $(this).attr('data-score');
+  }
+});
+
+$('#star-rating').raty({
+  path: '/ratyrate/',
+  scoreName: 'post[rating]'
+});
+
+$('#star-look').raty({
+  path: '/ratyrate/',
+  scoreName: 'post[look]'
+});
+
+$('#star-price').raty({
+  path: '/ratyrate/',
+  scoreName: 'post[price]'
+});
+
+$('#star-rating img').eq(0).trigger('click')
+$('#star-look img').eq(0).trigger('click')
+$('#star-price img').eq(0).trigger('click')
+
 // 放大镜
 $('#preview').css('visibility', 'hidden')
 var evt = new Event(),
@@ -17965,17 +17946,29 @@ m.attach({
     zoom: 2
 })
 
+// 评论图选择
+$('.commentImage').click(function () {
+  if ($(this).hasClass('selected')) {
+    $(this).parent().find('.commentBigImage').hide()
+    $(this).removeClass('selected')
+    return false
+  }
+  $(this).addClass('selected').siblings().removeClass('selected')
+
+  $(this).parent().find('.commentBigImage').attr('src', $(this).attr('src')).fadeIn()
+})
+
 // 预览图选择
 $(document).on('mouseover', '.intro-preview-item', function () {
-	var src = $(this).find('img').attr('src')
-	$('.intro-bigPic img').attr('src', src)
+  var src = $(this).find('img').attr('src')
+  $('.intro-bigPic img').attr('src', src)
     $('#thumb-lens').css('background-image', 'url(' + src + ')')
-	$(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
-	m.attach({
+  $(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
+  m.attach({
         thumb: '#thumb',
         large: src,
         largeWrapper: 'preview'
-	})
+  })
 })
 
 $('.intro-preview-activeItem').trigger('mouseover')
@@ -17985,4 +17978,6 @@ $(document).on('mouseover', '.magnifier-thumb-wrapper', function (e) {
 $(document).on('mouseout', '.magnifier-thumb-wrapper', function (e) {
     $('#preview').css('visibility', 'hidden')
 })
+
+
 ;
