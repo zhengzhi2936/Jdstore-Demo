@@ -5,17 +5,17 @@ class ProductsController < ApplicationController
     if params[:category].blank?
       @products = case params[:order]
       when 'by_product_price'
-            Product.order('price DESC')
+            Product.includes(:photos).order.('price DESC')
       when 'by_product_quantity'
-            Product.order('quantity DESC')
+            Product.includes(:photos).order('quantity DESC')
       when 'by_product_like'
-            Product.order('like DESC')
+            Product.includes(:photos).order('like DESC')
           else
-            Product.order('created_at DESC')
+            Product.includes(:photos).order('created_at DESC')
           end
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.where(:category_id => @category_id)
+      @products = Product.includes(:photos).where(:category_id => @category_id)
     end
   end
   def show

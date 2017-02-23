@@ -3,7 +3,7 @@ class Admin::ProductsController < ApplicationController
   before_action :require_is_admin
   layout 'admin'
   def index
-    @products = Product.all
+    @products = Product.includes(:photos).includes(:category).all
   end
   def new
     @product = Product.new

@@ -12,7 +12,7 @@
   </ul>
 
   <div class="cartProducts-list">
-    <% current_cart.cart_items.each do |cart_item| %>
+    <% current_cart.cart_items.includes(:product).each do |cart_item| %>
       <div class="cartProducts-listItem clearfix pt20 pb20 mb10 border">
         <div class="item-pic fl border ml30">
           <%= link_to product_path(cart_item.product) do %>

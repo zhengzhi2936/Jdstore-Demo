@@ -6,7 +6,7 @@
 </div>
 
 <div class="previewProductsList pa bg-gray border">
-	<% if current_cart.cart_items.present? %>
+	<% if current_cart.cart_items.includes(:product).present? %>
 		<% current_cart.cart_items.each do |cart_item| %>
 			<div class="previewProductsList-item clearfix pt10 pb10">
 				<%= link_to product_path(cart_item.product), class: "previewProductsList-item-image fl mr20 ml10 border" do %>
