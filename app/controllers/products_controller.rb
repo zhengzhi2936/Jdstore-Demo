@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:favorite]
+  before_action :find_product, only: [:show, :add_to_cart, :favorite, :upvote]
   def index
     if params[:category].blank?
       @products = case params[:order]
@@ -19,7 +20,6 @@ class ProductsController < ApplicationController
     end
   end
   def show
-    @product = Product.find(params[:id])
     @photos = @product.photos.all
     @posts = @product.posts.includes(:graphics).includes(:user)
     @prints = @product.prints.all
@@ -37,7 +37,6 @@ end
 		@products = Product.ransack({:title_cont => @q}).result(:distinct => true)
 	end
   def add_to_cart
-    @product = Product.find(params[:id])
     if !current_cart.products.include?(@product)
     current_cart.add_product_to_cart(@product)
     flash[:notice] = "#{@product.title}加入购物车成功"
@@ -48,7 +47,6 @@ end
 
   end
     def favorite
-      @product = Product.find(params[:id])
       type = params[:type]
       if type == "favorite"
       current_user.favorite_products << @product
@@ -63,7 +61,6 @@ end
   end
 
     def upvote
-      @product = Product.find(params[:id])
       @product.votes.create
       @product.like = @product.votes.count
       @product.save
@@ -71,6 +68,9 @@ end
     end
   protected
 
+  def find_product
+    @product = Product.find(params[:id])
+  end
   def validate_search_key
     @q = params[:query_string].gsub(/\|\'|\/|\?/, "") if params[:query_string].present?
   end

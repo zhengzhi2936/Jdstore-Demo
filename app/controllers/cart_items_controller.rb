@@ -1,16 +1,13 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_cart_item, only: [:destroy, :update, :add_quantity, :remove_quantity]
   def destroy
-    @cart = current_cart
-    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     @product = @cart_item.product
     @cart_item.destroy
     redirect_to :back
     flash[:notice] = "成功将 #{@product.title} 从购物车删除！"
   end
   def update
-    @cart = current_cart
-    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
     @cart_item.update(cart_item_params)
     flash[:notice] = "成功变更数量"
@@ -20,7 +17,6 @@ class CartItemsController < ApplicationController
     redirect_to carts_path
   end
   def add_quantity
-		@cart_item = current_cart.cart_items.find_by_product_id(params[:id])
 		if @cart_item.quantity < @cart_item.product.quantity
 			@cart_item.quantity += 1
 			@cart_item.save
@@ -31,7 +27,6 @@ class CartItemsController < ApplicationController
 	end
 
 	def remove_quantity
-		@cart_item = current_cart.cart_items.find_by_product_id(params[:id])
 		if @cart_item.quantity > 0
 			@cart_item.quantity -= 1
 			@cart_item.save
@@ -42,6 +37,11 @@ class CartItemsController < ApplicationController
 	end
 
   private
+
+  def find_cart_item
+    @cart = current_cart
+    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
+  end
 
   def cart_item_params
     params.require(:cart_item).permit(:quantity)

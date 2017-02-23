@@ -1,7 +1,5 @@
-class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :require_is_admin
-  layout 'admin'
+class Admin::ProductsController < AdminController
+  before_action :find_product, only: [:show, :edit, :update, :destroy]
   def index
     @products = Product.includes(:photos).includes(:category).all
   end
@@ -13,10 +11,8 @@ class Admin::ProductsController < ApplicationController
 
   end
   def show
-    @product = Product.find(params[:id])
   end
   def edit
-    @product = Product.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
   end
 
@@ -41,7 +37,6 @@ class Admin::ProductsController < ApplicationController
       end
     end
     def update
-       @product = Product.find(params[:id])
        @product.category_id = params[:category_id]
        if params[:photos] != nil
            @product.photos.destroy_all #need to destroy old pics first
@@ -60,11 +55,14 @@ class Admin::ProductsController < ApplicationController
          redirect_to admin_products_path
      end
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
     redirect_to admin_products_path
   end
   private
+  def find_product
+     @product = Product.find(params[:id])
+  end
+
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id, :detail)
   end
