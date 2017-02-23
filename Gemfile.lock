@@ -315,6 +315,8 @@ GEM
       trollop (~> 2.1)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rollbar (2.14.0)
+      multi_json
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -389,6 +391,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.0)
   ransack
+  rollbar
   sass-rails (~> 5.0)
   seo_helper (~> 1.0)
   simple_form
