@@ -39,11 +39,11 @@ end
   def add_to_cart
     if !current_cart.products.include?(@product)
     current_cart.add_product_to_cart(@product)
-    flash[:notice] = "#{@product.title}加入购物车成功"
   else
     flash[:warning] = "不能重复加入商品"
+        redirect_to :back
     end
-    redirect_to :back
+
 
   end
     def favorite
