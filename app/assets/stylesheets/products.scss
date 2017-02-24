@@ -172,8 +172,8 @@
   transition: all .4s;
   &:hover {
     position: relative;
-    top: -5px;
-    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+    // top: -2px;
+    box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.15);
     .productList-item-cartBtn {
     	display: block;
     }
