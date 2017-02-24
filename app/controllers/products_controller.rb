@@ -43,8 +43,6 @@ end
     flash[:warning] = "不能重复加入商品"
         redirect_to :back
     end
-
-
   end
     def favorite
       type = params[:type]
