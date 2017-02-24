@@ -147,7 +147,7 @@
         </p>
       </div>
     </div>
-     <% Product.all.each_with_index do |product, index| %>
+     <% Product.all.includes(:photos).each_with_index do |product, index| %>
      <% if product.favorites.count > 1 %>
        <%= render :partial => "product_item", locals: { product: product, index: index } %>
      <% end %>
