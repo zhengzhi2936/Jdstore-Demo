@@ -26,6 +26,7 @@ $(function() {
     $(".addCartBtn").click(function(event){ 
         var addcar = $(this); 
         var img = addcar.closest('.productList-item').find('.productList-item-pic img').attr('src'); 
+        if (!img) img = $('#thumb').attr('src');           
         var flyer = $('<img class="u-flyer" src="'+img+'">'); 
         flyer.fly({ 
             start: { 
@@ -39,8 +40,6 @@ $(function() {
                 height: 10 //结束时高度 
             }, 
             onEnd: function(){ //结束回调 
-                $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); //提示信息 
-                addcar.css("cursor","default").removeClass('orange').unbind('click'); 
                 this.destory(); //移除dom 
             } 
         }); 

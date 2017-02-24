@@ -41,13 +41,13 @@ class ProductsController < ApplicationController
   def add_to_cart
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
-      respond_to do |format|
-        format.html { render :index }
-        format.js   { render :layout => false }
-      end
     else
-      flash[:warning] = "不能重复加入商品"
-      redirect_to :back
+      # flash[:warning] = "不能重复加入商品"
+      # redirect_to :back
+    end
+    respond_to do |format|
+      format.html { render :index }
+      format.js   { render :layout => false }
     end
   end
   def favorite
