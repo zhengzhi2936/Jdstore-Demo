@@ -55,6 +55,7 @@
           <i class="fa fa-star-o"></i>
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
         <% end %>
+          收藏人数：<%= @product.favorites.count %>
       </p>
     </div>
 
@@ -70,6 +71,7 @@
       <p class="intro-text-count">
         <span class="pl20 pr30">库存</span><%= @product.quantity %><span></span>
       </p>
+
       <p class="intro-text-btnWrap">
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product),
@@ -145,5 +147,10 @@
         </p>
       </div>
     </div>
+     <% Product.limit(6).each_with_index do |product, index| %>
+     <% if product.favorites.count > 1 %>
+       <%= render :partial => "product_item", locals: { product: product, index: index } %>
+     <% end %>
+    <% end %>
   </div>
 </div>
