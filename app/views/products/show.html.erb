@@ -47,7 +47,7 @@
           <% end %>
         <% end %>
       </ul>
-      <p class="mt20">
+      <p class="mt20 f12">
         <% if current_user && current_user.is_favorite_of?(@product) %>
           <i class="fa fa-star col-red"></i>
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put, class: "col-red") %>
@@ -55,7 +55,7 @@
           <i class="fa fa-star-o"></i>
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
         <% end %>
-          收藏人数：<%= @product.favorites.count %>
+        <span class="intro-favorite-count">（<%= @product.favorites.count %>人气）</span>
       </p>
     </div>
 
