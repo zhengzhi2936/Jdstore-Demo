@@ -275,6 +275,14 @@ a:hover {
   right: 0;
   z-index: 10;
 }
+.u-flyer{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: fixed;
+  z-index: 9999;
+} 
 
 /*购物车预览*/
 .previewProductsList {

@@ -15,7 +15,7 @@
     <% end %>
   </p>
   <p class="productList-item-desc mt5 f12"><%= product.description %></p>
-  <%= link_to add_to_cart_product_path(product), :method => :post, class: "productList-item-cartBtn pa border f18" do %>
+  <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
     <i class="fa fa-shopping-cart col-red"></i>
   <% end %>
 </li>
