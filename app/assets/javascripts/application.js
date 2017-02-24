@@ -13,15 +13,12 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require bootstrap/alert
 //= require bootstrap
 //= require local_time
 //= require chosen-jquery
 //= require jquery.raty
 //= require turbolinks
 //= require_tree .
-
-console.log('test compile')
 
 // 首页轮播
 $(document).ready(function() {
@@ -58,7 +55,7 @@ $(window).scroll(function () {
       return false
     }
     $header.addClass('header_fixed')
-    $header.stop().animate({top: 0})
+    $header.stop().animate({top: 0}, 600)
     $('.header_placeholder').show()
   } else {
     $header.css({top: -80})
@@ -170,5 +167,3 @@ $(document).on('mouseover', '.magnifier-thumb-wrapper', function (e) {
 $(document).on('mouseout', '.magnifier-thumb-wrapper', function (e) {
     $('#preview').css('visibility', 'hidden')
 })
-
-

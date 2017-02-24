@@ -31,41 +31,39 @@ class ProductsController < ApplicationController
       @avg_post = @posts.average(:rating).round(2)
       @avg_look = @posts.average(:look).round(2)
       @avg_price = @posts.average(:price).round(2)
-end
+    end
   end
   def search
 		@products = Product.ransack({:title_cont => @q}).result(:distinct => true)
 	end
   def add_to_cart
     if !current_cart.products.include?(@product)
-    current_cart.add_product_to_cart(@product)
-  else
-    flash[:warning] = "不能重复加入商品"
-        redirect_to :back
-    end
-
-
-  end
-    def favorite
-      type = params[:type]
-      if type == "favorite"
-      current_user.favorite_products << @product
-      redirect_to :back
-      elsif type == "unfavorite"
-      current_user.favorite_products.delete(@product)
-      redirect_to :back
-
-      else
-      redirect_to :back
-      end
-  end
-
-    def upvote
-      @product.votes.create
-      @product.like = @product.votes.count
-      @product.save
+      current_cart.add_product_to_cart(@product)
+    else
+      flash[:warning] = "不能重复加入商品"
       redirect_to :back
     end
+  end
+  def favorite
+    type = params[:type]
+    if type == "favorite"
+    current_user.favorite_products << @product
+    redirect_to :back
+    elsif type == "unfavorite"
+    current_user.favorite_products.delete(@product)
+    redirect_to :back
+
+    else
+    redirect_to :back
+    end
+  end
+
+  def upvote
+    @product.votes.create
+    @product.like = @product.votes.count
+    @product.save
+    redirect_to :back
+  end
   protected
 
   def find_product

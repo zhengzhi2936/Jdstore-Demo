@@ -76,6 +76,7 @@
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product),
               :method => :post,
+              remote: true,
               :class => "intro-text-btn add-cart pl15 pr15 mt20 ml20 tc col-red f20 bg-red") %>
       <% else %>
         <a href="javascript:;" class="intro-text-btn add-cart pl15 pr15 mt20 ml20 tc col-red f20 bg-red">已售完</a>
@@ -124,7 +125,7 @@
         <ul class="commentList mt70">
           <% @posts.each do |post| %>
             <li class="commentList-item w700 pt10 pb10 bc clearfix">
-              <p class="fl content tl f14">
+              <p class="fl content tl f12">
                 <%= emojify post.content  %><br>
                 <% if post.graphics.present? %>
                   <% post.graphics.each_with_index do |p, index| %>
@@ -134,8 +135,7 @@
                 <br>
                 <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
               </p>
-
-              <p class="fr name ell">
+              <p class="fr name ell tr f12">
                 <%= post.user.email %>
               </p>
             </li>
