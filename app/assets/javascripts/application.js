@@ -58,7 +58,7 @@ $(window).scroll(function () {
       return false
     }
     $header.addClass('header_fixed')
-    $header.stop().animate({top: 0})
+    $header.stop().animate({top: 0}, 600)
     $('.header_placeholder').show()
   } else {
     $header.css({top: -80})
