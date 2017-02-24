@@ -76,7 +76,7 @@ $(window).scroll(function () {
     $category_sidebar.fadeOut()
   }
 
-  if ($(this).scrollTop() > 300) {
+  if ($(this).scrollTop() > 200) {
     if ($header.is(':animated')) {
       return false
     }
