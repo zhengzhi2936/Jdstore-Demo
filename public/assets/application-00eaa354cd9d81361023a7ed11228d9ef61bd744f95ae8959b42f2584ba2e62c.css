@@ -1,3 +1,7 @@
+/* line 5, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/admin/products.scss */
+.thumbnail {
+  width: 250px;
+}
 @charset "UTF-8";
 /*CSS reset*/
 /* line 3, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/base.scss */
@@ -1085,6 +1089,7 @@ abbr, acronym {
 #thumb-lens {
     background-size: 415px 415px !important;
 }
+@charset "UTF-8";
 /*details*/
 /* line 7, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .location {
@@ -1166,11 +1171,17 @@ abbr, acronym {
 }
 
 /* line 72, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.intro-favorite-count {
+  color: #6D6D6D;
+  font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
+}
+
+/* line 77, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .productDetail-tabList {
   border-bottom: 1px solid #D8D8D8;
 }
 
-/* line 76, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 81, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .productDetail-tabList-tab {
   cursor: pointer;
   height: 35px;
@@ -1178,73 +1189,241 @@ abbr, acronym {
   border-right: 1px solid #D8D8D8;
 }
 
-/* line 83, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 88, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .productDetail-tabList-activeTab {
   background: #fff;
 }
 
-/* line 87, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 92, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .productDetail-content {
   display: none;
 }
 
-/* line 91, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 96, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .productDetail-content .productDetail-introImg img {
   width: 700px;
 }
 
-/* line 95, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 100, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .commentList-item {
-  width: 665px;
+  width: 670px;
   border-bottom: 1px solid #DDDDDD;
 }
 
-/* line 100, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 105, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .commentList-item .content {
-  width: 400px;
+  width: 420px;
 }
 
-/* line 104, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 109, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.commentList-item .content .commentImage {
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+  margin-top: 10px;
+  margin-right: 2px;
+}
+/* line 115, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.commentList-item .content .commentImage.selected {
+  border: 1px solid #d32048;
+}
+
+/* line 120, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.commentList-item .commentBigImage {
+  margin-top: 20px;
+  width: 300px;
+  display: none;
+}
+
+/* line 126, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .commentList-item .name {
   width: 180px;
 }
 
-/* line 108, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 130, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .comment-say a {
   margin-right: auto;
   margin-left: auto;
   color: #fff;
 }
-/* line 112, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 134, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .comment-say a:hover {
   color: #fff;
 }
 
-/* line 117, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 139, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .comment-userName {
   margin-top: 2px;
 }
 
-/* line 121, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 143, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .comment-avatar {
   width: 25px;
   height: 25px;
   border-radius: 50%;
 }
 
-/* line 127, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 149, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .comment-image img {
   width: 70px;
 }
 
-/* line 131, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 153, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .comment-image-scale img {
   width: 220px;
 }
 
-/* line 135, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+/* line 157, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
 .productDetail-evaluation {
   letter-spacing: 5px;
+}
+
+/*商品列表*/
+/* line 162, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-wrap {
+  width: 1220px;
+}
+
+/* line 165, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList {
+  margin-bottom: 0;
+}
+
+/* line 168, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item {
+  width: 230px;
+  height: 350px;
+  background: #fff;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+  position: relative;
+  top: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+/* line 179, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item:hover {
+  position: relative;
+  top: -2px;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+/* line 183, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item:hover .productList-item-cartBtn {
+  display: block;
+}
+/* line 187, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item img {
+  width: 200px;
+  height: 200px;
+}
+
+/* line 192, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-lastItem {
+  margin-right: 0;
+}
+
+/* line 195, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item-name {
+  color: #333;
+}
+
+/* line 198, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item-desc {
+  color: #808080;
+}
+
+/* line 201, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item-cartBtn {
+  top: 168px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: none;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+}
+
+/* line 214, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item-cartBtn:hover {
+  background: #D32048;
+}
+/* line 216, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.productList-item-cartBtn:hover .fa-shopping-cart {
+  color: #fff;
+}
+
+/*放大镜*/
+/* line 222, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.magnifier-thumb-wrapper {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+/* line 229, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.magnifier-lens {
+  position: absolute;
+  border: solid 1px #ccc;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+/* line 237, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.magnifier-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid 1px #ccc;
+  color: #fff;
+  text-align: center;
+  background: transparent;
+  background: rgba(50, 50, 50, 0.5);
+  z-index: 1000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232);
+}
+
+/* line 251, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.magnifier-loader-text {
+  font: 13px Arial;
+  margin-top: 10px;
+}
+
+/* line 256, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.magnifier-preview {
+  position: absolute;
+  width: 418px;
+  height: 420px;
+  left: 418px;
+  top: -1px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* line 266, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.magnifier-preview img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 272, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.opaque {
+  opacity: .5;
+  filter: alpha(opacity=50);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+}
+
+/* line 278, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/products.scss */
+.hidden {
+  display: none;
 }
 @charset "UTF-8";
 /*
@@ -14330,6 +14509,15 @@ a:focus, a:hover {
   text-decoration: none;
 }
 
+/*emoji用的css*/
+/* line 35, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}
+
 /*body {*/
 /*margin-bottom: 150px;*/
 /*padding-top: 65px;*/
@@ -14341,13 +14529,13 @@ a:focus, a:hover {
   height: 150px;
   text-align: center;
 }*/
-/* line 48, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 54, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .container-1 {
   margin-top: 50px;
   width: 100%;
 }
 
-/* line 53, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 59, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cuadro_intro_hover {
   padding: 0px;
   position: relative;
@@ -14355,7 +14543,7 @@ a:focus, a:hover {
   height: 200px;
 }
 
-/* line 59, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 65, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cuadro_intro_hover:hover .caption {
   opacity: 1;
   transform: translateY(-150px);
@@ -14365,12 +14553,12 @@ a:focus, a:hover {
   -o-transform: translateY(-150px);
 }
 
-/* line 67, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 73, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cuadro_intro_hover img {
   z-index: 4;
 }
 
-/* line 70, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 76, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cuadro_intro_hover .caption {
   position: absolute;
   top: 150px;
@@ -14382,7 +14570,7 @@ a:focus, a:hover {
   width: 100%;
 }
 
-/* line 80, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 86, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cuadro_intro_hover .blur {
   background-color: rgba(0, 0, 0, 0.7);
   height: 300px;
@@ -14391,7 +14579,7 @@ a:focus, a:hover {
   width: 100%;
 }
 
-/* line 87, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 93, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cuadro_intro_hover .caption-text {
   z-index: 10;
   color: #fff;
@@ -14402,7 +14590,7 @@ a:focus, a:hover {
   width: 100%;
 }
 
-/* line 98, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 104, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .messages {
   max-height: 400px;
   overflow-y: auto;
@@ -14410,7 +14598,7 @@ a:focus, a:hover {
   margin-top: 1em;
 }
 
-/* line 102, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 108, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .round-image-50 {
   background-color: white;
   border: 1px solid #d9d9d9;
@@ -14422,68 +14610,68 @@ a:focus, a:hover {
   overflow: hidden;
   text-align: center;
 }
-/* line 112, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 118, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .round-image-50 img {
   width: 100%;
 }
 
 /*global*/
-/* line 116, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 122, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 body {
   color: #2E2E2E;
   font-family: "Microsoft Yahei",verdana;
   background: #FFFFFF;
 }
 
-/* line 121, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 127, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 a {
   color: #6D6D6D;
 }
 
-/* line 124, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 130, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 a:hover {
   color: #C81623;
   text-decoration: none;
 }
 
-/* line 128, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 134, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .main-content {
   min-height: 850px;
 }
 
 /*字体颜色和背景颜色*/
-/* line 133, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 139, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .bg-gray {
   background: #F5F5F5;
 }
 
-/* line 136, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 142, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .bg-red {
   background: #D32048;
 }
 
-/* line 139, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 145, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .col-gray {
   color: #808080;
 }
 
-/* line 142, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 148, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .col-black {
   color: #333333;
 }
 
-/* line 145, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 151, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .col-red {
   color: #d32048;
 }
 
 /*边框*/
-/* line 150, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 156, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .border {
   border: 1px solid #DDDDDD;
 }
 
-/* line 154, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 160, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .navbar-wrap {
   height: 30px;
   line-height: 30px;
@@ -14492,7 +14680,7 @@ a:hover {
   color: #909090;
 }
 
-/* line 161, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 167, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .jh_navbar-spacer {
   width: 1px;
   height: 12px;
@@ -14503,25 +14691,24 @@ a:hover {
 }
 
 /*logo*/
-/* line 171, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 177, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .logo {
   font-size: 36px;
 }
 
-/*logo*/
-/* line 176, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 181, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .logo {
   width: 360px;
   height: 60px;
 }
 
 /*search*/
-/* line 183, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 188, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .search {
   width: 400px;
 }
 
-/* line 186, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 191, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .search-input {
   height: 36px;
   line-height: 36px;
@@ -14537,7 +14724,7 @@ a:hover {
   border-radius: 20px;
 }
 
-/* line 200, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 205, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .search-button {
   width: 54px;
   height: 36px;
@@ -14553,7 +14740,7 @@ a:hover {
 }
 
 /*按钮*/
-/* line 215, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 220, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .g-btn {
   display: block;
   width: 178px;
@@ -14565,7 +14752,7 @@ a:hover {
   color: #fff;
 }
 
-/* line 226, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 231, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .s-btn {
   display: block;
   width: 84px;
@@ -14578,13 +14765,13 @@ a:hover {
   color: #fff;
 }
 
-/* line 238, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 243, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .s-btn:hover, .g-btn:hover {
   color: #fff;
 }
 
-/*cart*/
-/* line 243, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/*购物车*/
+/* line 248, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cart {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -14592,25 +14779,25 @@ a:hover {
   border: 1px solid #DFDFDF;
 }
 
-/* line 249, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.cart-left {
+/* line 254, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+.cart-wrap {
   width: 150px;
   top: 0;
   right: 0px;
 }
 
-/* line 254, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.cart-left:hover .cart {
+/* line 259, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+.cart-wrap:hover .cart {
   border-bottom: none;
   background: #fff;
 }
 
-/* line 258, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.cart-left:hover .previewProductsList {
+/* line 263, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+.cart-wrap:hover .previewProductsList {
   display: block;
 }
 
-/* line 261, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 266, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .products_count {
   padding: 1px 5px;
   border-radius: 50%;
@@ -14619,7 +14806,7 @@ a:hover {
   color: #fff;
 }
 
-/* line 268, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 273, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .cart {
   width: 100%;
   top: 0;
@@ -14627,7 +14814,18 @@ a:hover {
   z-index: 10;
 }
 
-/* line 276, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 279, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+.u-flyer {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: fixed;
+  z-index: 9999;
+}
+
+/*购物车预览*/
+/* line 289, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList {
   display: none;
   width: 325px;
@@ -14637,50 +14835,50 @@ a:hover {
   background: #fff;
 }
 
-/* line 285, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 298, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList .info {
   line-height: 30px;
   margin-bottom: 0;
 }
 
-/* line 290, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 303, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList-item {
   border-bottom: 1px solid #DDDDDD;
 }
 
-/* line 294, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 307, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList-item-image {
   width: 54px;
   height: 54px;
 }
-/* line 297, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 310, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList-item-image img {
   width: 52px;
   height: 52px;
 }
 
-/* line 303, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 316, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList-item-title {
   color: #808080;
-  width: 120px;
+  width: 135px;
 }
 
-/* line 308, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 321, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList-item-info p {
   margin-bottom: 0;
 }
 
-/* line 312, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 325, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList-item-info .delete-btn {
   color: #808080;
 }
 
-/* line 316, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 329, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .previewProductsList-item-info .delete-btn:hover {
   color: #D32048;
 }
 
-/* line 320, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 333, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .empty-message {
   color: #808080;
   padding: 10px 0 10px;
@@ -14690,7 +14888,7 @@ a:hover {
 }
 
 /*menu*/
-/* line 330, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 342, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .menu-wrap {
   background: #333333;
   height: 42px;
@@ -14698,199 +14896,64 @@ a:hover {
   color: #fff;
 }
 
-/* line 336, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 348, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .menuList-item {
   padding: 0 22px;
   cursor: pointer;
 }
-/* line 337, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 349, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .menuList-item a {
   color: #FFF;
 }
 
-/* line 343, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 355, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .menuList-item:hover {
   background-color: #434343;
 }
 
-/* line 346, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 358, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .menuList-activeItem {
   background: #D32048;
 }
 
-/* line 349, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 361, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .menuList-activeItem:hover {
   background: #D32048;
 }
 
-/*banner*/
-/* line 355, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/*轮播图*/
+/* line 367, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .banner img {
   width: 1200px;
   height: 360px;
 }
 
+/* line 372, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+.carousel-inner .item {
+  width: 1200px;
+  height: 375px;
+}
+
 /*排序*/
-/* line 361, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 378, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .order {
   background: #fff;
   height: 44px;
   line-height: 44px;
 }
 
-/* line 366, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 383, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .orderList-orderItem {
   cursor: pointer;
 }
 
-/* line 369, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 386, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .orderList-activeItem a {
   color: #d32048;
 }
 
-/*商品列表*/
-/* line 374, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList-wrap {
-  width: 1220px;
-}
-
-/* line 377, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList {
-  margin-bottom: 0;
-}
-
-/* line 380, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList-item {
-  width: 230px;
-  height: 350px;
-  background: #fff;
-  margin-right: 12px;
-  margin-bottom: 12px;
-  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
-  position: relative;
-  top: 0;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-}
+/*右侧边栏*/
 /* line 391, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList-item:hover {
-  position: relative;
-  top: -5px;
-  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
-}
-/* line 396, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList-item img {
-  width: 200px;
-  height: 200px;
-}
-
-/* line 401, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList-lastItem {
-  margin-right: 0;
-}
-
-/* line 404, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList-item-name {
-  color: #333;
-}
-
-/* line 407, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.productList-item-desc {
-  color: #808080;
-}
-
-/*footer*/
-/* line 412, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav {
-  background: #201f21;
-  padding: 35px 0 20px 0;
-}
-/* line 415, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns {
-  max-width: 980px;
-  margin: 0 auto;
-}
-/* line 418, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .column {
-  width: 70px;
-  line-height: 200%;
-  margin: 0 0 10px 25px;
-}
-/* line 423, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right {
-  float: right;
-  width: 200px;
-}
-/* line 426, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right li {
-  padding: 0;
-  display: block;
-  white-space: nowrap;
-}
-/* line 431, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right .icon-gamepad {
-  display: inline-block;
-  height: 50px;
-  font-size: 0;
-  margin-right: 50px;
-}
-/* line 437, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right h3 {
-  color: #fff;
-  opacity: .5;
-  margin-top: 0;
-  font-size: 24px;
-}
-/* line 444, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right h4 .fa {
-  font-size: 18px;
-  margin-right: 10px;
-}
-/* line 449, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right .a-icon {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  border: 1px #92a0a9 solid;
-  border-radius: 40px;
-  text-align: center;
-  font-size: 14px;
-  box-sizing: border-box;
-  padding-top: 0;
-  margin-right: 10px;
-  cursor: pointer;
-  vertical-align: middle;
-  margin-top: 10px;
-}
-/* line 463, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right .a-icon .fa {
-  display: block;
-  margin-top: 6px;
-  color: #92a0a9;
-}
-/* line 469, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns .colum-right .a-weixin {
-  position: relative;
-  display: inline-block;
-}
-/* line 475, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns li h2 {
-  font-size: 16px;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 22px;
-  opacity: .5;
-}
-/* line 482, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.footer-nav .columns li a {
-  color: #fff;
-  opacity: .5;
-  white-space: nowrap;
-  line-height: 36px;
-}
-
-/*拉票小功能*/
-/* line 493, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar {
   display: none;
   position: fixed;
@@ -14901,15 +14964,15 @@ a:hover {
   height: auto;
   line-height: 20px;
 }
-/* line 502, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 400, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar * {
   box-sizing: border-box;
 }
-/* line 505, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 403, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar ul {
   padding: 0;
 }
-/* line 508, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 406, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li {
   position: relative;
   display: block;
@@ -14922,31 +14985,31 @@ a:hover {
   background: #fbfbfb;
   line-height: 42px;
 }
-/* line 519, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 417, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li:hover {
   background: #eee;
 }
-/* line 522, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 420, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li:first-child {
   margin-top: 0;
 }
-/* line 525, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 423, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li.backtop i {
   font-size: 18px;
 }
-/* line 527, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 425, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li.backtop i:hover {
   color: #D32048;
 }
-/* line 532, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 430, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li.support i {
   font-size: 20px;
 }
-/* line 534, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 432, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li.support i:hover {
   color: #D32048;
 }
-/* line 538, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 436, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li.support .ewm {
   line-height: 22px;
   display: none;
@@ -14963,18 +15026,19 @@ a:hover {
   height: 136px;
   padding-right: 20px;
 }
-/* line 553, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 451, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li.support .ewm p {
   background: #eee;
   border-radius: 3px;
   padding: 12px;
 }
-/* line 560, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 458, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .sidebar li i {
   color: #555;
 }
 
-/* line 566, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/*footer*/
+/* line 465, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .footer {
   background: #333333;
   padding: 16px 10px 6px;
@@ -14982,99 +15046,23 @@ a:hover {
   font-size: 12px;
   color: #C2C2C2;
 }
-/* line 572, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 471, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .footer span {
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   height: 24px;
   line-height: 23px;
 }
 
-/* line 583, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.magnifier-thumb-wrapper {
-  position: relative;
-  display: block;
-  top: 0;
-  left: 0;
-}
-
-/* line 590, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.magnifier-lens {
-  position: absolute;
-  border: solid 1px #ccc;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-}
-
-/* line 598, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.magnifier-loader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: solid 1px #ccc;
-  color: #fff;
-  text-align: center;
-  background: transparent;
-  background: rgba(50, 50, 50, 0.5);
-  z-index: 1000;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)";
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232);
-}
-
-/* line 612, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.magnifier-loader-text {
-  font: 13px Arial;
-  margin-top: 10px;
-}
-
-/* line 617, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.magnifier-preview {
-  position: absolute;
-  width: 418px;
-  height: 420px;
-  left: 418px;
-  top: -1px;
-  padding: 0;
-  overflow: hidden;
-}
-
-/* line 627, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.magnifier-preview img {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* line 633, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.opaque {
-  opacity: .5;
-  filter: alpha(opacity=50);
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-}
-
-/* line 639, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.hidden {
-  display: none;
-}
-
-/* line 649, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.carousel-inner .item {
-  width: 1200px;
-  height: 375px;
-}
-
-/* line 655, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.thumbnail {
-  width: 250px;
-}
-
-/* line 660, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.index-main {
+/*页面最小高度1000*/
+/* line 481, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+.minHeight1000 {
   min-height: 1000px;
 }
 
-/* line 665, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/*header*/
+/* line 486, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .header_fixed {
   width: 100%;
   position: fixed;
@@ -15085,24 +15073,19 @@ a:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 5px;
 }
 
-/* line 675, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 496, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .header_fixed .header_content {
   margin-top: 4px;
   padding-bottom: 4px;
 }
 
-/* line 680, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
-.header_fixed .cart-left {
-  display: none;
-}
-
-/* line 684, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 501, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .header_placeholder {
   display: none;
 }
 
-/*category_sidebar*/
-/* line 689, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/*左侧导航栏*/
+/* line 506, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .category_sidebar {
   display: none;
   position: fixed;
@@ -15115,7 +15098,7 @@ a:hover {
   border-radius: 2px;
 }
 
-/* line 701, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 518, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .category_sidebar a {
   display: block;
   width: 100%;
@@ -15129,7 +15112,7 @@ a:hover {
   transition: all 0.1s ease-in-out;
 }
 
-/* line 714, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
+/* line 531, /Users/raimonfuns/project.raimon.me/Jdstore-Demo/app/assets/stylesheets/application.scss */
 .category_sidebar a:hover {
   color: #fff;
   background: #D32048;

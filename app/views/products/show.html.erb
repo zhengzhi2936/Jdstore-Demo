@@ -47,7 +47,7 @@
           <% end %>
         <% end %>
       </ul>
-      <p class="mt20">
+      <p class="mt20 f12">
         <% if current_user && current_user.is_favorite_of?(@product) %>
           <i class="fa fa-star col-red"></i>
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put, class: "col-red") %>
@@ -55,7 +55,7 @@
           <i class="fa fa-star-o"></i>
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
         <% end %>
-          收藏人数：<%= @product.favorites.count %>
+        <span class="intro-favorite-count">（<%= @product.favorites.count %>人气）</span>
       </p>
     </div>
 
@@ -76,8 +76,8 @@
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product),
               :method => :post,
-              remote: true,
-              :class => "intro-text-btn add-cart pl15 pr15 mt20 ml20 tc col-red f20 bg-red") %>
+              :remote => true,
+              :class => "intro-text-btn addCartBtn add-cart pl15 pr15 mt20 ml20 tc col-red f20 bg-red") %>
       <% else %>
         <a href="javascript:;" class="intro-text-btn add-cart pl15 pr15 mt20 ml20 tc col-red f20 bg-red">已售完</a>
       <% end %>
@@ -148,7 +148,7 @@
       </div>
     </div>
      <% Product.all.includes(:photos).each_with_index do |product, index| %>
-     <% if product.favorites.count > 1 %>
+     <% if product.favorites.count > 5 %>
        <%= render :partial => "product_item", locals: { product: product, index: index } %>
      <% end %>
     <% end %>

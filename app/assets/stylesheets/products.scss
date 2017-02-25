@@ -68,6 +68,11 @@
 	}
 }
 
+.intro-favorite-count {
+	color: #6D6D6D;
+	font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
+}
+
 .productDetail-tabList {
 	border-bottom: 1px solid #D8D8D8;
 }
@@ -172,7 +177,7 @@
   transition: all .4s;
   &:hover {
     position: relative;
-    // top: -2px;
+    top: -2px;
     box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.15);
     .productList-item-cartBtn {
     	display: block;

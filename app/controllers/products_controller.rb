@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     if params[:category].blank?
       @products = case params[:order]
       when 'by_product_price'
-            Product.includes(:photos).order.('price DESC')
+            Product.includes(:photos).order('price DESC')
       when 'by_product_quantity'
             Product.includes(:photos).order('quantity DESC')
       when 'by_product_like'
@@ -41,13 +41,13 @@ class ProductsController < ApplicationController
   def add_to_cart
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
-      respond_to do |format|
-        format.html { render :index }
-        format.js   { render :layout => false }
-      end
     else
-      flash[:warning] = "不能重复加入商品"
-      redirect_to :back
+      # flash[:warning] = "不能重复加入商品"
+      # redirect_to :back
+    end
+    respond_to do |format|
+      format.html { render :index }
+      format.js   { render :layout => false }
     end
   end
   def favorite
