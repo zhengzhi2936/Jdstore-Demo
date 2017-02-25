@@ -24,20 +24,20 @@
       </li>
       <li class="jh_navbar-spacer fl"></li>
       <li class="fl jh_navbar-listItem pr10 pl10">
+      <%= link_to(' 已收藏的商品'.html_safe, product_favorite_index_path(current_user.favorite_products)) %>
+      </li>
+      <li class="jh_navbar-spacer fl"></li>
+      <li class="fl jh_navbar-listItem pr10 pl10">
         <%= link_to("我的订单", account_orders_path )%>
       </li>
       <li class="jh_navbar-spacer fl"></li>
       <li class="fl jh_navbar-listItem pr10 pl10">
         <!-- <%= link_to '站内信', conversations_path %> -->
       </li>
-      <li class="jh_navbar-spacer fl"></li>
-      <li class="fl jh_navbar-listItem pr10 pl10">
-      <%= link_to(' 已收藏的商品'.html_safe, product_favorite_index_path(current_user.favorite_products)) %>
-      </li>
-      <li class="jh_navbar-spacer fl"></li>
+      <!-- <li class="jh_navbar-spacer fl"></li>
       <li class="fl jh_navbar-listItem pr10 pl10">
         <%= link_to '账号设置',edit_user_registration_path %>
-      </li>
+      </li> -->
       <li class="jh_navbar-spacer fl"></li>
       <% if current_user.admin?%>
         <li class="fl jh_navbar-listItem pr10 pl10">

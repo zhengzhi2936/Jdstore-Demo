@@ -85,72 +85,90 @@
     </div>
   </div>
 
-  <div class="productDetail border mt40">
-    <ul class="productDetail-tabList bg-gray clearfix">
-      <li class="productDetail-tabList-tab productDetail-tabList-activeTab fl pl50 pr50">
-        商品详情
-      </li>
-      <li class="productDetail-tabList-tab fl pl50 pr50">
-        商品评价(<%= @product.posts.count%>)
-      </li>
-    </ul>
-    <div class="productDetail-contentWrap">
-      <div class="productDetail-content pt20 tc pb20" style="display: block;">
-        <div class="productDetail-introImg">
-          <% if @prints.present? %>
-            <% @prints.each_with_index do |p, index| %>
-                <%= image_tag p.avatar.medium.url %>
-            <% end %>
-          <% else %>
-              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-          <% end %>
-        </div>
-        <p class="mt20 mb20"><%= @product.detail %></p>
-      </div>
-      <div class="productDetail-content pt30 tc pb20">
-        <div class="productDetail-evaluation w200 bc">
-          <div class="intro-text-count clearfix mt10">
-            <div class="fl mr10">味道: </div>
-            <div class="star-rating" data-score= <%= @avg_post %> ></div>
-          </div>
-          <div class="intro-text-count clearfix mt10">
-            <div class="fl mr10">外观: </div>
-            <div class="star-look" data-score= <%= @avg_look %> ></div>
-          </div>
-          <div class="intro-text-count clearfix mt10">
-            <div class="fl mr10">价格: </div>
-            <div class="star-price" data-score= <%= @avg_price %> ></div>
-          </div>
-        </div>
-        <ul class="commentList mt70">
-          <% @posts.each do |post| %>
-            <li class="commentList-item w700 pt10 pb10 bc clearfix">
-              <p class="fl content tl f12">
-                <%= emojify post.content  %><br>
-                <% if post.graphics.present? %>
-                  <% post.graphics.each_with_index do |p, index| %>
-                      <%= image_tag p.avatar.medium.url, class: "commentImage border" %>
-                  <% end %>
+  <div class="productContent-wrap mt40 clearfix">
+    <div class="productRecommend fl border w200">
+      <div class="productRecommendTitle tc">推荐列表</div>
+      <div class="productRecommendList">
+        <% Product.all.includes(:photos).each_with_index do |product, index| %>
+          <% if index < 5 %>
+            <div class="productRecommendList-item mb10">
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
                 <% end %>
-                <br>
-                <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
-              </p>
-              <p class="fr name ell tr f12">
-                <%= post.user.email %>
-              </p>
-            </li>
+              <% end %>
+              <p class="productRecommendList-item-price col-red fb mt10">￥<%= product.price %></p>
+              <p class="productRecommendList-item-title f12 col-gray"><%= link_to product_path(product) do %><%= product.title %><% end %></p>
+              <p class="f12 col-gray">已有<span class="col-blue"><%= product.posts.count%></span>人评价</p>
+            </div>
           <% end %>
-        </ul>
-        <p class="comment-say mt20 mb20">
-          <%= link_to("我来说两句", new_product_post_path(@product),
-              :class => "g-btn pl15 pr15 mt20 ml20 tc col-red f20 bg-red bc") %>
-        </p>
+        <% end %>
       </div>
     </div>
-     <% Product.all.includes(:photos).each_with_index do |product, index| %>
-     <% if product.favorites.count > 5 %>
-       <%= render :partial => "product_item", locals: { product: product, index: index } %>
-     <% end %>
-    <% end %>
+    <div class="productDetail border fr">
+      <ul class="productDetail-tabList bg-gray clearfix">
+        <li class="productDetail-tabList-tab productDetail-tabList-activeTab fl pl50 pr50">
+          商品详情
+        </li>
+        <li class="productDetail-tabList-tab fl pl50 pr50">
+          商品评价(<%= @product.posts.count%>)
+        </li>
+      </ul>
+      <div class="productDetail-contentWrap">
+        <div class="productDetail-content pt20 tc pb20" style="display: block;">
+          <div class="productDetail-introImg">
+            <% if @prints.present? %>
+              <% @prints.each_with_index do |p, index| %>
+                  <%= image_tag p.avatar.medium.url %>
+              <% end %>
+            <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          </div>
+          <p class="mt20 mb20"><%= @product.detail %></p>
+        </div>
+        <div class="productDetail-content pt30 tc pb20">
+          <div class="productDetail-evaluation w200 bc">
+            <div class="intro-text-count clearfix mt10">
+              <div class="fl mr10">味道: </div>
+              <div class="star-rating" data-score= <%= @avg_post %> ></div>
+            </div>
+            <div class="intro-text-count clearfix mt10">
+              <div class="fl mr10">外观: </div>
+              <div class="star-look" data-score= <%= @avg_look %> ></div>
+            </div>
+            <div class="intro-text-count clearfix mt10">
+              <div class="fl mr10">价格: </div>
+              <div class="star-price" data-score= <%= @avg_price %> ></div>
+            </div>
+          </div>
+          <ul class="commentList mt70">
+            <% @posts.each do |post| %>
+              <li class="commentList-item w700 pt10 pb10 bc clearfix">
+                <p class="fl content tl f12">
+                  <%= emojify post.content  %><br>
+                  <% if post.graphics.present? %>
+                    <% post.graphics.each_with_index do |p, index| %>
+                        <%= image_tag p.avatar.medium.url, class: "commentImage border" %>
+                    <% end %>
+                  <% end %>
+                  <br>
+                  <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
+                </p>
+                <p class="fr name ell tr f12">
+                  <%= post.user.email %>
+                </p>
+              </li>
+            <% end %>
+          </ul>
+          <p class="comment-say mt20 mb20">
+            <%= link_to("我来说两句", new_product_post_path(@product),
+                :class => "g-btn pl15 pr15 mt20 ml20 tc col-red f20 bg-red bc") %>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

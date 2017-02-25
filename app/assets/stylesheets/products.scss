@@ -73,6 +73,11 @@
 	font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
 }
 
+/*商品详情*/
+.productDetail {
+	width: 990px;
+}
+
 .productDetail-tabList {
 	border-bottom: 1px solid #D8D8D8;
 }
@@ -96,6 +101,27 @@
 	width: 700px;
 }
 
+/*推荐列表*/
+.productRecommendTitle {
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.productRecommendList-item {
+	padding: 5px 10px;
+}
+
+.productRecommendList-item img {
+	width: 100%;
+}
+
+.productRecommendList-item-title {
+	color: #6D6D6D;
+}
+
+
+/*评论*/
 .commentList-item {
 	width: 670px;
 	border-bottom: 1px solid #DDDDDD;
