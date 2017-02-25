@@ -24,10 +24,8 @@
   <div class="productList-wrap pt20 bc">
     <ul class="productList clearfix pl10 pr10 pb20">
       <% Product.all.includes(:photos).each_with_index do |product, index| %>
-       <% if product.favorites.count > 2 %>
-        <% if index < 5 %>
+        <% if product.favorites.count > 2 %>
           <%= render :partial => "product_item", locals: { product: product, index: index } %>
-        <% end %>
         <% end %>
       <% end %>
     </ul>
