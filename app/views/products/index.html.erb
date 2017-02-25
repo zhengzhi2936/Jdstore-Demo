@@ -62,39 +62,6 @@
 <div class="category_sidebar tc border f12">
   <% Category.all.each do |category| %>
     <%= link_to category.name, products_path(category: category.name) %>
-  </li>
   <% end %>
+  <a class="backtop" href="javascript:;"><i class="fa fa-arrow-circle-up"></i></a>
 </div>
-
-<!-- <div class="box"> 
-    <img src="https://ww1.sinaimg.cn/large/006tKfTcly1fd1qlkynu1j30640643z6.jpg" width="180" height="180"> 
-    <h4>￥<span>3499.00</span></h4> 
-    <p>LG 49LF5400-CA 49寸IPS硬屏富贵招财铜钱设计</p> 
-    <a href="javascript:;" class="button orange addcar">加入购物车</a> 
-</div> 
-<div class="box"> 
-    <img src="https://ww2.sinaimg.cn/large/006tKfTcly1fd1qlh1wlbj3064064mxs.jpg" width="180" height="180"> 
-    <h4>￥<span>3799.00</span></h4> 
-    <p>Hisense/海信 LED50T1A 海信电视官方旗舰店</p> 
-    <a href="javascript:;" class="button orange addcar">加入购物车</a> 
-</div> 
-<div class="box"> 
-    <img src="https://ww3.sinaimg.cn/large/006tKfTcly1fd1ql9k6mxj30640643z5.jpg" width="180" height="180"> 
-    <h4>￥<span>￥3999.00</span></h4> 
-    <p>Skyworth/创维 50E8EUS 8核4Kj极清酷开系统智能液晶电视</p> 
-    <a href="javascript:;" class="button orange addcar">加入购物车</a> 
-</div> 
-<div class="box"> 
-    <img src="https://ww4.sinaimg.cn/large/006tKfTcly1fd1qlnzhoej308w08wwfo.jpg" width="180" height="180"> 
-    <h4>￥<span>6969.00</span></h4> 
-    <p>乐视TV Letv X60S 4核1080P高清3D安卓智能超级电视</p> 
-    <a href="javascript:;" class="button orange addcar">加入购物车</a> 
-</div> 
-
-<div class="m-sidebar"> 
-    <div class="cartFly"> 
-        <i id="end"></i> 
-        <span>购物车</span> 
-    </div> 
-</div> 
-<div id="msg">已成功加入购物车！</div>  -->
