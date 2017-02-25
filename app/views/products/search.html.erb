@@ -20,14 +20,4 @@
       <p class="tc mt100">亲，没有搜索到商品哦，要不换个关键词试试？</p>
     <% end %>
   </div>
-  <h3 class="recommentTitle col-red ml40">热门推荐</h3>
-  <div class="productList-wrap pt20 bc">
-    <ul class="productList clearfix pl10 pr10 pb20">
-      <% Product.all.includes(:photos).each_with_index do |product, index| %>
-        <% if product.favorites.count > 2 %>
-          <%= render :partial => "product_item", locals: { product: product, index: index } %>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
 </div>
