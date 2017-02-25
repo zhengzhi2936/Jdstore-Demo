@@ -49,6 +49,7 @@ $(function() {
 // 首页轮播
 $(document).ready(function() {
     $('#myCarousel').carousel({interval: 4000})
+    $(window).trigger('scroll') // 一开始就触发一下滚动事件
 });
 
 // 点击事件
