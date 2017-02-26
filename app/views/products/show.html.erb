@@ -53,6 +53,7 @@
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put, class: "col-red") %>
         <% else %>
           <i class="fa fa-star-o"></i>
+          
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
         <% end %>
         <span class="intro-favorite-count">（<%= @product.favorites.count %>人气）</span>
@@ -149,3 +150,8 @@
     </div>
   </div>
 </div>
+
+
+<script type='text/javascript'>
+
+</script>
