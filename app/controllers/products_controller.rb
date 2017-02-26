@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:favorite]
   before_action :find_product, only: [:show, :add_to_cart, :favorite, :upvote]
-  respond_to :html, :js
+  respond_to :js
 
   def index
     if params[:category].blank?
@@ -48,7 +48,6 @@ class ProductsController < ApplicationController
       # redirect_to :back
     end
     respond_to do |format|
-      format.html { render :index }
       format.js   { render :layout => false }
     end
   end

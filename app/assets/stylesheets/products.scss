@@ -158,9 +158,6 @@
 }
 
 /*商品列表*/
-.productList-wrap {
-  width: 1220px;
-}
 .productList {
   margin-bottom: 0;
 }
@@ -184,7 +181,7 @@
     }
   }
   img {
-    width: 200px;
+    width: 100%;
     height: 200px;
   }
 }

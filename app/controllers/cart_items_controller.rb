@@ -1,7 +1,7 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_cart_item, only: [:destroy, :update, :add_quantity, :remove_quantity]
-  respond_to :html, :js
+  respond_to :js
 
   def destroy
     @product = @cart_item.product
@@ -9,7 +9,6 @@ class CartItemsController < ApplicationController
     @product.quantity += @cart_item.quantity
     @product.save
     respond_to do |format|
-      format.html { render :index }
       format.js   { render :layout => false }
     end
   end
@@ -27,8 +26,10 @@ class CartItemsController < ApplicationController
 			@cart_item.quantity += 1
       @cart_item.product.quantity -=1
 			@cart_item.save
-      @cart_item.product.save
-			redirect_to carts_path
+      # @cart_item.product.save
+      respond_to do |format|
+        format.js   { render :layout => false }
+      end
 		elsif @cart_item.quantity == @cart_item.product.quantity
 			redirect_to carts_path, alert: "库存不足！"
 		end
@@ -39,8 +40,10 @@ class CartItemsController < ApplicationController
 			@cart_item.quantity -= 1
       @cart_item.product.quantity +=1
 			@cart_item.save
-      @cart_item.product.save
-			redirect_to carts_path
+      # @cart_item.product.save
+			respond_to do |format|
+        format.js   { render :layout => false }
+      end
 		elsif @cart_item.quantity == 0
 			redirect_to carts_path, alert: "商品不能少于零！"
 		end
