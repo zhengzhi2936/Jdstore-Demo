@@ -4,6 +4,8 @@ class CartItemsController < ApplicationController
   def destroy
     @product = @cart_item.product
     @cart_item.destroy
+    @product.quantity += @cart_item.quantity
+    @product.save
     redirect_to :back
     flash[:notice] = "成功将 #{@product.title} 从购物车删除！"
   end
@@ -19,7 +21,9 @@ class CartItemsController < ApplicationController
   def add_quantity
 		if @cart_item.quantity < @cart_item.product.quantity
 			@cart_item.quantity += 1
+      @cart_item.product.quantity -=1
 			@cart_item.save
+      @cart_item.product.save
 			redirect_to carts_path
 		elsif @cart_item.quantity == @cart_item.product.quantity
 			redirect_to carts_path, alert: "库存不足！"
@@ -29,7 +33,9 @@ class CartItemsController < ApplicationController
 	def remove_quantity
 		if @cart_item.quantity > 0
 			@cart_item.quantity -= 1
+      @cart_item.product.quantity +=1
 			@cart_item.save
+      @cart_item.product.save
 			redirect_to carts_path
 		elsif @cart_item.quantity == 0
 			redirect_to carts_path, alert: "商品不能少于零！"
