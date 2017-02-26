@@ -374,7 +374,6 @@ a:hover {
 }
 
 .carousel-inner .item {
-  width: 1200px;
   height: 375px;
 }
 
@@ -535,4 +534,40 @@ a:hover {
 .category_sidebar a:hover {
   color: #fff;
   background: #D32048;
+}
+
+/*适应中等尺寸的屏幕*/
+@media (max-width: 1200px) {
+  .w1200 {
+    width: 1000px;
+  }
+  .banner {
+    width: 1000px;
+  }
+  .carousel {
+    height: 313px;
+  }
+  .carousel-inner .item {
+    height: 333px;
+  }
+  .productList-item {
+    width: 192px;
+    height: 305px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    .productList-item-pic {
+      width: 162px;
+      height: 162px;
+    }
+    img {
+      width: 162px;
+      height: 162px;
+    }
+  }
+  .productList-lastItem {
+    margin-right: 0;
+  }
+  .logo {
+    width: 278px;
+  }
 }
