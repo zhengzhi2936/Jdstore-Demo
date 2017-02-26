@@ -1,4 +1,5 @@
 $('.addCartBtn').bind('ajax:success', function(e, data) {
    $('.cart-wrap').html('<%= escape_javascript render(:partial => "products/cart") %>')
    $('#quantity').html('<%= @product.quantity %>')
+   $('.productList-wrap').html('<%= escape_javascript render(:partial => "products/product_list") %>')
 });

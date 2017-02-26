@@ -5,21 +5,7 @@ class ProductsController < ApplicationController
   respond_to :js
 
   def index
-    if params[:category].blank?
-      @products = case params[:order]
-      when 'by_product_price'
-            Product.includes(:photos).order('price DESC')
-      when 'by_product_quantity'
-            Product.includes(:photos).order('quantity DESC')
-      when 'by_product_like'
-            Product.includes(:photos).order('like DESC')
-          else
-            Product.includes(:photos).order('created_at DESC')
-          end
-    else
-      @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.includes(:photos).where(:category_id => @category_id)
-    end
+    get_products
   end
   def show
     @photos = @product.photos.all
@@ -39,6 +25,8 @@ class ProductsController < ApplicationController
 		@products = Product.ransack({:title_cont => @q}).result(:distinct => true)
 	end
   def add_to_cart
+    get_products
+
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
       @product.quantity -=1
@@ -52,6 +40,8 @@ class ProductsController < ApplicationController
     end
   end
   def favorite
+    get_products
+
     type = params[:type]
     if type == "favorite"
     current_user.favorite_products << @product
@@ -78,5 +68,22 @@ class ProductsController < ApplicationController
   end
   def validate_search_key
     @q = params[:query_string].gsub(/\|\'|\/|\?/, "") if params[:query_string].present?
+  end
+  def get_products
+    if params[:category].blank?
+      @products = case params[:order]
+      when 'by_product_price'
+            Product.includes(:photos).order('price DESC')
+      when 'by_product_quantity'
+            Product.includes(:photos).order('quantity DESC')
+      when 'by_product_like'
+            Product.includes(:photos).order('like DESC')
+          else
+            Product.includes(:photos).order('created_at DESC')
+          end
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.includes(:photos).where(:category_id => @category_id)
+    end
   end
 end
