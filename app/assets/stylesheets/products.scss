@@ -66,6 +66,10 @@
 	&.add-cart {
 		color: #fff;
 	}
+	&.btn-disabled {
+		background: #aaa;
+    border-color: #fff;
+	}
 }
 
 .intro-favorite-count {
