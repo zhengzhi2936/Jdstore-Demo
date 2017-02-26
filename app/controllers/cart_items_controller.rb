@@ -1,13 +1,17 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_cart_item, only: [:destroy, :update, :add_quantity, :remove_quantity]
+  respond_to :html, :js
+
   def destroy
     @product = @cart_item.product
     @cart_item.destroy
     @product.quantity += @cart_item.quantity
     @product.save
-    redirect_to :back
-    flash[:notice] = "成功将 #{@product.title} 从购物车删除！"
+    respond_to do |format|
+      format.html { render :index }
+      format.js   { render :layout => false }
+    end
   end
   def update
     if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
