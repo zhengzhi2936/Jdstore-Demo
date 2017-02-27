@@ -4,13 +4,17 @@ class CartItemsController < ApplicationController
   respond_to :js
 
   def destroy
+    @cart = current_cart
+    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     @product = @cart_item.product
     @cart_item.destroy
     @product.quantity += @cart_item.quantity
     @product.save
-    respond_to do |format|
-      format.js   { render :layout => false }
-    end
+    redirect_to :back
+    flash[:notice] = "成功将 #{@product.title} 从购物车删除！"
+    # respond_to do |format|
+    #   format.js   { render :layout => false }
+    # end
   end
   def update
     if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
@@ -26,10 +30,11 @@ class CartItemsController < ApplicationController
 			@cart_item.quantity += 1
       @cart_item.product.quantity -=1
 			@cart_item.save
+      redirect_to :back
       # @cart_item.product.save
-      respond_to do |format|
-        format.js   { render :layout => false }
-      end
+      # respond_to do |format|
+      #   format.js   { render :layout => false }
+      # end
 		elsif @cart_item.quantity == @cart_item.product.quantity
 			redirect_to carts_path, alert: "库存不足！"
 		end
@@ -40,10 +45,11 @@ class CartItemsController < ApplicationController
 			@cart_item.quantity -= 1
       @cart_item.product.quantity +=1
 			@cart_item.save
+      redirect_to :back
       # @cart_item.product.save
-			respond_to do |format|
-        format.js   { render :layout => false }
-      end
+			# respond_to do |format|
+   #      format.js   { render :layout => false }
+   #    end
 		elsif @cart_item.quantity == 0
 			redirect_to carts_path, alert: "商品不能少于零！"
 		end
