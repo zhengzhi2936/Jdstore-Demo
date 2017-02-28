@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:favorite]
-  before_action :find_product, only: [:show, :add_to_cart, :favorite, :upvote]
+  before_action :find_product, only: [:show, :add_to_cart, :favorite, :upvote, :add_buying_quantity, :remove_buying_quantity]
   respond_to :js
 
   def index
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
 
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
-      @product.quantity -=1
+      @product.quantity -= @product.buying_quantity
       @product.save
     else
       # flash[:warning] = "不能重复加入商品"
@@ -37,6 +37,22 @@ class ProductsController < ApplicationController
     end
     respond_to do |format|
       format.js   { render :layout => false }
+    end
+  end
+
+  def add_buying_quantity
+    if @product.buying_quantity <= @product.quantity
+      @product.buying_quantity +=1
+      @product.save
+      redirect_to :back
+    end
+  end
+
+  def remove_buying_quantity
+    if @product.buying_quantity > 1
+      @product.buying_quantity -= 1
+      @product.save
+      redirect_to :back
     end
   end
   def favorite
