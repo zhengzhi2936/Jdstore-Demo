@@ -1,5 +1,5 @@
 u = User.new
-u.email = "zhengzhi2616@gmail.com"           # 可以改成自己的 email
+u.email = "zhengzhi2616@123.com"           # 可以改成自己的 email
 
 u.password = "abc123123"                # 最少要六码
 
