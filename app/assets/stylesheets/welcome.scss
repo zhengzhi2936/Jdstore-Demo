@@ -1,3 +1,317 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'base';
+@import 'animate';
+
+$nav-color-gray: #A6A6A6;
+$nav-color-white: #fff;
+$nav-color-black: #A6A6A6;
+$nav-background-black: #323436;
+$nav-a-hover: #353637;
+$banner-color: #fff;
+$btn-color: #fff;
+$btn-background: #49BCB5;
+$btn-background-hover: #00DBE9;
+$banner: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1500,w_2000,f_auto,q_90/v1/1125481/1927496diuttntuepuh566_ju8euj.jpg);
+
+/*字体颜色和背景颜色*/
+.lp-bg-gray {
+  background: #F0F4F8;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.1), inset 0 -1px 1px rgba(0,0,0,0.1);
+}
+
+.lp {
+	color: #4C585F;
+	background: #fff;
+	font-family:  'Open Sans','open_sans','PingFang SC',"Microsoft YaHei","微软雅黑",STXihei,"华文细黑",sans-serif;
+	line-height: 1.5;
+	.container-fluid {
+		width: 1200px;
+	}
+	.title {
+		font-weight: normal;
+	}
+	.light {
+
+	}
+}
+.navbar {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	color: #fff;
+	a {
+		color: #fff;
+	}
+	.navbar-nav > li > a {
+		margin: 0 20px;
+	}
+	.nav > li > a:hover, .nav > li > a:focus {
+		background: none;
+		color: #fff;
+		text-decoration: underline;
+	}
+	.nav > li > .brand:hover, .nav > li > .brand:focus {
+		text-decoration: none;
+	}
+	.navbar-toggle .icon-bar {
+		background: #fff;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.navbar {
+		.navbar-nav {
+			position: absolute;
+			top: 20px;
+			left: 50%;
+			margin-left: -341px;
+		}
+		.navbar-brand {
+			display: none;
+		}
+		.first-nav {
+			margin-left: 440px;
+		}
+		.third-nav {
+			margin-left: 200px;
+		}
+		.brand {
+			font-size: 30px;
+			font-family: 'roboto condensed',sans-serif;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.navbar-fixed {
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		height: 60px;
+		background: #fff;
+		box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+	  padding: 8px 0;
+	  z-index: 1000;
+	  a {
+	  	color: #555555;
+	  }
+	  .navbar-nav {
+			top: 4px;
+	  }
+	  .brand {
+	  	color: #D32048;
+	  }
+	  .nav > li > .brand:hover, .nav > li > .brand:focus, {
+	  	color: #D32048;	
+	  }
+	}
+}
+	
+
+/*button*/
+.lp-b-btn {
+  color: $btn-color;
+  padding: 12px 40px;
+  background: #D32048;
+  color: #fff;
+  font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  &:focus,
+	&:hover {
+	  color: #fff;
+	  background-color: #D32048;
+	  border-color: #D32048;
+	}
+}
+
+.lp-banner {
+	color: #fff;
+  .jumbotron {
+    padding-bottom: 110px;
+    margin: 0 -15px;
+    border-radius: 0;
+    padding-top: 0;
+  }
+}
+.jumbotron {
+  background-image: $banner;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+  background-position: center -38px;
+  margin: 0 -15px 0;
+  color: $banner-color;
+  position: relative;
+  height: 770px;
+  letter-spacing: 2px;
+  
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparentize(#000, .55);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .text-content {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .title {
+  	color: $banner-color;
+    text-align: center;
+    padding: 50px 20px 0;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 240px; 
+    line-height: 1.5;
+  }
+  .slogan {
+  	color: $banner-color;
+    width: 630px;
+    margin: 44px auto 0;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+  }
+  .lead {
+    margin-top: 40px;
+    margin-bottom: 230px;
+    text-align: center;
+    color: white;
+  }
+}
+
+.lp-advantage {
+	.lp-advantage-img {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	.lp-advantage-title {
+		color: #444;
+		line-height: 1.2;
+	}
+	.lp-advantage-desc {
+		line-height: 1.7;
+	  letter-spacing: 0;
+	  font-size: 16px;
+	}
+		
+}
+
+/*home-people*/
+.lp-feedback {
+	.home-people {
+	  .person {
+	    display: inline-block;
+	    top: 0;
+	    padding-bottom: 20px;
+	    position: relative;
+	    .avata-wrapper {
+	      position: absolute;
+	      width: 96px;
+	      height: 96px;
+	      padding: 5px;
+	      left: 50%;
+	      top: 10px;
+	      margin-left: -53px;
+	      border: dotted 1px #E6EDEF;
+	      border-radius: 53px;
+	      overflow: hidden;
+	    }
+	    .avata {
+	      width: 100%;
+	      height: 100%;
+	      border-radius: 50%;
+	    }
+	    .intro {
+	      margin-top: 108px;
+	      .name {
+	        text-align: center;
+	      }
+	      .invest {
+	        float: right;
+	        margin-right: 20px;
+	        font-size: 14px;
+	        line-height: 28px;
+	        color: #fff;
+	        font-weight: bold;
+	      }
+	    }
+	    .words {
+	      position: relative;
+	      margin-top: 10px;
+	      padding: 41px 20px 20px 25px;
+	      border-radius: 3px;
+	      line-height: 25px;
+	      text-align: left;
+	      font-weight: bold;
+	      overflow: hidden;
+	      .bg {
+	        position: absolute;
+	        display: block;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        height: 100%;
+	        background: #fff;
+	        opacity: 0.7;
+	        z-index: 0;
+	      }
+	      .quote {
+	        position: absolute;
+	        color: #aaa;
+	        font-size: 16px;
+	      }
+	      .quote-l {
+	        top: 10px;
+	        left: 5px;
+	      }
+	      .quote-r {
+	        bottom: 10px;
+	        right: 5px;
+	      }
+	      .content {
+	        position: relative;
+	        height: 75px;
+	        overflow: hidden;
+	        font-size: 14px;
+	        z-index: 0;
+	      }
+	    }
+	  }
+	}
+}
+
+.lp-action {
+	background: url('https://ww2.sinaimg.cn/large/006tNbRwgy1fd6gpqtd6tj31hc0dq0xk.jpg') center center no-repeat;
+	height: 200px;
+	.text-content {
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+	}
+	p {
+		color: #fff;
+	}
+	&::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparentize(#000, .45);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

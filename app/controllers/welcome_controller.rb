@@ -1,5 +1,3 @@
 class WelcomeController < ApplicationController
-  def index
-    flash[:warning] = "welcome!"
-  end
+	layout 'welcome'
 end

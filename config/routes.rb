@@ -49,7 +49,7 @@ Rails.application.routes.draw do
     resources :posts
   end
   devise_for :users
-  root 'products#index'
+  root 'welcome#index'
 
   namespace :admin do
     resources :products

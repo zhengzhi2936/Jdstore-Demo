@@ -20,6 +20,9 @@
 //= require turbolinks
 //= require_tree .
 
+// landing page 动画效果
+new WOW().init();
+
 // 购物车效果
 $(function() { 
     var offset = $("#end").offset(); 
@@ -67,6 +70,7 @@ $(document).on('click', '.backtop', function () {
 var $header = $('.header')
 var $sidebar = $('#sidebar')
 var $category_sidebar = $('.category_sidebar')
+var $lp_navbar = $('.lp-navbar')
 
 $(window).scroll(function () {
   if ($(this).scrollTop() > 500) {
@@ -88,6 +92,17 @@ $(window).scroll(function () {
     $header.css({top: -80})
     $header.removeClass('header_fixed')
     $('.header_placeholder').hide()
+  }
+
+  if ($(this).scrollTop() > 200) {
+    if ($lp_navbar.is(':animated') || $lp_navbar.hasClass('navbar-fixed')) {
+      return false
+    }
+    $lp_navbar.addClass('navbar-fixed')
+    $lp_navbar.css({top: -60})
+    $lp_navbar.stop().animate({top: 0}, 600)
+  } else {
+    $lp_navbar.removeClass('navbar-fixed')
   }
 })
 
