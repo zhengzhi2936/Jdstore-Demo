@@ -14,7 +14,7 @@ $banner-color: #fff;
 $btn-color: #fff;
 $btn-background: #49BCB5;
 $btn-background-hover: #00DBE9;
-$banner: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1500,w_2000,f_auto,q_90/v1/1125481/1927496diuttntuepuh566_ju8euj.jpg);
+$banner: url(https://ww1.sinaimg.cn/large/006tNc79ly1fd6jk3vi4xj31jk0rs7ki.jpg);
 
 /*字体颜色和背景颜色*/
 .lp-bg-gray {
@@ -94,7 +94,7 @@ $banner: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1500,w_2
 		left: 0;
 		height: 60px;
 		background: #fff;
-		box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+		box-shadow: 0 1px 1px rgba(0,0,0,0.15);
 	  padding: 8px 0;
 	  z-index: 1000;
 	  a {
@@ -109,6 +109,9 @@ $banner: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1500,w_2
 	  .nav > li > .brand:hover, .nav > li > .brand:focus, {
 	  	color: #D32048;	
 	  }
+	  .nav > li > a:hover, .nav > li > a:focus {
+			color: #555555;
+		}
 	}
 }
 	
@@ -119,7 +122,8 @@ $banner: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1500,w_2
   padding: 12px 40px;
   background: #D32048;
   color: #fff;
-  font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
   &:focus,
 	&:hover {
 	  color: #fff;
@@ -130,6 +134,8 @@ $banner: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1500,w_2
 
 .lp-banner {
 	color: #fff;
+	height: 732px;
+  overflow: hidden;
   .jumbotron {
     padding-bottom: 110px;
     margin: 0 -15px;
@@ -153,7 +159,7 @@ $banner: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1500,w_2
     content: "";
     width: 100%;
     height: 100%;
-    background-color: transparentize(#000, .55);
+    background-color: transparentize(#000, .45);
     position: absolute;
     top: 0;
     left: 0;
