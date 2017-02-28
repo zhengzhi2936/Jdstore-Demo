@@ -42,6 +42,8 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
       post :upvote
+      post :add_buying_quantity
+      post :remove_buying_quantity
     end
     collection do
       get :search
