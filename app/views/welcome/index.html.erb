@@ -12,15 +12,17 @@
 	    </div>
 	  </div>
 	</div>
-	
+
 	<div class="lp-products pt60 pb60 lp-bg-gray">
 		<h2 class="title tc f22 pb50">正在热卖的零食</h2>
 		<div class="productList-wrap w1200 bc">
     <ul class="productList clearfix pb20">
       <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
-        <% if index < 10 %>
+				<% if product.quantity > 0 %>
+				<% if index < 10 %>
           <%= render :partial => "product_item", locals: { product: product, index: index } %>
         <% end %>
+				<% end %>
       <% end %>
     </ul>
   </div>
@@ -121,7 +123,7 @@
 		<div class="text-content pa pt60 pb60">
 			<p class="f16 pb20">一大波好吃的零食在等着你，快来注册下单吧</p>
 			<p class="wow zoomIn" data-wow-duration="1s">
-				<a class="btn-lg lp-b-btn bc"  href="/products">立刻选购</a>	
+				<a class="btn-lg lp-b-btn bc"  href="/products">立刻选购</a>
 			</p>
 		</div>
 	</div>
