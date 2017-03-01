@@ -1,36 +1,10 @@
-<nav class="lp-navbar navbar">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">小小食杂铺</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/">首页<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">关于我们</a></li>
-        <li><a class="brand" href="/products">小小食杂铺</a></li>
-        <li><a href="#">新动态</a></li>
-        <li><a href="#">联系我们</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
 <div class="lp">
 	<div class="lp-banner">
 	  <div class="jumbotron">
 	    <div class="text-content">
-	      <h1 class="title wow fadeIn" data-wow-duration="1s">你曾多少次想要吃点什么却因不愿下楼而舍弃</h1>
+	      <h1 class="title wow fadeIn" data-wow-duration="1s">我们只卖那些让人幸福感提升而感觉相见恨晚的零食</h1>
 	      <p class="slogan wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
-	        现在我们来了，你想吃的零食，我们马上就能送到你面前！
+	        你想吃的零食，我们马上就能送到你面前！
 	      </p>
 	      <p class="lead wow zoomIn" data-wow-duration="1s" data-wow-delay="2s"><a class="btn-lg lp-b-btn" href="/products">
 	      	立刻选购</a>
@@ -38,8 +12,15 @@
 	    </div>
 	  </div>
 	</div>
+	
+	<div class="lp-products pt60 pb60 lp-bg-gray">
+		<h2 class="title tc f22 pb50">正在热卖的商品</h2>
+		<div class="productList-wrap w1200 bc">
+	    <%= render :partial => "welcome/product_list"%>
+	  </div>
+	</div>
 
-	<div class="lp-advantage pt70 pb70">
+	<div class="lp-advantage pt60 pb60">
 		<h2 class="title tc f22 pb50">我们可以给您提供什么</h2>
 		<div class="container bc">
 			<div class="row">
@@ -68,12 +49,12 @@
 		</div>
 	</div>
 
-	<!-- <div class="lp-how pt70 pb70">
+	<!-- <div class="lp-how pt60 pb60">
 		<h2 class="title tc f22 pb20">我们是如何快速送达商品的</h2>
 		<p class="f16 tc light">与全国180多个城市大型超市合作，每天有无数的快递员穿梭于您与超市之间。</p>
 	</div> -->
 
-	<div class="lp-feedback pt70 pb70 lp-bg-gray">
+	<div class="lp-feedback pt60 pb60 lp-bg-gray">
 		<h2 class="title tc f22 pb20">「小小食杂铺」的超级粉丝</h2>
 		<p class="f16 tc light pb30">听听他们是怎么评价的</p>
     <div class="home-people container">
@@ -131,7 +112,7 @@
 	</div>
 
 	<div class="lp-action tc pr">
-		<div class="text-content pa pt70 pb70">
+		<div class="text-content pa pt60 pb60">
 			<p class="f16 pb20">一大波好吃的零食在等着你，快来注册下单吧</p>
 			<p class="wow zoomIn" data-wow-duration="1s">
 				<a class="btn-lg lp-b-btn bc"  href="/products">立刻选购</a>	

@@ -94,16 +94,16 @@ $(window).scroll(function () {
     $('.header_placeholder').hide()
   }
 
-  if ($(this).scrollTop() > 200) {
-    if ($lp_navbar.is(':animated') || $lp_navbar.hasClass('navbar-fixed')) {
-      return false
-    }
-    $lp_navbar.addClass('navbar-fixed')
-    $lp_navbar.css({top: -60})
-    $lp_navbar.stop().animate({top: 0}, 600)
-  } else {
-    $lp_navbar.removeClass('navbar-fixed')
-  }
+  // if ($(this).scrollTop() > 200) {
+  //   if ($lp_navbar.is(':animated') || $lp_navbar.hasClass('navbar-fixed')) {
+  //     return false
+  //   }
+  //   $lp_navbar.addClass('navbar-fixed')
+  //   $lp_navbar.css({top: -60})
+  //   $lp_navbar.stop().animate({top: 0}, 600)
+  // } else {
+  //   $lp_navbar.removeClass('navbar-fixed')
+  // }
 })
 
 // 详情菜单栏切换
