@@ -113,11 +113,16 @@
   color: #fff;
   letter-spacing: 2px;
   font-weight: bold;
+  transition: all .4s;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  -o-transition: all .4s;
+  -ms-transition: all .4s;
   &:focus,
 	&:hover {
 	  color: #fff;
-	  background-color: #D32048;
-	  border-color: #D32048;
+	  background-color: #E04869;
+	  border-color: #E04869;
 	}
 }
 
