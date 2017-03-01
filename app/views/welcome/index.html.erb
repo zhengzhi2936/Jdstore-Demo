@@ -2,9 +2,9 @@
 	<div class="lp-banner">
 	  <div class="jumbotron">
 	    <div class="text-content">
-	      <h1 class="title wow fadeIn" data-wow-duration="1s">我们只卖那些让人幸福感提升而感觉相见恨晚的零食</h1>
+	      <h1 class="title wow fadeIn" data-wow-duration="1s">那些让人幸福感提升而感觉相见恨晚的零食</h1>
 	      <p class="slogan wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
-	        你想吃的零食，我们马上就能送到你面前！
+	        你想吃的零食，我们马上就能送到你面前
 	      </p>
 	      <p class="lead wow zoomIn" data-wow-duration="1s" data-wow-delay="2s"><a class="btn-lg lp-b-btn" href="/products">
 	      	立刻选购</a>
@@ -14,10 +14,16 @@
 	</div>
 	
 	<div class="lp-products pt60 pb60 lp-bg-gray">
-		<h2 class="title tc f22 pb50">正在热卖的商品</h2>
+		<h2 class="title tc f22 pb50">正在热卖的零食</h2>
 		<div class="productList-wrap w1200 bc">
-	    <%= render :partial => "welcome/product_list"%>
-	  </div>
+    <ul class="productList clearfix pb20">
+      <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
+        <% if index < 10 %>
+          <%= render :partial => "product_item", locals: { product: product, index: index } %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 	</div>
 
 	<div class="lp-advantage pt60 pb60">
@@ -35,13 +41,13 @@
 					<div class="lp-advantage-item bc pl20 pr20 tc wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
 						<img class="lp-advantage-img" src="https://ww3.sinaimg.cn/large/006tNc79ly1fd6k2sz9a8j30ow0oywfk.jpg">
 						<p class="lp-advantage-title f18 mt20">让你幸福感爆棚的零食</p>
-						<p class="lp-advantage-desc f14 pl20 pr20 mt30">每个人总有些心情不好的时候。那么怎样才能有效改善自己的心情，让自己摆脱忧郁重新对生活充满信心呢？偶尔的一点零食，正是您调节心态的好方法。</p>
+						<p class="lp-advantage-desc f14 pl20 pr20 mt30">每个人总有心情不好的时候。那么怎样才能有效改善自己的心情，让自己摆脱忧郁重新对生活充满信心呢？偶尔的一点零食，正是您调节心态的好方法。</p>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="lp-advantage-item bc pl20 pr20 tc wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
 						<img class="lp-advantage-img" src="https://ww3.sinaimg.cn/large/006tNc79ly1fd6k7s7eywj304604g3yg.jpg">
-						<p class="lp-advantage-title f18 mt20">正品行货，精致服务</p>
+						<p class="lp-advantage-title f18 mt20">安全食品，正品行货</p>
 						<p class="lp-advantage-desc f14 pl20 pr20 mt30">严格的质量把控，我们只卖正品、安全、高质量的产品。如果您对商品不满意，我们提供7天无理由退换货。您尽管放心地买。</p>
 					</div>
 				</div>
