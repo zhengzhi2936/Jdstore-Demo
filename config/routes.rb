@@ -50,7 +50,11 @@ Rails.application.routes.draw do
     end
     resources :posts
   end
-  devise_for :users
+   devise_for :user, controllers: {
+     passwords: 'users/passwords',
+     registrations: 'users/registrations',
+     sessions: 'users/sessions'
+   }
   root 'welcome#index'
 
   namespace :admin do
