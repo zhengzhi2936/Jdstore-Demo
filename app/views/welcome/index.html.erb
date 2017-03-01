@@ -18,11 +18,9 @@
 		<div class="productList-wrap w1200 bc">
     <ul class="productList clearfix pb20">
       <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
-				<% if product.quantity > 0 %>
 				<% if index < 10 %>
           <%= render :partial => "product_item", locals: { product: product, index: index } %>
         <% end %>
-				<% end %>
       <% end %>
     </ul>
   </div>
