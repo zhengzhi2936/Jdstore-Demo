@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*details*/
+/*商品详细*/
 .location {
 	line-height: 30px;
 	padding-bottom: 3px;
@@ -81,6 +81,7 @@
 	font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
 }
 
+/*商品详情*/
 .productDetail-tabList {
 	border-bottom: 1px solid #D8D8D8;
 }
@@ -104,6 +105,8 @@
 	width: 700px;
 }
 
+
+/*评论*/
 .commentList-item {
 	width: 670px;
 	border-bottom: 1px solid #DDDDDD;
