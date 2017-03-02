@@ -178,7 +178,6 @@
 }
 .jumbotron-slogan {
 	color: #fff;
-  width: 630px;
   margin: 44px auto 0;
   font-size: 16px;
   line-height: 26px;
@@ -314,4 +313,11 @@
     top: 0;
     left: 0;
   }
+}
+
+// 适应小屏幕
+@media (max-width: 1200px) {
+	.lp-banner {
+		height: 460px;
+	}
 }
