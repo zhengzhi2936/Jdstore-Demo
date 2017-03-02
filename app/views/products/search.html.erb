@@ -20,7 +20,7 @@
       <p class="tc mt100">亲，没有搜索到商品哦，要不换个关键词试试？</p>
     <% end %>
   </div>
-  <h3 class="recommentTitle col-red ml40">热门推荐</h3>
+  <h3 class="recommentTitle col-red ml40 w1200 bc">热门推荐</h3>
   <div class="productList-wrap w1200 pt20 bc">
     <ul class="productList clearfix pb20">
       <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>

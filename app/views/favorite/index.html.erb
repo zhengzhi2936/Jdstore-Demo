@@ -23,7 +23,7 @@
       <p class="tc mt100">亲，你还没有收藏商品哦~</p>
     <% end %>
   </div>
-  <h3 class="recommentTitle col-red ml40">热门推荐</h3>
+  <h3 class="recommentTitle col-red ml40 w1200 bc">热门推荐</h3>
   <div class="productList-wrap w1200 pt20 bc">
     <ul class="productList clearfix pb20">
       <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
