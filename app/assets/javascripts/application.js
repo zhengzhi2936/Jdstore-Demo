@@ -57,16 +57,16 @@ $(document).ready(function() {
 
 // 点击事件
 $(document).on('click', '.backtop', function () {
-  $('body').animate({'scrollTop': 0}, 500)
+  $('body').animate({'scrollTop': 0}, 500) // 在500ms内，慢慢地回到顶部
 }).on('mouseenter', '.support', function () {
-  $('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500)
+  $('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500) 
 }).on('mouseleave', '.support', function () {
   $('.ewm').stop().animate({opacity: 0}, 500, function () {
     $(this).css('left', 0).hide()
   })
 })
 
-// 拉票小功能
+// 下拉时显示「顶部导航栏」和「侧边栏」
 var $header = $('.header')
 var $sidebar = $('#sidebar')
 var $category_sidebar = $('.category_sidebar')
@@ -74,36 +74,25 @@ var $lp_navbar = $('.lp-navbar')
 
 $(window).scroll(function () {
   if ($(this).scrollTop() > 500) {
-    $sidebar.fadeIn()
-    $category_sidebar.fadeIn()
+    $sidebar.fadeIn() 
+    $category_sidebar.fadeIn() // 慢慢地显示侧边栏
   } else {
     $sidebar.fadeOut()
-    $category_sidebar.fadeOut()
+    $category_sidebar.fadeOut() // 慢慢地隐藏侧边栏
   }
 
   if ($(this).scrollTop() > 200) {
     if ($header.is(':animated')) {
       return false
     }
-    $header.addClass('header_fixed')
-    $header.stop().animate({top: 0}, 600)
-    $('.header_placeholder').show()
+    $header.addClass('header_fixed') // 让导航栏固定在顶部
+    $header.stop().animate({top: 0}, 600) // 在600ms内，慢慢地出来
+    $('.header_placeholder').show() // 显示「用来占位」的header
   } else {
     $header.css({top: -80})
     $header.removeClass('header_fixed')
     $('.header_placeholder').hide()
   }
-
-  // if ($(this).scrollTop() > 200) {
-  //   if ($lp_navbar.is(':animated') || $lp_navbar.hasClass('navbar-fixed')) {
-  //     return false
-  //   }
-  //   $lp_navbar.addClass('navbar-fixed')
-  //   $lp_navbar.css({top: -60})
-  //   $lp_navbar.stop().animate({top: 0}, 600)
-  // } else {
-  //   $lp_navbar.removeClass('navbar-fixed')
-  // }
 })
 
 // 详情菜单栏切换
@@ -115,11 +104,11 @@ $(document).on('click', '.productDetail-tabList-tab', function () {
 
 // 评论图片放大
 $('.comment-image').click(function () {
-    if ($(this).hasClass('comment-image-scale')) {
-        $(this).removeClass('comment-image-scale')
-    } else {
-        $(this).addClass('comment-image-scale')
-    }
+  if ($(this).hasClass('comment-image-scale')) {
+    $(this).removeClass('comment-image-scale')
+  } else {
+    $(this).addClass('comment-image-scale')
+  }
 })
 
 // 投票
