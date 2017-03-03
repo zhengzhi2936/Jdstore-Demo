@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
       @product.quantity -= @product.buying_quantity
+      @product.buying_quantity = 1
       @product.save
     else
       # flash[:warning] = "不能重复加入商品"
