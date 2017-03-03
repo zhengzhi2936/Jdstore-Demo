@@ -75,9 +75,9 @@
       <div class="intro-text-quantity clearfix">
         <span class="pl20 pr30 fl">数量</span> 
         <div class="countNumber fl mt10">
-          <%= link_to("-", remove_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post) %>
+          <%= link_to("-", remove_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
           <input class="countNumber-input" type="text" value="<%= @product.buying_quantity %>">
-          <%= link_to("+", add_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post) %>
+          <%= link_to("+", add_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
         </div>
       </div>
       <p class="intro-text-btnWrap">
