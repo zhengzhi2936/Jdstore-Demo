@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
       @product.quantity -= @product.buying_quantity
+      @product.buying_quantity = 1
       @product.save
     else
       # flash[:warning] = "不能重复加入商品"
@@ -44,7 +45,10 @@ class ProductsController < ApplicationController
     if @product.buying_quantity <= @product.quantity
       @product.buying_quantity +=1
       @product.save
-      redirect_to :back
+      # redirect_to :back
+      respond_to do |format|
+        format.js   { render :layout => false }
+      end
     end
   end
 
@@ -52,7 +56,10 @@ class ProductsController < ApplicationController
     if @product.buying_quantity > 1
       @product.buying_quantity -= 1
       @product.save
-      redirect_to :back
+      # redirect_to :back
+      respond_to do |format|
+        format.js   { render :layout => false }
+      end
     end
   end
   def favorite
