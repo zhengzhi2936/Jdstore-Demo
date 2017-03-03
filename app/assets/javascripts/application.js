@@ -17,7 +17,6 @@
 //= require local_time
 //= require chosen-jquery
 //= require jquery.raty
-//= require turbolinks
 //= require_tree .
 
 // landing page 动画效果
