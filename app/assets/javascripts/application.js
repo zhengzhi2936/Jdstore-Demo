@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
+//= require turbolinks
 //= require local_time
 //= require chosen-jquery
 //= require jquery.raty
