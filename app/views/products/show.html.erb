@@ -1,10 +1,13 @@
-<div class="w1200 clearfix bc mt30 pb20 pr">
-  <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
-  <div class="fl ml40 mt10">
-    <%= render :partial => "products/search_bar" %>
-  </div>
-  <div class="pa mt10 cart-wrap">
-    <%= render :partial => "products/cart" %>
+<div class="header_placeholder h80"></div>    
+<div class="header">
+  <div class="w1200 clearfix bc mt30 pb20 header_content pr">
+    <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+    <div class="fl ml40 mt10">
+      <%= render :partial => "products/search_bar" %>
+    </div>
+    <div class="pa mt10 cart-wrap">
+      <%= render :partial => "products/cart" %>
+    </div>
   </div>
 </div>
 

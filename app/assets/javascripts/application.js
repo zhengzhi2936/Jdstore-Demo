@@ -80,17 +80,17 @@ $(window).scroll(function () {
     $category_sidebar.fadeOut() // 慢慢地隐藏侧边栏
   }
 
-  if ($(this).scrollTop() > 200) {
+  if ($(this).scrollTop() > 120) {
     if ($header.is(':animated')) {
       return false
     }
+    $('.header_placeholder').show() // 显示「用来占位」的header
     $header.addClass('header_fixed') // 让导航栏固定在顶部
     $header.stop().animate({top: 0}, 600) // 在600ms内，慢慢地出来
-    $('.header_placeholder').show() // 显示「用来占位」的header
   } else {
-    $header.css({top: -80})
-    $header.removeClass('header_fixed')
     $('.header_placeholder').hide()
+    $header.removeClass('header_fixed')
+    $header.css({top: -80})
   }
 })
 
