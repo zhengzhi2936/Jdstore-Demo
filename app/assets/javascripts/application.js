@@ -19,6 +19,8 @@
 //= require jquery.raty
 //= require_tree .
 
+console.log('test heroku compile assets')
+
 // landing page 动画效果
 new WOW().init();
 
@@ -197,6 +199,3 @@ $(document).on('mouseover', '.magnifier-thumb-wrapper', function (e) {
 $(document).on('mouseout', '.magnifier-thumb-wrapper', function (e) {
     $('#preview').css('visibility', 'hidden')
 })
-
-
-console.log('test heroku compile assets')
