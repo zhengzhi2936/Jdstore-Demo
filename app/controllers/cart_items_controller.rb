@@ -1,5 +1,4 @@
 class CartItemsController < ApplicationController
-  before_action :authenticate_user!
   before_action :find_cart_item, only: [:destroy, :update, :add_quantity, :remove_quantity]
   respond_to :js
 
