@@ -19,8 +19,6 @@
 //= require jquery.raty
 //= require_tree .
 
-console.log('test heroku compile assets')
-
 // landing page 动画效果
 new WOW().init();
 
