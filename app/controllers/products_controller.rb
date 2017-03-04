@@ -96,7 +96,7 @@ class ProductsController < ApplicationController
     if params[:category].blank?
       @products = case params[:order]
       when 'by_product_price'
-            Product.includes(:photos).order('price DESC')
+            Product.includes(:photos).order('price ASC')
       when 'by_product_quantity'
             Product.includes(:photos).order('quantity DESC')
       when 'by_product_like'
