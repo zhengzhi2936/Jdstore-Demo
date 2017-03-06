@@ -17,36 +17,37 @@
 //= require local_time
 //= require chosen-jquery
 //= require jquery.raty
+//= require turbolinks
 //= require_tree .
 
 // landing page 动画效果
 new WOW().init();
 
 // 购物车效果
-$(function() { 
-    var offset = $("#end").offset(); 
-    $(".addCartBtn").click(function(event){ 
-        var addcar = $(this); 
-        var img = addcar.closest('.productList-item').find('.productList-item-pic img').attr('src'); 
-        if (!img) img = $('#thumb').attr('src');           
-        var flyer = $('<img class="u-flyer" src="'+img+'">'); 
-        flyer.fly({ 
-            start: { 
-                left: event.pageX - 20, //开始位置（必填）#fly元素会被设置成position: fixed 
-                top: event.clientY - 20 //开始位置（必填） 
-            }, 
-            end: { 
-                left: $('.fa-shopping-cart').offset().left, //结束位置（必填） 
-                top: $('.fa-shopping-cart').offset().top - $(window).scrollTop(), //结束位置（必填） 
-                width: 10, //结束时宽度 
-                height: 10 //结束时高度 
-            }, 
-            onEnd: function(){ //结束回调 
-                this.destory(); //移除dom 
-            } 
-        }); 
-    }); 
-}); 
+$(function() {
+    var offset = $("#end").offset();
+    $(".addCartBtn").click(function(event){
+        var addcar = $(this);
+        var img = addcar.closest('.productList-item').find('.productList-item-pic img').attr('src');
+        if (!img) img = $('#thumb').attr('src');
+        var flyer = $('<img class="u-flyer" src="'+img+'">');
+        flyer.fly({
+            start: {
+                left: event.pageX - 20, //开始位置（必填）#fly元素会被设置成position: fixed
+                top: event.clientY - 20 //开始位置（必填）
+            },
+            end: {
+                left: $('.fa-shopping-cart').offset().left, //结束位置（必填）
+                top: $('.fa-shopping-cart').offset().top - $(window).scrollTop(), //结束位置（必填）
+                width: 10, //结束时宽度
+                height: 10 //结束时高度
+            },
+            onEnd: function(){ //结束回调
+                this.destory(); //移除dom
+            }
+        });
+    });
+});
 
 // 首页轮播
 $(document).ready(function() {
@@ -58,7 +59,7 @@ $(document).ready(function() {
 $(document).on('click', '.backtop', function () {
   $('body').animate({'scrollTop': 0}, 500) // 在500ms内，慢慢地回到顶部
 }).on('mouseenter', '.support', function () {
-  $('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500) 
+  $('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500)
 }).on('mouseleave', '.support', function () {
   $('.ewm').stop().animate({opacity: 0}, 500, function () {
     $(this).css('left', 0).hide()
@@ -73,7 +74,7 @@ var $lp_navbar = $('.lp-navbar')
 
 $(window).scroll(function () {
   if ($(this).scrollTop() > 500) {
-    $sidebar.fadeIn() 
+    $sidebar.fadeIn()
     $category_sidebar.fadeIn() // 慢慢地显示侧边栏
   } else {
     $sidebar.fadeOut()

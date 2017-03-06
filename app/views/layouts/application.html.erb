@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="shortcut icon" href="/images/favicon.ico">
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
@@ -17,6 +17,7 @@
     </div>
 
     <%= render "common/footer"%>
+
   </body>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 </html>
