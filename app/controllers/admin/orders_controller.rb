@@ -3,6 +3,15 @@ class Admin::OrdersController <  AdminController
 
   def index
     @orders = Order.order("id DESC")
+    if params[:status] == "pending"
+      @orders = @orders.where( :aasm_state => ["order_placed", "paid"] )
+    elsif params[:status] == "done"
+      @orders = @orders.where.not( :aasm_state => ["order_placed", "paid"] )
+    end
+    if params[:date].present?
+      d = Date.parse( params[:date] )
+    @orders = @orders.where( :created_at => d.beginning_of_day..d.end_of_day )
+  end
   end
    def show
      @product_lists = @order.product_lists
