@@ -1,5 +1,15 @@
 <h2>订单列表 </h2>
 
+<%= form_tag admin_orders_path, :method => :get do%>
+    <%= date_field_tag :date%>
+    <%= submit_tag "submit"%>
+
+<% end %>
+ <p>
+   <%= link_to "all", admin_orders_path%>
+   <%= link_to "pending", admin_orders_path( :status => "pending")%>
+   <%= link_to "done", admin_orders_path( :status => "pending")%>
+ </p>
 <table class="table table-bordered">
   <thead>
     <tr>

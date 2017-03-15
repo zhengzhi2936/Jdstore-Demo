@@ -2,10 +2,10 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:favorite]
   before_action :find_product, only: [:show, :add_to_cart, :favorite, :upvote, :add_buying_quantity, :remove_buying_quantity]
+  before_action :get_products, only: [:index, :add_to_cart, :favorite]
   respond_to :js
 
   def index
-    get_products
   end
   def show
     @photos = @product.photos.all
@@ -25,7 +25,6 @@ class ProductsController < ApplicationController
 		@products = Product.ransack({:title_cont => @q}).result(:distinct => true)
 	end
   def add_to_cart
-    get_products
 
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
@@ -63,7 +62,6 @@ class ProductsController < ApplicationController
     end
   end
   def favorite
-    get_products
 
     type = params[:type]
     if type == "favorite"
@@ -91,22 +89,5 @@ class ProductsController < ApplicationController
   end
   def validate_search_key
     @q = params[:query_string].gsub(/\|\'|\/|\?/, "") if params[:query_string].present?
-  end
-  def get_products
-    if params[:category].blank?
-      @products = case params[:order]
-      when 'by_product_price'
-            Product.includes(:photos).order('price ASC')
-      when 'by_product_quantity'
-            Product.includes(:photos).order('quantity DESC')
-      when 'by_product_like'
-            Product.includes(:photos).order('like DESC')
-          else
-            Product.includes(:photos).order('created_at DESC')
-          end
-    else
-      @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.includes(:photos).where(:category_id => @category_id)
-    end
   end
 end
